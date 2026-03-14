@@ -72,7 +72,7 @@ export default function Footer() {
                 <Facebook className="w-4 h-4" />
               </motion.a>
             </div>
-            <p className="text-gray-500 text-xs">ตอบรับทุกวัน 9:00 – 21:00 น.</p>
+            <p className="text-gray-500 text-xs">ทักหาเราได้ 24 ชม.</p>
           </div>
         </div>
 
