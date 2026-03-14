@@ -6,40 +6,40 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "คุณ สุภาพร ว.",
-    role: "นักเทรด Forex",
-    avatar: "👩",
+    name: "คุณ ธนกร พ.",
+    role: "นักเทรด Forex & Gold",
+    avatar: "👨‍💼",
     avatarBg: "linear-gradient(135deg, #C8E6C9, #E8F5E9)",
     quote:
-      "ก่อนหน้านี้เทรดแบบเดาตลอด พอเรียน Volume Profile แล้วเริ่มเข้าใจว่าทำไมราคาถึงเด้งจากจุดนั้น เปลี่ยนชีวิตการเทรดเลยค่ะ ขอบคุณมากๆ นะคะ",
+      "ก่อนเรียนเข้า-ออกผิดจังหวะตลอด พอเข้าใจ Volume Profile กับ Delta แล้ว รู้ว่า Smart Money อยู่ไหน เทรดมั่นใจขึ้นเยอะมากครับ คุ้มค่ามากๆ",
     stars: 5,
   },
   {
-    name: "คุณ พิชญา ร.",
-    role: "เทรด Gold ออนไลน์",
-    avatar: "👩‍💼",
+    name: "คุณ วิชัย ส.",
+    role: "เทรด Futures พาร์ทไทม์",
+    avatar: "👨‍🔬",
     avatarBg: "linear-gradient(135deg, #E8F5E9, #A5D6A7)",
     quote:
-      "ชอบที่สอนทั้ง Sierra Chart และ TradingView มากค่ะ ไฟล์ Indicator ที่ให้มาก็ใช้ได้จริงเลย ตอนนี้อ่าน Footprint ออกแล้วค่ะ คุ้มมากๆ เลย",
+      "Workshop วิเคราะห์ Gold และ Futures จากตลาดจริงนี่ดีมากเลยครับ ไฟล์ Indicator ก็ใช้งานได้จริง ตอนนี้อ่าน Footprint ออกแล้วครับ",
     stars: 5,
   },
   {
-    name: "คุณ นันทนา ส.",
+    name: "คุณ สมหญิง ร.",
     role: "พนักงานบริษัท เทรดพาร์ทไทม์",
-    avatar: "👩‍🍳",
+    avatar: "👩‍💻",
     avatarBg: "linear-gradient(135deg, #F1F8E9, #C8E6C9)",
     quote:
-      "เรียนตอนเย็นหลังเลิกงาน 16 บทเรียนครบมาก ดูซ้ำได้เรื่อยๆ ค่ะ ตอนนี้อ่าน Footprint Chart เป็นแล้ว แนะนำเพื่อนไปเรียนด้วยแล้ว 2 คนค่ะ",
+      "เรียนตอนเย็นหลังเลิกงาน ดูซ้ำได้ไม่จำกัดค่ะ 16 บทเรียนครบมาก แนะนำเพื่อนไปเรียนด้วยแล้ว 2 คนเลยนะคะ คุ้มมากค่ะ",
     stars: 5,
   },
 ];
 
 const miniReviews = [
-  { text: "เข้าใจ Volume Profile แล้วค่ะ ขอบคุณมากนะคะ 🙏", name: "นักเรียน A." },
-  { text: "ดีกว่าที่คิดไว้มากเลยค่ะ", name: "นักเรียน B." },
-  { text: "Footprint Chart อ่านออกแล้ว ปลื้มมาก!", name: "นักเรียน C." },
-  { text: "คุ้มมากๆ เลยค่ะ ฿5,900 นี้", name: "นักเรียน D." },
-  { text: "แนะนำเพื่อนไปเรียนด้วยแล้วค่ะ", name: "นักเรียน E." },
+  { text: "เข้าใจ Volume Profile แล้วครับ ขอบคุณมากๆ 🙏", name: "คุณ อนุชา ก." },
+  { text: "ดีกว่าที่คิดไว้มากเลยครับ", name: "คุณ ปิยะ ม." },
+  { text: "Footprint Chart อ่านออกแล้ว ปลื้มมากครับ!", name: "คุณ ณัฐวุฒิ ว." },
+  { text: "คุ้มมากๆ ฿5,900 นี้ครับ", name: "คุณ สิทธิชัย ร." },
+  { text: "แนะนำเพื่อนไปเรียนด้วยแล้วค่ะ", name: "คุณ มินตรา ส." },
 ];
 
 const containerVariants: Variants = {
@@ -119,7 +119,7 @@ export default function TestimonialsSection() {
             </span>
             <span className="text-gray-300 hidden sm:inline">|</span>
             <span className="text-sm font-semibold text-gray-700">
-              👩‍🎓 นักเรียนกว่า <strong style={{ color: "#1B5E20" }}>500 คน</strong>
+              🎓 นักเรียนกว่า <strong style={{ color: "#1B5E20" }}>500 คน</strong>
             </span>
             <span className="text-gray-300 hidden sm:inline">|</span>
             <span className="text-sm font-semibold text-gray-700">
