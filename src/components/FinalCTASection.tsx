@@ -99,6 +99,10 @@ export default function FinalCTASection() {
               href="https://lin.ee/1hpcpsl"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
+              }}
               className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl transition-all duration-200"
               style={{
                 background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
@@ -122,6 +126,10 @@ export default function FinalCTASection() {
               href="https://lin.ee/1hpcpsl"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
+              }}
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-base text-white shadow-lg transition-all duration-200"
               style={{ background: "#06C755" }}
               whileHover={{ scale: 1.04, y: -1 }}

@@ -86,6 +86,10 @@ export default function UrgencyBar() {
           href="https://lin.ee/1hpcpsl"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={(e) => {
+            e.preventDefault();
+            window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
+          }}
           className="px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap transition-all hover:scale-105"
           style={{ background: "#FFB300", color: "#1A2E1A" }}
         >

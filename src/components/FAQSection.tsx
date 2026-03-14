@@ -210,6 +210,10 @@ export default function FAQSection() {
               href="https://lin.ee/1hpcpsl"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
+              }}
               className="px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all duration-200"
               style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
               whileHover={{ scale: 1.04 }}
@@ -221,6 +225,10 @@ export default function FAQSection() {
               href="https://lin.ee/1hpcpsl"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => {
+                e.preventDefault();
+                window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
+              }}
               className="px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200 hover:bg-white/60"
               style={{ borderColor: "#1B5E20", color: "#1B5E20" }}
             >

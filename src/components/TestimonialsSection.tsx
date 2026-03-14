@@ -206,6 +206,10 @@ export default function TestimonialsSection() {
             href="https://lin.ee/1hpcpsl"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => {
+              e.preventDefault();
+              window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
+            }}
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-bold shadow-lg transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
