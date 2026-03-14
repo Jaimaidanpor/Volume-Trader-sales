@@ -1,5 +1,7 @@
 "use client";
 
+import { openLine, LINE_URL } from "@/lib/openLine";
+
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
 
@@ -234,7 +236,7 @@ export default function CoursesSection() {
               </div>
 
               <motion.a
-                href="https://lin.ee/1hpcpsl"
+                href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {

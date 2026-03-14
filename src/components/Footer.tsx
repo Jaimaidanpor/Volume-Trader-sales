@@ -1,5 +1,7 @@
 "use client";
 
+import { openLine, LINE_URL } from "@/lib/openLine";
+
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { MessageCircle, Facebook, Heart } from "lucide-react";
@@ -45,7 +47,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center justify-center md:justify-end gap-3 mb-3">
               <motion.a
-                href="https://lin.ee/1hpcpsl"
+                href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={(e) => {

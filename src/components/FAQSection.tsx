@@ -1,5 +1,7 @@
 "use client";
 
+import { openLine, LINE_URL } from "@/lib/openLine";
+
 import { useState, useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
@@ -207,13 +209,10 @@ export default function FAQSection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <motion.a
-              href="https://lin.ee/1hpcpsl"
+              href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
-              }}
+              onClick={(e) => openLine(e)}
               className="px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all duration-200"
               style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
               whileHover={{ scale: 1.04 }}
@@ -222,13 +221,10 @@ export default function FAQSection() {
               สมัครเรียนเลย ฿ 5,900
             </motion.a>
             <a
-              href="https://lin.ee/1hpcpsl"
+              href={LINE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              onClick={(e) => {
-                e.preventDefault();
-                window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
-              }}
+              onClick={(e) => openLine(e)}
               className="px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200 hover:bg-white/60"
               style={{ borderColor: "#1B5E20", color: "#1B5E20" }}
             >

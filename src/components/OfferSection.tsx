@@ -1,5 +1,7 @@
 "use client";
 
+import { openLine, LINE_URL } from "@/lib/openLine";
+
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
@@ -182,13 +184,10 @@ export default function OfferSection() {
 
           {/* BIG CTA */}
           <motion.a
-            href="https://lin.ee/1hpcpsl"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
-            }}
+            onClick={(e) => openLine(e)}
             className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl mb-4 transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",

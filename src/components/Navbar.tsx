@@ -1,5 +1,7 @@
 "use client";
 
+import { openLine, LINE_URL } from "@/lib/openLine";
+
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
@@ -52,13 +54,10 @@ export default function Navbar() {
 
           {/* Single CTA Button */}
           <motion.a
-            href="https://lin.ee/1hpcpsl"
+            href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => {
-              e.preventDefault();
-              window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
-            }}
+            onClick={(e) => openLine(e)}
             className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #FFB300, #FFA000)",
