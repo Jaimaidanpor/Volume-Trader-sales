@@ -50,10 +50,7 @@ export default function Footer() {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
-                }}
+                onClick={(e) => openLine(e)}
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white transition-all duration-200"
                 style={{ background: "#06C755" }}
                 whileHover={{ scale: 1.05 }}
