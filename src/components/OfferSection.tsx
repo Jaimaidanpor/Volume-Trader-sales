@@ -1,20 +1,10 @@
 "use client";
 
 import { useRef, useState, useEffect } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 
-function getTimeLeft() {
-  const now = new Date();
-  const target = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
-  const diff = target.getTime() - now.getTime();
-  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  return {
-    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / (1000 * 60)) % 60),
-    seconds: Math.floor((diff / 1000) % 60),
-  };
-}
+const SEATS_LEFT = 8;
+const TOTAL_SEATS = 20;
 
 const valueStackBrief = [
   { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿ 14,900" },
@@ -32,11 +22,15 @@ const trustBadges = [
 export default function OfferSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [time, setTime] = useState(getTimeLeft());
-  const pad = (n: number) => String(n).padStart(2, "0");
+  const [viewers, setViewers] = useState(12);
 
   useEffect(() => {
-    const timer = setInterval(() => setTime(getTimeLeft()), 1000);
+    const timer = setInterval(() => {
+      setViewers((prev) => {
+        const change = Math.random() < 0.5 ? 1 : -1;
+        return Math.min(Math.max(prev + change, 8), 18);
+      });
+    }, 4500);
     return () => clearInterval(timer);
   }, []);
 
@@ -91,38 +85,59 @@ export default function OfferSection() {
             </span>
           </h2>
 
-          {/* Countdown Timer */}
-          <div
-            className="inline-block px-6 py-4 rounded-2xl mb-8"
-            style={{ background: "rgba(183,28,28,0.25)", border: "1px solid rgba(239,83,80,0.4)" }}
-          >
-            <p className="text-red-200 text-xs font-semibold mb-3 tracking-widest uppercase">
-              ⏰ ราคาพิเศษหมดเขตสิ้นเดือนนี้
-            </p>
-            <div className="flex items-center justify-center gap-2">
-              {[
-                { val: time.days, label: "วัน" },
-                { val: time.hours, label: "ชั่วโมง" },
-                { val: time.minutes, label: "นาที" },
-                { val: time.seconds, label: "วินาที" },
-              ].map((item, i) => (
-                <div key={i} className="flex items-center gap-2">
-                  <div className="flex flex-col items-center">
-                    <div
-                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center"
-                      style={{ background: "rgba(0,0,0,0.4)" }}
-                    >
-                      <span className="text-white font-bold text-xl sm:text-2xl tabular-nums">
-                        {pad(item.val)}
-                      </span>
-                    </div>
-                    <span className="text-red-200 text-[10px] mt-1">{item.label}</span>
-                  </div>
-                  {i < 3 && (
-                    <span className="text-white font-bold text-xl mb-4">:</span>
-                  )}
-                </div>
-              ))}
+          {/* Seats + Viewers */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
+            {/* Seats remaining */}
+            <div
+              className="px-6 py-4 rounded-2xl w-full sm:w-auto"
+              style={{ background: "rgba(183,28,28,0.25)", border: "1px solid rgba(239,83,80,0.4)" }}
+            >
+              <p className="text-red-200 text-xs font-semibold mb-2 tracking-widest uppercase">
+                ⚠️ ที่นั่งคงเหลือ
+              </p>
+              {/* Seat progress bar */}
+              <div className="w-full sm:w-48 h-3 rounded-full mb-2" style={{ background: "rgba(255,255,255,0.15)" }}>
+                <motion.div
+                  initial={{ width: 0 }}
+                  animate={isInView ? { width: `${((TOTAL_SEATS - SEATS_LEFT) / TOTAL_SEATS) * 100}%` } : {}}
+                  transition={{ duration: 1, delay: 0.3 }}
+                  className="h-3 rounded-full"
+                  style={{ background: "linear-gradient(90deg, #FFB300, #FF6D00)" }}
+                />
+              </div>
+              <p className="text-white font-bold text-lg">
+                เหลือ <span style={{ color: "#FFB300", fontSize: "1.5rem" }}>{SEATS_LEFT}</span> / {TOTAL_SEATS} ที่นั่ง
+              </p>
+              <p className="text-red-200 text-xs mt-1">ครบแล้วปรับเป็นราคาเต็ม ฿ 14,900</p>
+            </div>
+
+            {/* Live viewers */}
+            <div
+              className="px-6 py-4 rounded-2xl w-full sm:w-auto"
+              style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.15)" }}
+            >
+              <p className="text-green-200 text-xs font-semibold mb-2 tracking-widest uppercase">
+                🟢 Live ตอนนี้
+              </p>
+              <div className="flex items-center justify-center gap-2">
+                <span className="relative flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-green-400" />
+                </span>
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={viewers}
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 5 }}
+                    transition={{ duration: 0.3 }}
+                    className="font-bold text-2xl text-white tabular-nums"
+                  >
+                    {viewers}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+              <p className="text-green-200 text-xs mt-1">คนกำลังดูหน้านี้อยู่</p>
             </div>
           </div>
 
