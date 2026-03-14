@@ -217,12 +217,15 @@ export default function FAQSection() {
             >
               สมัครเรียนเลย ฿ 5,900
             </motion.a>
-            <button
+            <a
+              href="https://lin.ee/1hpcpsl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200 hover:bg-white/60"
               style={{ borderColor: "#1B5E20", color: "#1B5E20" }}
             >
               ติดต่อผ่าน LINE
-            </button>
+            </a>
           </div>
         </motion.div>
       </div>
