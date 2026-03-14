@@ -137,6 +137,29 @@ export default function HeroSection() {
             ปัญหาเหล่านี้มีคำตอบเดียวค่ะ — คุณต้องเรียนรู้ที่จะอ่าน Volume
           </motion.p>
 
+          {/* YouTube badge */}
+          <motion.a
+            href="https://www.youtube.com/@volumetraderwhale"
+            target="_blank"
+            rel="noopener noreferrer"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.45 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold mb-5 transition-all hover:scale-105"
+            style={{
+              background: "rgba(255,255,255,0.85)",
+              border: "1px solid rgba(255,0,0,0.2)",
+              color: "#1A2E1A",
+            }}
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+          >
+            <svg className="w-4 h-4 flex-shrink-0" viewBox="0 0 24 24" fill="#FF0000" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            ดูวิดีโอวิเคราะห์จริงของเราบน YouTube →
+          </motion.a>
+
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
