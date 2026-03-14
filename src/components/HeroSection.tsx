@@ -154,7 +154,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.04, y: -2, boxShadow: "0 20px 40px rgba(46,125,50,0.4)" }}
               whileTap={{ scale: 0.97 }}
             >
-              ใช่! หนูอยากเรียนอ่าน Volume →
+              ใช่! อยากเรียนอ่าน Volume →
             </motion.button>
             <p className="text-xs sm:text-sm text-gray-500">
               ราคาพิเศษ{" "}
