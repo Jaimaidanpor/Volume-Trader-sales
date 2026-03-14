@@ -60,7 +60,9 @@ export default function Footer() {
                 LINE
               </motion.a>
               <motion.a
-                href="#"
+                href="https://www.facebook.com/VolumeTalks"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full flex items-center justify-center text-white transition-all duration-200"
                 style={{ background: "#1877F2" }}
                 whileHover={{ scale: 1.08 }}
