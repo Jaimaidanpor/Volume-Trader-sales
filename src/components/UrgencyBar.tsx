@@ -1,16 +1,28 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SEATS_LEFT = 8;
-const BAR_HEIGHT = 76; // 2-line height px
 
 export default function UrgencyBar() {
   const [viewers, setViewers] = useState(12);
+  const barRef = useRef<HTMLDivElement>(null);
 
+  // Dynamically update CSS var based on actual rendered height
   useEffect(() => {
-    document.documentElement.style.setProperty("--urgency-bar-height", `${BAR_HEIGHT}px`);
+    const el = barRef.current;
+    if (!el) return;
+
+    const update = () => {
+      const h = el.getBoundingClientRect().height;
+      document.documentElement.style.setProperty("--urgency-bar-height", `${h}px`);
+    };
+
+    update();
+    const ro = new ResizeObserver(update);
+    ro.observe(el);
+    return () => ro.disconnect();
   }, []);
 
   useEffect(() => {
@@ -30,13 +42,13 @@ export default function UrgencyBar() {
 
   return (
     <motion.div
+      ref={barRef}
       id="urgency-bar"
-      initial={{ y: -BAR_HEIGHT, opacity: 0 }}
+      initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.4, delay: 0.2 }}
       className="fixed top-0 left-0 right-0 z-[60] flex flex-col items-center justify-center px-4 py-3 gap-2"
       style={{
-        height: `${BAR_HEIGHT}px`,
         background: "linear-gradient(90deg, #B71C1C 0%, #C62828 50%, #B71C1C 100%)",
       }}
     >
