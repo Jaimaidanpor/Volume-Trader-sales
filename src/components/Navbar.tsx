@@ -65,7 +65,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.04, y: -1 }}
             whileTap={{ scale: 0.97 }}
           >
-            สมัครเรียน ฿5,900 →
+            สมัครเรียน ฿ 5,900 →
           </motion.button>
         </div>
       </div>

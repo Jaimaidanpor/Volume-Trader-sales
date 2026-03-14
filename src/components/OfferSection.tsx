@@ -4,10 +4,10 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 
 const valueStackBrief = [
-  { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿14,900" },
-  { emoji: "📁", label: "ไฟล์ Indicator พร้อมใช้", value: "฿2,000" },
-  { emoji: "👥", label: "กลุ่ม LINE Community Private", value: "฿3,000" },
-  { emoji: "🔄", label: "เรียนซ้ำตลอดชีพ + อัปเดตฟรี", value: "฿5,000" },
+  { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿ 14,900" },
+  { emoji: "📁", label: "ไฟล์ Indicator พร้อมใช้", value: "฿ 2,000" },
+  { emoji: "👥", label: "กลุ่ม LINE Community Private", value: "฿ 3,000" },
+  { emoji: "🔄", label: "เรียนซ้ำตลอดชีพ + อัปเดตฟรี", value: "฿ 5,000" },
 ];
 
 const trustBadges = [
@@ -67,7 +67,7 @@ export default function OfferSection() {
           >
             โอกาสสุดท้าย
             <span className="block" style={{ color: "#A5D6A7" }}>
-              ที่ราคา ฿5,900
+              ที่ราคา ฿ 5,900
             </span>
           </h2>
 
@@ -108,7 +108,7 @@ export default function OfferSection() {
               style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.15)" }}
             >
               <span className="text-green-200 text-sm">รวมมูลค่า</span>
-              <span className="text-green-200 text-sm line-through">฿24,900</span>
+              <span className="text-green-200 text-sm line-through">฿ 24,900</span>
             </div>
           </div>
 
@@ -119,7 +119,7 @@ export default function OfferSection() {
               className="font-playfair font-bold text-6xl sm:text-7xl mb-2"
               style={{ color: "#FFB300" }}
             >
-              ฿5,900
+              ฿ 5,900
             </div>
             <p className="text-green-200 text-sm">ชำระครั้งเดียว • เรียนตลอดชีพ</p>
           </div>
@@ -135,7 +135,7 @@ export default function OfferSection() {
             whileHover={{ scale: 1.04, y: -3, boxShadow: "0 25px 50px rgba(255,179,0,0.5)" }}
             whileTap={{ scale: 0.97 }}
           >
-            สมัครเรียนเลยตอนนี้ — ฿5,900 →
+            สมัครเรียนเลยตอนนี้ — ฿ 5,900 →
           </motion.button>
 
           {/* Payment info */}

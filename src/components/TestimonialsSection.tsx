@@ -38,7 +38,7 @@ const miniReviews = [
   { text: "เข้าใจ Volume Profile แล้วครับ ขอบคุณมากๆ 🙏", name: "คุณ อนุชา ก." },
   { text: "ดีกว่าที่คิดไว้มากเลยครับ", name: "คุณ ปิยะ ม." },
   { text: "Footprint Chart อ่านออกแล้ว ปลื้มมากครับ!", name: "คุณ ณัฐวุฒิ ว." },
-  { text: "คุ้มมากๆ ฿5,900 นี้ครับ", name: "คุณ สิทธิชัย ร." },
+  { text: "คุ้มมากๆ ฿ 5,900 นี้ครับ", name: "คุณ สิทธิชัย ร." },
   { text: "แนะนำเพื่อนไปเรียนด้วยแล้วค่ะ", name: "คุณ มินตรา ส." },
 ];
 
@@ -215,7 +215,7 @@ export default function TestimonialsSection() {
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}
           >
-            สมัครเรียน ฿5,900 →
+            สมัครเรียน ฿ 5,900 →
           </motion.button>
           <p className="text-xs text-gray-500 mt-2">เข้าถึงได้ทันทีหลังชำระ</p>
         </motion.div>

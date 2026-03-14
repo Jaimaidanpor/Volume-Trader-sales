@@ -116,7 +116,7 @@ export default function FinalCTASection() {
 
             {/* Price reminder */}
             <p className="text-sm text-gray-600">
-              <strong style={{ color: "#1B5E20" }}>฿5,900</strong>{" "}
+              <strong style={{ color: "#1B5E20" }}>฿ 5,900</strong>{" "}
               <span className="text-gray-400">•</span> ชำระครั้งเดียว{" "}
               <span className="text-gray-400">•</span> เรียนตลอดชีพ
             </p>

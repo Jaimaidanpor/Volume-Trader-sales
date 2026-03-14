@@ -63,10 +63,10 @@ const phases = [
 ];
 
 const valueStack = [
-  { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿14,900" },
-  { emoji: "📁", label: "ไฟล์ Indicator พร้อมใช้", value: "฿2,000" },
-  { emoji: "👥", label: "กลุ่ม LINE Community Private", value: "฿3,000" },
-  { emoji: "🔄", label: "เข้าถึงตลอดชีพ + อัปเดตฟรี", value: "฿5,000" },
+  { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿ 14,900" },
+  { emoji: "📁", label: "ไฟล์ Indicator พร้อมใช้", value: "฿ 2,000" },
+  { emoji: "👥", label: "กลุ่ม LINE Community Private", value: "฿ 3,000" },
+  { emoji: "🔄", label: "เข้าถึงตลอดชีพ + อัปเดตฟรี", value: "฿ 5,000" },
 ];
 
 const containerVariants: Variants = {
@@ -225,7 +225,7 @@ export default function CoursesSection() {
             {/* Price reveal */}
             <div className="text-center">
               <div className="mb-2">
-                <span className="text-green-300 text-base line-through mr-2">รวมมูลค่า ฿24,900</span>
+                <span className="text-green-300 text-base line-through mr-2">รวมมูลค่า ฿ 24,900</span>
               </div>
               <div className="mb-1">
                 <span className="text-white text-sm">วันนี้ราคาเพียง</span>
@@ -234,7 +234,7 @@ export default function CoursesSection() {
                 className="font-playfair font-bold text-5xl sm:text-6xl mb-4"
                 style={{ color: "#A5D6A7" }}
               >
-                ฿5,900
+                ฿ 5,900
               </div>
 
               <motion.button
@@ -247,7 +247,7 @@ export default function CoursesSection() {
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
               >
-                สมัครเรียนเลยตอนนี้ — ฿5,900 →
+                สมัครเรียนเลยตอนนี้ — ฿ 5,900 →
               </motion.button>
 
               <p className="text-green-300 text-xs mt-3">

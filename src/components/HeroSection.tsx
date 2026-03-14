@@ -157,8 +157,8 @@ export default function HeroSection() {
             </motion.button>
             <p className="text-xs sm:text-sm text-gray-500">
               ราคาพิเศษ{" "}
-              <strong style={{ color: "#1B5E20" }}>฿5,900</strong>{" "}
-              <span className="line-through text-gray-400">(ปกติ ฿14,900)</span>
+              <strong style={{ color: "#1B5E20" }}>฿ 5,900</strong>{" "}
+              <span className="line-through text-gray-400">(ปกติ ฿ 14,900)</span>
             </p>
           </motion.div>
 
