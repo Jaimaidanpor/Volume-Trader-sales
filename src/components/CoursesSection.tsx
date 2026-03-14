@@ -239,9 +239,10 @@ export default function CoursesSection() {
 
               <motion.button
                 onClick={handleCTA}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base sm:text-lg text-white shadow-xl transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
                 style={{
-                  background: "linear-gradient(135deg, #43A047 0%, #66BB6A 50%, #43A047 100%)",
+                  background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
+                  color: "#1A2E1A",
                 }}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
