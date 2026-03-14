@@ -69,9 +69,9 @@ export default function SolutionSection() {
           {/* Big reveal */}
           <div
             className="inline-block px-6 py-3 rounded-2xl mb-5"
-            style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
+            style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)" }}
           >
-            <p className="text-white text-xs sm:text-sm font-semibold tracking-wide">
+            <p className="text-xs sm:text-sm font-semibold tracking-wide" style={{ color: "#1A2E1A" }}>
               แนะนำ: หลักสูตร
             </p>
           </div>
@@ -84,7 +84,7 @@ export default function SolutionSection() {
             <span
               className="block"
               style={{
-                background: "linear-gradient(135deg, #1B5E20, #43A047)",
+                background: "linear-gradient(135deg, #FFB300, #FFA000)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",

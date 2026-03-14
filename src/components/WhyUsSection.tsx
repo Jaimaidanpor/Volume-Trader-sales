@@ -169,8 +169,8 @@ export default function WhyUsSection() {
               const el = document.querySelector("#courses");
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
-            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-white font-semibold text-sm shadow-md hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
-            style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full font-semibold text-sm shadow-md hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
+            style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
           >
             ดูรายละเอียดคอร์ส →
           </button>

@@ -79,9 +79,9 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
             className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold transition-all duration-300"
             style={{
               background: isOpen
-                ? "linear-gradient(135deg, #1B5E20, #2E7D32)"
+                ? "linear-gradient(135deg, #FFB300, #FFA000)"
                 : "rgba(76,175,80,0.15)",
-              color: isOpen ? "white" : "#1B5E20",
+              color: isOpen ? "#1A2E1A" : "#1B5E20",
             }}
           >
             {index + 1}
@@ -212,8 +212,8 @@ export default function FAQSection() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <motion.button
               onClick={handleCTA}
-              className="px-6 py-3 rounded-full text-white font-bold text-sm shadow-md transition-all duration-200"
-              style={{ background: "linear-gradient(135deg, #2E7D32, #43A047)" }}
+              className="px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all duration-200"
+              style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >

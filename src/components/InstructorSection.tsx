@@ -66,8 +66,8 @@ export default function InstructorSection() {
               <motion.div
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -bottom-2 -left-4 sm:left-0 px-4 py-2.5 rounded-2xl shadow-lg text-white text-sm font-semibold"
-                style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
+                className="absolute -bottom-2 -left-4 sm:left-0 px-4 py-2.5 rounded-2xl shadow-lg text-sm font-semibold"
+                style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
               >
                 📈 Forex • Gold • หุ้นไทย
               </motion.div>
@@ -161,8 +161,8 @@ export default function InstructorSection() {
                 const el = document.querySelector("#courses");
                 if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-200 transition-all duration-200"
-              style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold shadow-lg hover:shadow-purple-200 transition-all duration-200"
+              style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
             >

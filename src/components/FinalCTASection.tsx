@@ -63,7 +63,7 @@ export default function FinalCTASection() {
             <span
               className="block"
               style={{
-                background: "linear-gradient(135deg, #1B5E20, #43A047)",
+                background: "linear-gradient(135deg, #FFB300, #FFA000)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -103,9 +103,10 @@ export default function FinalCTASection() {
           <div className="flex flex-col items-center gap-4">
             <motion.button
               onClick={handleCTA}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl text-white shadow-2xl transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl transition-all duration-200"
               style={{
-                background: "linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #2E7D32 100%)",
+                background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
+                color: "#1A2E1A",
               }}
               whileHover={{ scale: 1.05, y: -3, boxShadow: "0 25px 50px rgba(46,125,50,0.45)" }}
               whileTap={{ scale: 0.97 }}

@@ -74,7 +74,7 @@ export default function HeroSection() {
             <span
               className="block mt-1"
               style={{
-                background: "linear-gradient(135deg, #1B5E20, #43A047)",
+                background: "linear-gradient(135deg, #FFB300, #FFA000)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -145,9 +145,10 @@ export default function HeroSection() {
           >
             <motion.button
               onClick={() => handleScroll("#offer")}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
               style={{
-                background: "linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #2E7D32 100%)",
+                background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
+                color: "#1A2E1A",
               }}
               whileHover={{ scale: 1.04, y: -2, boxShadow: "0 20px 40px rgba(46,125,50,0.4)" }}
               whileTap={{ scale: 0.97 }}
@@ -281,8 +282,8 @@ export default function HeroSection() {
             <motion.div
               variants={floatingVariants}
               animate="animate"
-              className="absolute -top-4 -right-4 px-3 py-1.5 rounded-2xl shadow-lg text-white text-xs font-bold"
-              style={{ background: "linear-gradient(135deg, #2E7D32, #43A047)" }}
+              className="absolute -top-4 -right-4 px-3 py-1.5 rounded-2xl shadow-lg text-xs font-bold"
+              style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
             >
               ลด 60% 🔥
             </motion.div>

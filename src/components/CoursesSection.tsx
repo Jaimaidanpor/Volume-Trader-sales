@@ -23,8 +23,8 @@ const phases = [
     title: "เครื่องมือขั้นสูง",
     emoji: "⚡",
     lessons: "บทที่ 5–8",
-    color: "#FFFFFF",
-    bg: "linear-gradient(135deg, #1B5E20, #2E7D32)",
+    color: "#1A2E1A",
+    bg: "linear-gradient(135deg, #FFB300, #FFA000)",
     modules: [
       { num: 5, title: "Delta Analysis — อ่านแรงซื้อแรงขายแบบ Real-time" },
       { num: 6, title: "Footprint Chart เบื้องต้น" },

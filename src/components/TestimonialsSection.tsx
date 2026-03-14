@@ -210,7 +210,7 @@ export default function TestimonialsSection() {
             onClick={handleCTA}
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-bold shadow-lg transition-all duration-200"
             style={{
-              background: "linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #2E7D32 100%)",
+              background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
             }}
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}

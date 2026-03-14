@@ -57,9 +57,10 @@ export default function Navbar() {
           {/* Single CTA Button */}
           <motion.button
             onClick={handleCTA}
-            className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm font-bold text-white shadow-md hover:shadow-lg transition-all duration-200"
+            className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200"
             style={{
-              background: "linear-gradient(135deg, #2E7D32, #43A047)",
+              background: "linear-gradient(135deg, #FFB300, #FFA000)",
+              color: "#1A2E1A",
             }}
             whileHover={{ scale: 1.04, y: -1 }}
             whileTap={{ scale: 0.97 }}
