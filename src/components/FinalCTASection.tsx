@@ -9,9 +9,7 @@ export default function FinalCTASection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const handleCTA = () => {
-    // Scroll to offer or open registration
-    const el = document.querySelector("#offer");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    window.open("https://lin.ee/1hpcpsl", "_blank");
   };
 
   return (

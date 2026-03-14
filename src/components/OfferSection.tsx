@@ -36,8 +36,7 @@ export default function OfferSection() {
   }, []);
 
   const handleCTA = () => {
-    const el = document.querySelector("#final-cta");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    window.open("https://lin.ee/1hpcpsl", "_blank");
   };
 
   return (

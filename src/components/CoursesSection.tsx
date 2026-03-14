@@ -84,8 +84,7 @@ export default function CoursesSection() {
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   const handleCTA = () => {
-    const el = document.querySelector("#offer");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    window.open("https://lin.ee/1hpcpsl", "_blank");
   };
 
   return (

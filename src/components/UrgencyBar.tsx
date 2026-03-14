@@ -36,8 +36,7 @@ export default function UrgencyBar() {
   }, []);
 
   const handleCTA = () => {
-    const el = document.querySelector("#offer");
-    if (el) el.scrollIntoView({ behavior: "smooth" });
+    window.open("https://lin.ee/1hpcpsl", "_blank");
   };
 
   return (
