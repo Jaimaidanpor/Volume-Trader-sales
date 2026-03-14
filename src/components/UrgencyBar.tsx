@@ -4,6 +4,8 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SEATS_LEFT = 8;
+const TOTAL_SEATS = 50;
+const BATCH = "รุ่นที่ 3";
 
 export default function UrgencyBar() {
   const [viewers, setViewers] = useState(12);
@@ -54,12 +56,12 @@ export default function UrgencyBar() {
     >
       {/* Row 1: Seats left */}
       <span className="text-white text-xs sm:text-sm font-bold text-center leading-normal">
-        🔥 เหลือเพียง{" "}
+        🔥 {BATCH} เหลือเพียง{" "}
         <span
           className="font-extrabold px-2 py-0.5 rounded mx-0.5 text-xs sm:text-sm"
           style={{ background: "#FFB300", color: "#1A2E1A" }}
         >
-          {SEATS_LEFT} ที่นั่ง
+          {SEATS_LEFT}/{TOTAL_SEATS} ที่นั่ง
         </span>{" "}
         <span className="whitespace-nowrap">ในราคา ฿ 5,900</span>{" "}
         — ครบแล้วปรับเต็มราคา!

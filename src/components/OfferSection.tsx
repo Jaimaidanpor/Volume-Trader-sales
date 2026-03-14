@@ -4,7 +4,8 @@ import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const SEATS_LEFT = 8;
-const TOTAL_SEATS = 20;
+const TOTAL_SEATS = 50;
+const BATCH = "รุ่นที่ 3";
 
 const valueStackBrief = [
   { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿ 14,900" },
@@ -93,7 +94,7 @@ export default function OfferSection() {
               style={{ background: "rgba(183,28,28,0.25)", border: "1px solid rgba(239,83,80,0.4)" }}
             >
               <p className="text-red-200 text-xs font-semibold mb-2 tracking-widest uppercase">
-                ⚠️ ที่นั่งคงเหลือ
+                ⚠️ {BATCH} — ที่นั่งคงเหลือ
               </p>
               {/* Seat progress bar */}
               <div className="w-full sm:w-48 h-3 rounded-full mb-2" style={{ background: "rgba(255,255,255,0.15)" }}>
