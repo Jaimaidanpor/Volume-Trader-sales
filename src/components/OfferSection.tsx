@@ -30,17 +30,17 @@ export default function OfferSection() {
       id="offer"
       className="py-20 lg:py-28 relative overflow-hidden"
       style={{
-        background: "linear-gradient(145deg, #3D2060 0%, #6B3FA0 60%, #8B5CC0 100%)",
+        background: "linear-gradient(145deg, #1B5E20 0%, #2E7D32 100%)",
       }}
     >
       {/* Decorative blobs */}
       <div
         className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C9A96E, transparent)" }}
+        style={{ background: "radial-gradient(circle, #A5D6A7, transparent)" }}
       />
       <div
         className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-10 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #F4A7B9, transparent)" }}
+        style={{ background: "radial-gradient(circle, #C8E6C9, transparent)" }}
       />
 
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -54,9 +54,9 @@ export default function OfferSection() {
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-6"
             style={{
-              background: "rgba(201,169,110,0.2)",
-              color: "#C9A96E",
-              border: "1px solid rgba(201,169,110,0.4)",
+              background: "rgba(165,214,167,0.2)",
+              color: "#A5D6A7",
+              border: "1px solid rgba(165,214,167,0.4)",
             }}
           >
             ข้อเสนอพิเศษ
@@ -66,7 +66,7 @@ export default function OfferSection() {
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4 leading-tight"
           >
             โอกาสสุดท้าย
-            <span className="block" style={{ color: "#C9A96E" }}>
+            <span className="block" style={{ color: "#A5D6A7" }}>
               ที่ราคา ฿5,900
             </span>
           </h2>
@@ -96,7 +96,7 @@ export default function OfferSection() {
                   <span className="text-xl">{item.emoji}</span>
                   <span className="text-white text-sm sm:text-base">{item.label}</span>
                 </div>
-                <span className="text-purple-300 text-sm font-semibold whitespace-nowrap">
+                <span className="text-green-200 text-sm font-semibold whitespace-nowrap">
                   {item.value}
                 </span>
               </motion.div>
@@ -107,45 +107,45 @@ export default function OfferSection() {
               className="flex items-center justify-between px-5 py-3 rounded-2xl"
               style={{ background: "rgba(255,255,255,0.05)", border: "1px solid rgba(255,255,255,0.15)" }}
             >
-              <span className="text-purple-200 text-sm">รวมมูลค่า</span>
-              <span className="text-purple-200 text-sm line-through">฿24,900</span>
+              <span className="text-green-200 text-sm">รวมมูลค่า</span>
+              <span className="text-green-200 text-sm line-through">฿24,900</span>
             </div>
           </div>
 
           {/* Price */}
           <div className="mb-6">
-            <p className="text-purple-300 text-sm mb-1">วันนี้ราคาเพียง</p>
+            <p className="text-green-300 text-sm mb-1">วันนี้ราคาเพียง</p>
             <div
               className="font-playfair font-bold text-6xl sm:text-7xl mb-2"
-              style={{ color: "#C9A96E" }}
+              style={{ color: "#A5D6A7" }}
             >
               ฿5,900
             </div>
-            <p className="text-purple-300 text-sm">ชำระครั้งเดียว • เรียนตลอดชีพ</p>
+            <p className="text-green-300 text-sm">ชำระครั้งเดียว • เรียนตลอดชีพ</p>
           </div>
 
           {/* BIG CTA */}
           <motion.button
             onClick={handleCTA}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl text-gray-900 shadow-2xl mb-4 transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl text-white shadow-2xl mb-4 transition-all duration-200"
             style={{
-              background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
+              background: "linear-gradient(135deg, #43A047 0%, #66BB6A 50%, #43A047 100%)",
             }}
-            whileHover={{ scale: 1.04, y: -3, boxShadow: "0 25px 50px rgba(201,169,110,0.5)" }}
+            whileHover={{ scale: 1.04, y: -3, boxShadow: "0 25px 50px rgba(67,160,71,0.5)" }}
             whileTap={{ scale: 0.97 }}
           >
             สมัครเรียนเลยตอนนี้ — ฿5,900 →
           </motion.button>
 
           {/* Payment info */}
-          <p className="text-purple-200 text-xs sm:text-sm mb-8">
+          <p className="text-green-200 text-xs sm:text-sm mb-8">
             ✅ ชำระผ่าน PromptPay / โอนเงิน / บัตรเครดิต &nbsp;•&nbsp; ✅ เข้าถึงได้ทันทีหลังชำระ
           </p>
 
           {/* Trust badges */}
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6">
             {trustBadges.map((badge, i) => (
-              <div key={i} className="flex items-center gap-2 text-purple-200 text-sm">
+              <div key={i} className="flex items-center gap-2 text-green-200 text-sm">
                 <span className="text-base">{badge.emoji}</span>
                 <span>{badge.text}</span>
               </div>

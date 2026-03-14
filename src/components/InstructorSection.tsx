@@ -41,9 +41,9 @@ export default function InstructorSection() {
               <div
                 className="w-64 h-64 sm:w-80 sm:h-80 rounded-full flex items-center justify-center text-8xl shadow-2xl"
                 style={{
-                  background: "linear-gradient(145deg, #EDE0F8, #F4D9E4, #FFF8F0)",
+                  background: "linear-gradient(145deg, #E8F5E9, #F1F8E9, #F9FDF9)",
                   border: "4px solid",
-                  borderColor: "#C9A96E",
+                  borderColor: "#43A047",
                 }}
               >
                 👩‍💻
@@ -54,10 +54,10 @@ export default function InstructorSection() {
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut" }}
                 className="absolute -top-4 -right-4 sm:right-0 px-4 py-2.5 rounded-2xl shadow-lg bg-white border"
-                style={{ borderColor: "#C8B4E8" }}
+                style={{ borderColor: "#A5D6A7" }}
               >
                 <div className="text-xs text-gray-400">ประสบการณ์</div>
-                <div className="font-bold text-sm" style={{ color: "#6B3FA0" }}>
+                <div className="font-bold text-sm" style={{ color: "#1B5E20" }}>
                   10+ ปีในตลาด
                 </div>
               </motion.div>
@@ -67,7 +67,7 @@ export default function InstructorSection() {
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                 className="absolute -bottom-2 -left-4 sm:left-0 px-4 py-2.5 rounded-2xl shadow-lg text-white text-sm font-semibold"
-                style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
+                style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
               >
                 📈 Forex • Gold • หุ้นไทย
               </motion.div>
@@ -77,7 +77,7 @@ export default function InstructorSection() {
                 className="absolute inset-0 rounded-full pointer-events-none"
                 style={{
                   background:
-                    "conic-gradient(from 0deg, #C9A96E, #C8B4E8, #F4A7B9, #C9A96E)",
+                    "conic-gradient(from 0deg, #43A047, #A5D6A7, #C8E6C9, #43A047)",
                   padding: "3px",
                   borderRadius: "50%",
                   opacity: 0.4,
@@ -96,8 +96,8 @@ export default function InstructorSection() {
             <span
               className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-5"
               style={{
-                background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-                color: "#6B3FA0",
+                background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
+                color: "#1B5E20",
               }}
             >
               ผู้สอน
@@ -109,14 +109,14 @@ export default function InstructorSection() {
             >
               อาจารย์ ปุณยวีร์
             </h2>
-            <p className="font-semibold text-lg mb-5" style={{ color: "#C9A96E" }}>
+            <p className="font-semibold text-lg mb-5" style={{ color: "#43A047" }}>
               Volume Trading Expert & Market Analyst
             </p>
 
             <div className="space-y-4 mb-8 text-gray-600 text-base leading-relaxed">
               <p>
                 ผู้เชี่ยวชาญด้าน Volume Trading ที่มีประสบการณ์มากกว่า{" "}
-                <strong className="text-[#6B3FA0]">10 ปี</strong>{" "}
+                <strong className="text-[#1B5E20]">10 ปี</strong>{" "}
                 ในตลาด Forex, Gold และหุ้นไทย
                 เชี่ยวชาญพิเศษด้าน Order Flow Analysis และ Volume Profile
               </p>
@@ -125,7 +125,7 @@ export default function InstructorSection() {
                 จึงมุ่งมั่นถ่ายทอดความรู้นี้ให้แก่นักเทรดไทยทุกคน
               </p>
               <p>
-                ปัจจุบันสอนนักเรียนกว่า <strong className="text-[#6B3FA0]">2,400+ คน</strong> ทั่วประเทศไทย
+                ปัจจุบันสอนนักเรียนกว่า <strong className="text-[#1B5E20]">2,400+ คน</strong> ทั่วประเทศไทย
                 และยังคง Active Trading ในตลาดทุกวัน
               </p>
             </div>
@@ -140,14 +140,14 @@ export default function InstructorSection() {
                   transition={{ delay: 0.4 + i * 0.1, duration: 0.5 }}
                   className="text-center p-3 rounded-xl"
                   style={{
-                    background: "linear-gradient(135deg, #FFF8F0, #EDE0F8)",
+                    background: "linear-gradient(135deg, #F9FDF9, #E8F5E9)",
                     border: "1px solid rgba(200,180,232,0.3)",
                   }}
                 >
-                  <div className="flex justify-center mb-1" style={{ color: "#C9A96E" }}>
+                  <div className="flex justify-center mb-1" style={{ color: "#43A047" }}>
                     {item.icon}
                   </div>
-                  <div className="font-bold text-base" style={{ color: "#6B3FA0" }}>
+                  <div className="font-bold text-base" style={{ color: "#1B5E20" }}>
                     {item.value}
                   </div>
                   <div className="text-xs text-gray-400 mt-0.5">{item.label}</div>
@@ -162,7 +162,7 @@ export default function InstructorSection() {
                 if (el) el.scrollIntoView({ behavior: "smooth" });
               }}
               className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-200 transition-all duration-200"
-              style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
+              style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
             >

@@ -27,7 +27,7 @@ export default function HeroSection() {
       id="hero"
       className="relative min-h-screen flex items-center overflow-hidden pt-16"
       style={{
-        background: "linear-gradient(145deg, #FFF8F0 0%, #EDE0F8 50%, #F4D9E4 100%)",
+        background: "linear-gradient(145deg, #F9FDF9 0%, #E8F5E9 50%, #F1F8E9 100%)",
       }}
     >
       {/* Decorative blobs */}
@@ -35,13 +35,13 @@ export default function HeroSection() {
         variants={floatingVariants}
         animate="animate"
         className="absolute top-20 right-8 w-72 h-72 rounded-full opacity-25 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C8B4E8, #F4A7B9)" }}
+        style={{ background: "radial-gradient(circle, #A5D6A7, #C8E6C9)" }}
       />
       <motion.div
         variants={floatingVariants2}
         animate="animate"
         className="absolute bottom-20 left-4 w-56 h-56 rounded-full opacity-20 blur-2xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C9A96E, #F4A7B9)" }}
+        style={{ background: "radial-gradient(circle, #43A047, #C8E6C9)" }}
       />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center w-full">
@@ -68,13 +68,13 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight mb-5"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             ทำไมคุณถึงยังขาดทุน
             <span
               className="block mt-1"
               style={{
-                background: "linear-gradient(135deg, #6B3FA0, #C9A96E)",
+                background: "linear-gradient(135deg, #1B5E20, #43A047)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -94,8 +94,8 @@ export default function HeroSection() {
             style={{ color: "#555" }}
           >
             เพราะคุณกำลังดูแค่{" "}
-            <strong style={{ color: "#6B3FA0" }}>&ldquo;เส้น&rdquo;</strong> บนกราฟ — แต่ไม่เห็น{" "}
-            <strong style={{ color: "#C9A96E" }}>&ldquo;แรงซื้อแรงขาย&rdquo;</strong>{" "}
+            <strong style={{ color: "#1B5E20" }}>&ldquo;เส้น&rdquo;</strong> บนกราฟ — แต่ไม่เห็น{" "}
+            <strong style={{ color: "#43A047" }}>&ldquo;แรงซื้อแรงขาย&rdquo;</strong>{" "}
             ที่แท้จริงที่อยู่เบื้องหลัง
           </motion.p>
 
@@ -116,7 +116,7 @@ export default function HeroSection() {
                 className="flex items-start gap-3 px-4 py-3 rounded-2xl"
                 style={{
                   background: "rgba(255,255,255,0.7)",
-                  border: "1px solid rgba(200,180,232,0.3)",
+                  border: "1px solid rgba(76,175,80,0.2)",
                 }}
               >
                 <span className="text-xl flex-shrink-0">{item.emoji}</span>
@@ -131,7 +131,7 @@ export default function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
             className="text-sm sm:text-base font-semibold mb-7 max-w-xl mx-auto lg:mx-0"
-            style={{ color: "#6B3FA0" }}
+            style={{ color: "#1B5E20" }}
           >
             ปัญหาเหล่านี้มีคำตอบเดียวค่ะ — คุณต้องเรียนรู้ที่จะอ่าน Volume
           </motion.p>
@@ -145,18 +145,18 @@ export default function HeroSection() {
           >
             <motion.button
               onClick={() => handleScroll("#offer")}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-gray-900 font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-white font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
               style={{
-                background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
+                background: "linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #2E7D32 100%)",
               }}
-              whileHover={{ scale: 1.04, y: -2, boxShadow: "0 20px 40px rgba(201,169,110,0.4)" }}
+              whileHover={{ scale: 1.04, y: -2, boxShadow: "0 20px 40px rgba(46,125,50,0.4)" }}
               whileTap={{ scale: 0.97 }}
             >
               ใช่! หนูอยากเรียนอ่าน Volume →
             </motion.button>
             <p className="text-xs sm:text-sm text-gray-500">
               ราคาพิเศษ{" "}
-              <strong style={{ color: "#6B3FA0" }}>฿5,900</strong>{" "}
+              <strong style={{ color: "#1B5E20" }}>฿5,900</strong>{" "}
               <span className="line-through text-gray-400">(ปกติ ฿14,900)</span>
             </p>
           </motion.div>
@@ -183,16 +183,16 @@ export default function HeroSection() {
           <div className="relative w-full max-w-sm">
             {/* Main card */}
             <div
-              className="rounded-3xl p-6 shadow-2xl shadow-purple-200/60"
+              className="rounded-3xl p-6 shadow-2xl shadow-green-200/60"
               style={{
-                background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(237,224,248,0.8))",
-                border: "1px solid rgba(200,180,232,0.4)",
+                background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(232,245,233,0.8))",
+                border: "1px solid rgba(76,175,80,0.3)",
                 backdropFilter: "blur(10px)",
               }}
             >
               <p
                 className="font-playfair font-bold text-base mb-4 text-center"
-                style={{ color: "#2D2D2D" }}
+                style={{ color: "#1A2E1A" }}
               >
                 Volume Profile & Order Flow
               </p>
@@ -244,10 +244,10 @@ export default function HeroSection() {
                       style={{
                         background:
                           h > 75
-                            ? "linear-gradient(to top, #6B3FA0, #C8B4E8)"
+                            ? "linear-gradient(to top, #1B5E20, #4CAF50)"
                             : h > 50
-                            ? "linear-gradient(to top, #C9A96E, #E8C99A)"
-                            : "linear-gradient(to top, #F4A7B9, #FDD5DF)",
+                            ? "linear-gradient(to top, #2E7D32, #81C784)"
+                            : "linear-gradient(to top, #A5D6A7, #C8E6C9)",
                       }}
                     />
                   ))}
@@ -258,10 +258,10 @@ export default function HeroSection() {
               {/* Metrics row */}
               <div className="grid grid-cols-2 gap-2">
                 {[
-                  { label: "Buy Volume", value: "+68.4%", color: "#6B3FA0" },
-                  { label: "Sell Volume", value: "31.6%", color: "#F4A7B9" },
-                  { label: "Delta", value: "+4,280", color: "#C9A96E" },
-                  { label: "VWAP", value: "1,842.50", color: "#2D2D2D" },
+                  { label: "Buy Volume", value: "+68.4%", color: "#1B5E20" },
+                  { label: "Sell Volume", value: "31.6%", color: "#E57373" },
+                  { label: "Delta", value: "+4,280", color: "#43A047" },
+                  { label: "VWAP", value: "1,842.50", color: "#1A2E1A" },
                 ].map((m, i) => (
                   <div
                     key={i}
@@ -282,7 +282,7 @@ export default function HeroSection() {
               variants={floatingVariants}
               animate="animate"
               className="absolute -top-4 -right-4 px-3 py-1.5 rounded-2xl shadow-lg text-white text-xs font-bold"
-              style={{ background: "linear-gradient(135deg, #C9A96E, #E8C99A)", color: "#2D2D2D" }}
+              style={{ background: "linear-gradient(135deg, #2E7D32, #43A047)" }}
             >
               ลด 60% 🔥
             </motion.div>
@@ -291,8 +291,8 @@ export default function HeroSection() {
             <motion.div
               variants={floatingVariants2}
               animate="animate"
-              className="absolute -bottom-4 -left-4 px-3 py-2 rounded-2xl shadow-lg bg-white border border-purple-100 text-xs font-semibold"
-              style={{ color: "#6B3FA0" }}
+              className="absolute -bottom-4 -left-4 px-3 py-2 rounded-2xl shadow-lg bg-white border border-green-100 text-xs font-semibold"
+              style={{ color: "#1B5E20" }}
             >
               🎓 16 บทเรียน • เรียนตลอดชีพ
             </motion.div>

@@ -47,13 +47,13 @@
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
 
-  /* Brand Color Palette */
-  --color-rose-gold: #C9A96E;
-  --color-blush-pink: #F4A7B9;
-  --color-soft-lavender: #C8B4E8;
-  --color-cream: #FFF8F0;
-  --color-deep-plum: #6B3FA0;
-  --color-charcoal: #2D2D2D;
+  /* Brand Color Palette — Green + White */
+  --brand-primary: #1B5E20;
+  --brand-medium: #2E7D32;
+  --brand-light: #4CAF50;
+  --brand-pale: #E8F5E9;
+  --brand-gold: #43A047;
+  --brand-dark: #1A2E1A;
 
   /* Font families */
   --font-poppins: var(--font-poppins), "Poppins", sans-serif;
@@ -94,13 +94,13 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Brand CSS Custom Properties */
-  --brand-rose-gold: #C9A96E;
-  --brand-blush-pink: #F4A7B9;
-  --brand-soft-lavender: #C8B4E8;
-  --brand-cream: #FFF8F0;
-  --brand-deep-plum: #6B3FA0;
-  --brand-charcoal: #2D2D2D;
+  /* Brand CSS Custom Properties — Green + White */
+  --brand-primary: #1B5E20;
+  --brand-medium: #2E7D32;
+  --brand-light: #4CAF50;
+  --brand-pale: #E8F5E9;
+  --brand-gold: #43A047;
+  --brand-dark: #1A2E1A;
 }
 
 @layer base {
@@ -123,40 +123,43 @@
   .font-playfair {
     font-family: var(--font-playfair), "Playfair Display", serif;
   }
-  .bg-brand-cream {
-    background-color: #FFF8F0;
+  .bg-brand-pale {
+    background-color: #E8F5E9;
   }
-  .bg-brand-lavender {
-    background-color: #C8B4E8;
+  .bg-brand-light {
+    background-color: #4CAF50;
   }
-  .bg-brand-plum {
-    background-color: #6B3FA0;
+  .bg-brand-medium {
+    background-color: #2E7D32;
   }
-  .bg-brand-charcoal {
-    background-color: #2D2D2D;
+  .bg-brand-dark {
+    background-color: #1A2E1A;
   }
-  .text-brand-rose-gold {
-    color: #C9A96E;
+  .text-brand-primary {
+    color: #1B5E20;
   }
-  .text-brand-plum {
-    color: #6B3FA0;
+  .text-brand-medium {
+    color: #2E7D32;
   }
-  .text-brand-charcoal {
-    color: #2D2D2D;
+  .text-brand-light {
+    color: #4CAF50;
   }
-  .border-brand-rose-gold {
-    border-color: #C9A96E;
+  .border-brand-primary {
+    border-color: #1B5E20;
+  }
+  .border-brand-light {
+    border-color: #4CAF50;
   }
   .gradient-hero {
-    background: linear-gradient(135deg, #FFF8F0 0%, #f9f0ff 50%, #EDE0F8 100%);
+    background: linear-gradient(135deg, #F9FDF9 0%, #E8F5E9 50%, #F1F8E9 100%);
   }
   .gradient-lavender {
-    background: linear-gradient(135deg, #EDE0F8 0%, #F4D9E4 100%);
+    background: linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 100%);
   }
-  .gradient-plum {
-    background: linear-gradient(135deg, #6B3FA0 0%, #8B5CC0 100%);
+  .gradient-green {
+    background: linear-gradient(135deg, #1B5E20 0%, #2E7D32 100%);
   }
-  .gradient-rose-gold {
-    background: linear-gradient(135deg, #C9A96E 0%, #E8C99A 100%);
+  .gradient-green-light {
+    background: linear-gradient(135deg, #2E7D32 0%, #43A047 100%);
   }
 }

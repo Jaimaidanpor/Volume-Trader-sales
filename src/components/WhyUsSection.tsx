@@ -9,7 +9,7 @@ const features = [
     title: "เทคนิคจากตลาดจริง",
     description:
       "ทุกบทเรียนใช้ตัวอย่างจากตลาด Gold, Forex และ Futures ที่เกิดขึ้นจริง ไม่ใช่แค่ทฤษฎี",
-    color: "#6B3FA0",
+    color: "#1B5E20",
     bgColor: "rgba(107,63,160,0.08)",
     borderColor: "rgba(107,63,160,0.15)",
   },
@@ -18,7 +18,7 @@ const features = [
     title: "Footprint & Volume Profile",
     description:
       "เรียนเครื่องมือที่นักเทรดสถาบันใช้ ทั้ง Footprint Chart, Delta, VWAP และ Volume Profile อย่างลึกซึ้ง",
-    color: "#C9A96E",
+    color: "#43A047",
     bgColor: "rgba(201,169,110,0.08)",
     borderColor: "rgba(201,169,110,0.2)",
   },
@@ -27,7 +27,7 @@ const features = [
     title: "รองรับทุก Platform",
     description:
       "มีแนะนำการตั้งค่าทั้ง Sierra Chart และ TradingView พร้อมไฟล์ Indicator ให้ดาวน์โหลดฟรี",
-    color: "#F4A7B9",
+    color: "#C8E6C9",
     bgColor: "rgba(244,167,185,0.1)",
     borderColor: "rgba(244,167,185,0.25)",
   },
@@ -36,7 +36,7 @@ const features = [
     title: "Community Private",
     description:
       "เข้ากลุ่ม LINE นักเรียน Private สำหรับแลกเปลี่ยนการวิเคราะห์และถามตอบกับผู้สอน",
-    color: "#C8B4E8",
+    color: "#A5D6A7",
     bgColor: "rgba(200,180,232,0.12)",
     borderColor: "rgba(200,180,232,0.3)",
   },
@@ -69,11 +69,11 @@ export default function WhyUsSection() {
       {/* Decorative background shapes */}
       <div
         className="absolute top-0 right-0 w-72 h-72 rounded-full opacity-5 pointer-events-none"
-        style={{ background: "radial-gradient(circle, #6B3FA0, transparent)" }}
+        style={{ background: "radial-gradient(circle, #1B5E20, transparent)" }}
       />
       <div
         className="absolute bottom-0 left-0 w-56 h-56 rounded-full opacity-5 pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C9A96E, transparent)" }}
+        style={{ background: "radial-gradient(circle, #43A047, transparent)" }}
       />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -88,8 +88,8 @@ export default function WhyUsSection() {
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
             style={{
-              background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-              color: "#6B3FA0",
+              background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
+              color: "#1B5E20",
             }}
           >
             ทำไมถึงเลือกเรา
@@ -170,7 +170,7 @@ export default function WhyUsSection() {
               if (el) el.scrollIntoView({ behavior: "smooth" });
             }}
             className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-white font-semibold text-sm shadow-md hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
-            style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
+            style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
           >
             ดูรายละเอียดคอร์ส →
           </button>

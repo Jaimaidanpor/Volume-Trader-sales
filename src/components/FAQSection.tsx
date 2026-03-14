@@ -59,13 +59,13 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
       className="rounded-2xl overflow-hidden"
       style={{
         border: isOpen
-          ? "1.5px solid rgba(107,63,160,0.4)"
-          : "1.5px solid rgba(200,180,232,0.25)",
+          ? "1.5px solid rgba(27,94,32,0.4)"
+          : "1.5px solid rgba(76,175,80,0.2)",
         background: isOpen
-          ? "linear-gradient(135deg, rgba(237,224,248,0.45), rgba(255,248,240,0.65))"
+          ? "linear-gradient(135deg, rgba(232,245,233,0.55), rgba(241,248,233,0.65))"
           : "rgba(255,255,255,0.8)",
         boxShadow: isOpen
-          ? "0 4px 24px rgba(107,63,160,0.1)"
+          ? "0 4px 24px rgba(27,94,32,0.1)"
           : "0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
@@ -79,16 +79,16 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
             className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold transition-all duration-300"
             style={{
               background: isOpen
-                ? "linear-gradient(135deg, #6B3FA0, #8B5CC0)"
-                : "rgba(200,180,232,0.25)",
-              color: isOpen ? "white" : "#6B3FA0",
+                ? "linear-gradient(135deg, #1B5E20, #2E7D32)"
+                : "rgba(76,175,80,0.15)",
+              color: isOpen ? "white" : "#1B5E20",
             }}
           >
             {index + 1}
           </span>
           <span
             className="font-semibold text-sm sm:text-base transition-colors duration-200 text-left"
-            style={{ color: isOpen ? "#6B3FA0" : "#2D2D2D" }}
+            style={{ color: isOpen ? "#1B5E20" : "#1A2E1A" }}
           >
             {question}
           </span>
@@ -97,7 +97,7 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.25 }}
           className="flex-shrink-0 ml-3"
-          style={{ color: isOpen ? "#6B3FA0" : "#999" }}
+          style={{ color: isOpen ? "#1B5E20" : "#999" }}
         >
           <ChevronDown className="w-5 h-5" />
         </motion.div>
@@ -142,7 +142,7 @@ export default function FAQSection() {
         className="absolute inset-0 opacity-25 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 10% 50%, rgba(200,180,232,0.2) 0%, transparent 50%)",
+            "radial-gradient(ellipse at 10% 50%, rgba(76,175,80,0.1) 0%, transparent 50%)",
         }}
       />
 
@@ -158,15 +158,15 @@ export default function FAQSection() {
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
             style={{
-              background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-              color: "#6B3FA0",
+              background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
+              color: "#1B5E20",
             }}
           >
             FAQ
           </span>
           <h2
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             ข้อสงสัยที่พบบ่อย
           </h2>
@@ -196,13 +196,13 @@ export default function FAQSection() {
           transition={{ delay: 0.6, duration: 0.5 }}
           className="text-center rounded-3xl p-8"
           style={{
-            background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-            border: "1px solid rgba(200,180,232,0.4)",
+            background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
+            border: "1px solid rgba(76,175,80,0.3)",
           }}
         >
           <p
             className="font-playfair font-semibold text-xl mb-2"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             ยังมีคำถามเพิ่มเติม?
           </p>
@@ -212,8 +212,8 @@ export default function FAQSection() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <motion.button
               onClick={handleCTA}
-              className="px-6 py-3 rounded-full text-gray-900 font-bold text-sm shadow-md transition-all duration-200"
-              style={{ background: "linear-gradient(135deg, #C9A96E, #FFD97D)" }}
+              className="px-6 py-3 rounded-full text-white font-bold text-sm shadow-md transition-all duration-200"
+              style={{ background: "linear-gradient(135deg, #2E7D32, #43A047)" }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
@@ -221,7 +221,7 @@ export default function FAQSection() {
             </motion.button>
             <button
               className="px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200 hover:bg-white/60"
-              style={{ borderColor: "#6B3FA0", color: "#6B3FA0" }}
+              style={{ borderColor: "#1B5E20", color: "#1B5E20" }}
             >
               ติดต่อผ่าน LINE
             </button>

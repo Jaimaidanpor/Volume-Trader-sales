@@ -1,7 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { TrendingUp, MessageCircle, Facebook, Heart } from "lucide-react";
+import { MessageCircle, Facebook, Heart } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -11,22 +12,17 @@ export default function Footer() {
           {/* Logo + tagline */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2.5 mb-3">
-              <div
-                className="w-9 h-9 rounded-xl flex items-center justify-center shadow-md"
-                style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
-              >
-                <TrendingUp className="w-5 h-5 text-white" />
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Volume Trader"
+                width={110}
+                height={36}
+                className="object-contain brightness-0 invert"
+              />
               <div>
                 <div
-                  className="font-playfair font-bold text-lg leading-none"
-                  style={{ color: "#C9A96E" }}
-                >
-                  Volume Trader
-                </div>
-                <div
                   className="text-[10px] font-bold tracking-widest uppercase"
-                  style={{ color: "#C8B4E8" }}
+                  style={{ color: "#A5D6A7" }}
                 >
                   Pro
                 </div>
@@ -43,7 +39,7 @@ export default function Footer() {
           <div className="text-center md:text-right">
             <p
               className="text-xs font-bold uppercase tracking-widest mb-4"
-              style={{ color: "#C9A96E" }}
+              style={{ color: "#43A047" }}
             >
               ติดต่อเรา
             </p>

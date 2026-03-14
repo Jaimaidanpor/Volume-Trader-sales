@@ -19,17 +19,17 @@ export default function FinalCTASection() {
       id="final-cta"
       className="py-20 lg:py-28 relative overflow-hidden"
       style={{
-        background: "linear-gradient(145deg, #FFF8F0 0%, #EDE0F8 60%, #F4D9E4 100%)",
+        background: "linear-gradient(145deg, #F9FDF9 0%, #E8F5E9 60%, #F1F8E9 100%)",
       }}
     >
       {/* Decorative blobs */}
       <div
         className="absolute top-0 right-0 w-80 h-80 rounded-full opacity-15 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C8B4E8, transparent)" }}
+        style={{ background: "radial-gradient(circle, #A5D6A7, transparent)" }}
       />
       <div
         className="absolute bottom-0 left-0 w-64 h-64 rounded-full opacity-15 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C9A96E, transparent)" }}
+        style={{ background: "radial-gradient(circle, #43A047, transparent)" }}
       />
 
       <div className="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -42,7 +42,7 @@ export default function FinalCTASection() {
           {/* Stars */}
           <div className="flex justify-center gap-1 mb-6">
             {[...Array(5)].map((_, i) => (
-              <span key={i} className="text-2xl" style={{ color: "#C9A96E" }}>
+              <span key={i} className="text-2xl" style={{ color: "#FFB300" }}>
                 ★
               </span>
             ))}
@@ -57,13 +57,13 @@ export default function FinalCTASection() {
 
           <h2
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-5 leading-tight"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             แสดงว่าคุณพร้อมที่จะ
             <span
               className="block"
               style={{
-                background: "linear-gradient(135deg, #6B3FA0, #C9A96E)",
+                background: "linear-gradient(135deg, #1B5E20, #43A047)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -77,9 +77,9 @@ export default function FinalCTASection() {
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto">
             อย่าปล่อยให้ความลังเลทำให้คุณพลาดโอกาสนี้ไปนะคะ
             <br />
-            <strong style={{ color: "#6B3FA0" }}>นักเทรดที่ประสบความสำเร็จ</strong>{" "}
+            <strong style={{ color: "#1B5E20" }}>นักเทรดที่ประสบความสำเร็จ</strong>{" "}
             ต่างจากคนอื่นตรงที่{" "}
-            <strong style={{ color: "#C9A96E" }}>ลงมือทำ</strong> ค่ะ
+            <strong style={{ color: "#43A047" }}>ลงมือทำ</strong> ค่ะ
           </p>
 
           {/* Highlight box */}
@@ -87,14 +87,14 @@ export default function FinalCTASection() {
             className="inline-block px-6 py-4 rounded-2xl mb-8"
             style={{
               background: "rgba(255,255,255,0.7)",
-              border: "1px solid rgba(200,180,232,0.4)",
-              boxShadow: "0 4px 20px rgba(107,63,160,0.1)",
+              border: "1px solid rgba(76,175,80,0.3)",
+              boxShadow: "0 4px 20px rgba(27,94,32,0.08)",
             }}
           >
             <p className="text-sm text-gray-600 mb-1">
               💡 เริ่มเรียนได้ตอนนี้เลย — ไม่ต้องรอ
             </p>
-            <p className="text-base font-semibold" style={{ color: "#2D2D2D" }}>
+            <p className="text-base font-semibold" style={{ color: "#1A2E1A" }}>
               เข้าถึงได้ทันทีหลังชำระ
             </p>
           </div>
@@ -103,11 +103,11 @@ export default function FinalCTASection() {
           <div className="flex flex-col items-center gap-4">
             <motion.button
               onClick={handleCTA}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl text-gray-900 shadow-2xl transition-all duration-200"
+              className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl text-white shadow-2xl transition-all duration-200"
               style={{
-                background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
+                background: "linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #2E7D32 100%)",
               }}
-              whileHover={{ scale: 1.05, y: -3, boxShadow: "0 25px 50px rgba(201,169,110,0.45)" }}
+              whileHover={{ scale: 1.05, y: -3, boxShadow: "0 25px 50px rgba(46,125,50,0.45)" }}
               whileTap={{ scale: 0.97 }}
             >
               เริ่มเรียน Volume Profile วันนี้เลย →
@@ -115,7 +115,7 @@ export default function FinalCTASection() {
 
             {/* Price reminder */}
             <p className="text-sm text-gray-600">
-              <strong style={{ color: "#6B3FA0" }}>฿5,900</strong>{" "}
+              <strong style={{ color: "#1B5E20" }}>฿5,900</strong>{" "}
               <span className="text-gray-400">•</span> ชำระครั้งเดียว{" "}
               <span className="text-gray-400">•</span> เรียนตลอดชีพ
             </p>

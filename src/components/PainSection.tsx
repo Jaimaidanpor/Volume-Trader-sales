@@ -33,14 +33,15 @@ export default function PainSection() {
   return (
     <section
       id="pain"
-      className="py-20 lg:py-28 bg-white relative overflow-hidden"
+      className="py-20 lg:py-28 relative overflow-hidden"
+      style={{ background: "#F9FDF9" }}
     >
       {/* Background decoration */}
       <div
         className="absolute inset-0 opacity-20 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 50% 0%, rgba(244,167,185,0.3) 0%, transparent 60%)",
+            "radial-gradient(ellipse at 50% 0%, rgba(76,175,80,0.2) 0%, transparent 60%)",
         }}
       />
 
@@ -65,7 +66,7 @@ export default function PainSection() {
           </span>
           <h2
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             คุณเคยรู้สึกแบบนี้ไหม?
           </h2>
@@ -84,13 +85,14 @@ export default function PainSection() {
               transition={{ duration: 0.5, delay: 0.1 + i * 0.1 }}
               className="flex items-start gap-4 p-5 sm:p-6 rounded-2xl"
               style={{
-                background: "linear-gradient(135deg, #FFFBFB, #FFF5F5)",
-                border: "1px solid rgba(244,167,185,0.3)",
-                boxShadow: "0 2px 12px rgba(244,167,185,0.15)",
+                background: "linear-gradient(135deg, #FFFFFF, #F9FDF9)",
+                border: "1px solid rgba(76,175,80,0.2)",
+                borderLeft: "4px solid #4CAF50",
+                boxShadow: "0 2px 12px rgba(76,175,80,0.08)",
               }}
             >
               <span className="text-3xl sm:text-4xl flex-shrink-0 mt-0.5">{item.emoji}</span>
-              <p className="text-base sm:text-lg font-medium leading-relaxed" style={{ color: "#2D2D2D" }}>
+              <p className="text-base sm:text-lg font-medium leading-relaxed" style={{ color: "#3D4D3D" }}>
                 &ldquo;{item.text}&rdquo;
               </p>
             </motion.div>
@@ -107,13 +109,13 @@ export default function PainSection() {
           <div
             className="inline-block px-6 py-4 rounded-3xl mb-8"
             style={{
-              background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-              border: "1px solid rgba(200,180,232,0.4)",
+              background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
+              border: "1px solid rgba(76,175,80,0.3)",
             }}
           >
             <p
               className="font-playfair font-bold text-xl sm:text-2xl mb-2"
-              style={{ color: "#2D2D2D" }}
+              style={{ color: "#1B5E20" }}
             >
               ถ้าคุณรู้สึกแบบนี้ — นั่นไม่ใช่ความผิดของคุณค่ะ
             </p>
@@ -121,9 +123,9 @@ export default function PainSection() {
 
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">
             ตลาดถูกขับเคลื่อนด้วย{" "}
-            <strong style={{ color: "#6B3FA0" }}>Volume</strong>{" "}
+            <strong style={{ color: "#1B5E20" }}>Volume</strong>{" "}
             ไม่ใช่ indicator แต่ไม่มีใครสอนเรื่องนี้อย่างจริงจัง...{" "}
-            <strong style={{ color: "#C9A96E" }}>จนกระทั่งตอนนี้</strong>
+            <strong style={{ color: "#43A047" }}>จนกระทั่งตอนนี้</strong>
           </p>
         </motion.div>
       </div>

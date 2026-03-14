@@ -9,7 +9,7 @@ const testimonials = [
     name: "คุณ สุภาพร ว.",
     role: "นักเทรด Forex",
     avatar: "👩",
-    avatarBg: "linear-gradient(135deg, #F4D9E4, #EDE0F8)",
+    avatarBg: "linear-gradient(135deg, #C8E6C9, #E8F5E9)",
     quote:
       "ก่อนหน้านี้เทรดแบบเดาตลอด พอเรียน Volume Profile แล้วเริ่มเข้าใจว่าทำไมราคาถึงเด้งจากจุดนั้น เปลี่ยนชีวิตการเทรดเลยค่ะ ขอบคุณมากๆ นะคะ",
     stars: 5,
@@ -18,7 +18,7 @@ const testimonials = [
     name: "คุณ พิชญา ร.",
     role: "เทรด Gold ออนไลน์",
     avatar: "👩‍💼",
-    avatarBg: "linear-gradient(135deg, #EDE0F8, #C8B4E8)",
+    avatarBg: "linear-gradient(135deg, #E8F5E9, #A5D6A7)",
     quote:
       "ชอบที่สอนทั้ง Sierra Chart และ TradingView มากค่ะ ไฟล์ Indicator ที่ให้มาก็ใช้ได้จริงเลย ตอนนี้อ่าน Footprint ออกแล้วค่ะ คุ้มมากๆ เลย",
     stars: 5,
@@ -27,7 +27,7 @@ const testimonials = [
     name: "คุณ นันทนา ส.",
     role: "พนักงานบริษัท เทรดพาร์ทไทม์",
     avatar: "👩‍🍳",
-    avatarBg: "linear-gradient(135deg, #FFF8F0, #F4D9E4)",
+    avatarBg: "linear-gradient(135deg, #F1F8E9, #C8E6C9)",
     quote:
       "เรียนตอนเย็นหลังเลิกงาน 16 บทเรียนครบมาก ดูซ้ำได้เรื่อยๆ ค่ะ ตอนนี้อ่าน Footprint Chart เป็นแล้ว แนะนำเพื่อนไปเรียนด้วยแล้ว 2 คนค่ะ",
     stars: 5,
@@ -71,17 +71,17 @@ export default function TestimonialsSection() {
       className="py-20 lg:py-28 relative overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, #EDE0F8 0%, #F4D9E4 50%, #FFF8F0 100%)",
+          "linear-gradient(135deg, #E8F5E9 0%, #F1F8E9 50%, #F9FDF9 100%)",
       }}
     >
       {/* Decorative shapes */}
       <div
         className="absolute top-10 left-10 w-40 h-40 rounded-full opacity-20 blur-2xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #6B3FA0, transparent)" }}
+        style={{ background: "radial-gradient(circle, #1B5E20, transparent)" }}
       />
       <div
         className="absolute bottom-10 right-10 w-52 h-52 rounded-full opacity-15 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C9A96E, transparent)" }}
+        style={{ background: "radial-gradient(circle, #43A047, transparent)" }}
       />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,15 +97,15 @@ export default function TestimonialsSection() {
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
             style={{
               background: "rgba(255,255,255,0.7)",
-              color: "#6B3FA0",
-              border: "1px solid rgba(107,63,160,0.2)",
+              color: "#1B5E20",
+              border: "1px solid rgba(27,94,32,0.2)",
             }}
           >
             รีวิวจากนักเรียน
           </span>
           <h2
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             นักเรียนของเราพูดว่าอะไร?
           </h2>
@@ -115,11 +115,11 @@ export default function TestimonialsSection() {
             className="inline-flex flex-wrap justify-center items-center gap-4 sm:gap-6 px-6 py-3 rounded-2xl bg-white/80 shadow-sm"
           >
             <span className="text-sm font-semibold text-gray-700 flex items-center gap-1">
-              ⭐ <span style={{ color: "#2D2D2D", fontWeight: "bold" }}>4.9</span>/5
+              ⭐ <span style={{ color: "#1A2E1A", fontWeight: "bold" }}>4.9</span>/5
             </span>
             <span className="text-gray-300 hidden sm:inline">|</span>
             <span className="text-sm font-semibold text-gray-700">
-              👩‍🎓 นักเรียนกว่า <strong style={{ color: "#6B3FA0" }}>500 คน</strong>
+              👩‍🎓 นักเรียนกว่า <strong style={{ color: "#1B5E20" }}>500 คน</strong>
             </span>
             <span className="text-gray-300 hidden sm:inline">|</span>
             <span className="text-sm font-semibold text-gray-700">
@@ -141,13 +141,13 @@ export default function TestimonialsSection() {
               variants={cardVariants}
               whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 22 }}
-              className="relative rounded-3xl p-6 bg-white/85 backdrop-blur-sm shadow-xl shadow-purple-100/40"
-              style={{ border: "1px solid rgba(200,180,232,0.3)" }}
+              className="relative rounded-3xl p-6 bg-white/85 backdrop-blur-sm shadow-xl shadow-green-100/40"
+              style={{ border: "1px solid rgba(76,175,80,0.2)" }}
             >
               {/* Stars */}
               <div className="flex gap-0.5 mb-4">
                 {[...Array(t.stars)].map((_, j) => (
-                  <Star key={j} className="w-4 h-4 fill-[#C9A96E] text-[#C9A96E]" />
+                  <Star key={j} className="w-4 h-4 fill-[#FFB300] text-[#FFB300]" />
                 ))}
               </div>
 
@@ -157,15 +157,15 @@ export default function TestimonialsSection() {
               </p>
 
               {/* Profile */}
-              <div className="flex items-center gap-3 pt-4 border-t border-purple-100/50">
+              <div className="flex items-center gap-3 pt-4 border-t border-green-100/50">
                 <div
                   className="w-11 h-11 rounded-full flex items-center justify-center text-xl flex-shrink-0 shadow-md"
-                  style={{ background: t.avatarBg, border: "2px solid #C9A96E" }}
+                  style={{ background: t.avatarBg, border: "2px solid #4CAF50" }}
                 >
                   {t.avatar}
                 </div>
                 <div>
-                  <div className="font-semibold text-sm" style={{ color: "#2D2D2D" }}>
+                  <div className="font-semibold text-sm" style={{ color: "#1A2E1A" }}>
                     {t.name}
                   </div>
                   <div className="text-xs text-gray-400">{t.role}</div>
@@ -188,7 +188,7 @@ export default function TestimonialsSection() {
               className="px-4 py-2.5 rounded-2xl text-sm shadow-sm"
               style={{
                 background: "white",
-                border: "1px solid rgba(200,180,232,0.35)",
+                border: "1px solid rgba(76,175,80,0.2)",
                 color: "#555",
                 maxWidth: "260px",
               }}
@@ -208,9 +208,9 @@ export default function TestimonialsSection() {
         >
           <motion.button
             onClick={handleCTA}
-            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-gray-900 font-bold shadow-lg transition-all duration-200"
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-bold shadow-lg transition-all duration-200"
             style={{
-              background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
+              background: "linear-gradient(135deg, #2E7D32 0%, #43A047 50%, #2E7D32 100%)",
             }}
             whileHover={{ scale: 1.04, y: -2 }}
             whileTap={{ scale: 0.97 }}

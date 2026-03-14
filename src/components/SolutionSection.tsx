@@ -34,17 +34,17 @@ export default function SolutionSection() {
       id="solution"
       className="py-20 lg:py-28 relative overflow-hidden"
       style={{
-        background: "linear-gradient(145deg, #F8F0FF 0%, #FFF8F0 100%)",
+        background: "linear-gradient(145deg, #F1F8E9 0%, #F9FDF9 100%)",
       }}
     >
       {/* Decoration */}
       <div
         className="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #6B3FA0, transparent)" }}
+        style={{ background: "radial-gradient(circle, #1B5E20, transparent)" }}
       />
       <div
         className="absolute bottom-0 left-0 w-72 h-72 rounded-full opacity-10 blur-3xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #C9A96E, transparent)" }}
+        style={{ background: "radial-gradient(circle, #43A047, transparent)" }}
       />
 
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -59,8 +59,8 @@ export default function SolutionSection() {
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
             style={{
-              background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-              color: "#6B3FA0",
+              background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
+              color: "#1B5E20",
             }}
           >
             วิธีแก้ปัญหา
@@ -69,7 +69,7 @@ export default function SolutionSection() {
           {/* Big reveal */}
           <div
             className="inline-block px-6 py-3 rounded-2xl mb-5"
-            style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
+            style={{ background: "linear-gradient(135deg, #1B5E20, #2E7D32)" }}
           >
             <p className="text-white text-xs sm:text-sm font-semibold tracking-wide">
               แนะนำ: หลักสูตร
@@ -78,13 +78,13 @@ export default function SolutionSection() {
 
           <h2
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 leading-tight"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             Volume Profile &
             <span
               className="block"
               style={{
-                background: "linear-gradient(135deg, #6B3FA0, #C9A96E)",
+                background: "linear-gradient(135deg, #1B5E20, #43A047)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -114,8 +114,8 @@ export default function SolutionSection() {
               className="rounded-2xl p-5 text-center"
               style={{
                 background: "rgba(255,255,255,0.8)",
-                border: "1px solid rgba(200,180,232,0.35)",
-                boxShadow: "0 4px 20px rgba(107,63,160,0.08)",
+                border: "1px solid rgba(76,175,80,0.25)",
+                boxShadow: "0 4px 20px rgba(27,94,32,0.08)",
               }}
             >
               <div className="mb-3">
@@ -144,8 +144,8 @@ export default function SolutionSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.35 }}
-          className="rounded-3xl overflow-hidden shadow-xl shadow-purple-100/40"
-          style={{ border: "1px solid rgba(200,180,232,0.3)" }}
+          className="rounded-3xl overflow-hidden shadow-xl shadow-green-100/40"
+          style={{ border: "1px solid rgba(76,175,80,0.25)" }}
         >
           {/* Table header */}
           <div className="grid grid-cols-3">
@@ -163,7 +163,7 @@ export default function SolutionSection() {
             </div>
             <div
               className="py-3 px-4 text-xs font-bold uppercase tracking-wide text-center"
-              style={{ background: "#F0FFF4", color: "#1B5E20" }}
+              style={{ background: "#E8F5E9", color: "#1B5E20" }}
             >
               ✅ หลังเรียน
             </div>
@@ -174,11 +174,11 @@ export default function SolutionSection() {
             <div
               key={i}
               className="grid grid-cols-3 border-t"
-              style={{ borderColor: "rgba(200,180,232,0.2)" }}
+              style={{ borderColor: "rgba(76,175,80,0.15)" }}
             >
               <div
                 className="py-3 px-4 text-xs sm:text-sm font-semibold flex items-center"
-                style={{ background: "rgba(255,255,255,0.9)", color: "#2D2D2D" }}
+                style={{ background: "rgba(255,255,255,0.9)", color: "#1A2E1A" }}
               >
                 {row.label}
               </div>
@@ -190,7 +190,7 @@ export default function SolutionSection() {
               </div>
               <div
                 className="py-3 px-4 text-xs sm:text-sm text-center flex items-center justify-center font-medium"
-                style={{ background: "rgba(240,255,244,0.5)", color: "#2E7D32" }}
+                style={{ background: "rgba(232,245,233,0.5)", color: "#2E7D32" }}
               >
                 {row.after}
               </div>

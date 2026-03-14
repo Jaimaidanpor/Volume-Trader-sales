@@ -9,8 +9,8 @@ const phases = [
     title: "รากฐาน",
     emoji: "🏗️",
     lessons: "บทที่ 1–4",
-    color: "#6B3FA0",
-    bg: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
+    color: "#1B5E20",
+    bg: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
     modules: [
       { num: 1, title: "แนะนำ Order Flow & ทำไม Volume ถึงสำคัญ" },
       { num: 2, title: "Volume Profile พื้นฐาน — POC, VAH, VAL" },
@@ -23,8 +23,8 @@ const phases = [
     title: "เครื่องมือขั้นสูง",
     emoji: "⚡",
     lessons: "บทที่ 5–8",
-    color: "#C9A96E",
-    bg: "linear-gradient(135deg, #FFF8F0, #FFF0DC)",
+    color: "#FFFFFF",
+    bg: "linear-gradient(135deg, #1B5E20, #2E7D32)",
     modules: [
       { num: 5, title: "Delta Analysis — อ่านแรงซื้อแรงขายแบบ Real-time" },
       { num: 6, title: "Footprint Chart เบื้องต้น" },
@@ -37,8 +37,8 @@ const phases = [
     title: "Workshop จริง",
     emoji: "🎯",
     lessons: "บทที่ 9–13",
-    color: "#F4A7B9",
-    bg: "linear-gradient(135deg, #FFF0F5, #FFEAF2)",
+    color: "#FFFFFF",
+    bg: "linear-gradient(135deg, #2E7D32, #388E3C)",
     modules: [
       { num: 9, title: "Price Action + Volume — ผสมให้ลงตัว" },
       { num: 10, title: "การตั้งค่า Sierra Chart ทีละขั้นตอน" },
@@ -52,8 +52,8 @@ const phases = [
     title: "ระบบการเทรด",
     emoji: "🏆",
     lessons: "บทที่ 14–16",
-    color: "#2E7D32",
-    bg: "linear-gradient(135deg, #F0FFF4, #DCFCE7)",
+    color: "#1B5E20",
+    bg: "linear-gradient(135deg, #E8F5E9, #DCFCE7)",
     modules: [
       { num: 14, title: "Workshop: วิเคราะห์ Futures Live" },
       { num: 15, title: "Risk Management ด้วย Volume" },
@@ -99,7 +99,7 @@ export default function CoursesSection() {
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 80%, rgba(200,180,232,0.25) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.12) 0%, transparent 50%)",
+            "radial-gradient(ellipse at 20% 80%, rgba(76,175,80,0.12) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(27,94,32,0.08) 0%, transparent 50%)",
         }}
       />
 
@@ -115,20 +115,20 @@ export default function CoursesSection() {
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
             style={{
-              background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-              color: "#6B3FA0",
+              background: "linear-gradient(135deg, #E8F5E9, #F1F8E9)",
+              color: "#1B5E20",
             }}
           >
             เนื้อหาหลักสูตร
           </span>
           <h2
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4"
-            style={{ color: "#2D2D2D" }}
+            style={{ color: "#1A2E1A" }}
           >
             สิ่งที่คุณจะได้เรียน
           </h2>
           <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            ครบ <strong style={{ color: "#6B3FA0" }}>16 บทเรียน</strong> แบ่งเป็น 4 Phase — จากพื้นฐานถึงระดับมืออาชีพ
+            ครบ <strong style={{ color: "#1B5E20" }}>16 บทเรียน</strong> แบ่งเป็น 4 Phase — จากพื้นฐานถึงระดับมืออาชีพ
           </p>
         </motion.div>
 
@@ -144,7 +144,7 @@ export default function CoursesSection() {
               key={i}
               variants={cardVariants}
               className="rounded-3xl overflow-hidden shadow-md"
-              style={{ border: "1px solid rgba(200,180,232,0.25)" }}
+              style={{ border: "1px solid rgba(76,175,80,0.2)" }}
             >
               {/* Phase header */}
               <div
@@ -161,7 +161,7 @@ export default function CoursesSection() {
                   </div>
                   <div
                     className="font-playfair font-bold text-lg"
-                    style={{ color: "#2D2D2D" }}
+                    style={{ color: phase.color === "#FFFFFF" ? "#FFFFFF" : "#1A2E1A" }}
                   >
                     {phase.title}
                   </div>
@@ -175,7 +175,7 @@ export default function CoursesSection() {
                     <li key={mod.num} className="flex items-start gap-3">
                       <span
                         className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
-                        style={{ background: `${phase.color}20`, color: phase.color }}
+                        style={{ background: "rgba(27,94,32,0.12)", color: "#1B5E20" }}
                       >
                         {mod.num}
                       </span>
@@ -193,16 +193,16 @@ export default function CoursesSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="rounded-3xl overflow-hidden shadow-2xl shadow-purple-200/30"
+          className="rounded-3xl overflow-hidden shadow-2xl shadow-green-200/30"
           style={{
-            background: "linear-gradient(145deg, #6B3FA0 0%, #8B5CC0 100%)",
+            background: "linear-gradient(145deg, #1B5E20 0%, #2E7D32 100%)",
           }}
         >
           <div className="px-6 sm:px-10 py-8">
             <h3 className="text-white font-playfair font-bold text-2xl sm:text-3xl text-center mb-2">
               คุณจะได้รับทั้งหมดนี้ค่ะ:
             </h3>
-            <p className="text-purple-200 text-sm text-center mb-8">รวมมูลค่าทั้งหมดที่คุณจะได้รับ</p>
+            <p className="text-green-200 text-sm text-center mb-8">รวมมูลค่าทั้งหมดที่คุณจะได้รับ</p>
 
             <div className="space-y-3 mb-8 max-w-xl mx-auto">
               {valueStack.map((item, i) => (
@@ -215,7 +215,7 @@ export default function CoursesSection() {
                     <span className="text-xl">{item.emoji}</span>
                     <span className="text-white text-sm sm:text-base">{item.label}</span>
                   </div>
-                  <span className="text-purple-200 text-sm font-semibold whitespace-nowrap">
+                  <span className="text-green-200 text-sm font-semibold whitespace-nowrap">
                     มูลค่า {item.value}
                   </span>
                 </div>
@@ -225,23 +225,23 @@ export default function CoursesSection() {
             {/* Price reveal */}
             <div className="text-center">
               <div className="mb-2">
-                <span className="text-purple-300 text-base line-through mr-2">รวมมูลค่า ฿24,900</span>
+                <span className="text-green-300 text-base line-through mr-2">รวมมูลค่า ฿24,900</span>
               </div>
               <div className="mb-1">
                 <span className="text-white text-sm">วันนี้ราคาเพียง</span>
               </div>
               <div
                 className="font-playfair font-bold text-5xl sm:text-6xl mb-4"
-                style={{ color: "#C9A96E" }}
+                style={{ color: "#A5D6A7" }}
               >
                 ฿5,900
               </div>
 
               <motion.button
                 onClick={handleCTA}
-                className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base sm:text-lg text-gray-900 shadow-xl transition-all duration-200"
+                className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base sm:text-lg text-white shadow-xl transition-all duration-200"
                 style={{
-                  background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
+                  background: "linear-gradient(135deg, #43A047 0%, #66BB6A 50%, #43A047 100%)",
                 }}
                 whileHover={{ scale: 1.04, y: -2 }}
                 whileTap={{ scale: 0.97 }}
@@ -249,7 +249,7 @@ export default function CoursesSection() {
                 สมัครเรียนเลยตอนนี้ — ฿5,900 →
               </motion.button>
 
-              <p className="text-purple-300 text-xs mt-3">
+              <p className="text-green-300 text-xs mt-3">
                 ชำระครั้งเดียว • เรียนซ้ำได้ตลอดชีพ • เข้าถึงทันทีหลังชำระ
               </p>
             </div>
