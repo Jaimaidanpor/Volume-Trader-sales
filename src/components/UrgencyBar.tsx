@@ -53,15 +53,16 @@ export default function UrgencyBar() {
       }}
     >
       {/* Row 1: Seats left */}
-      <span className="text-white text-sm font-bold text-center leading-normal">
+      <span className="text-white text-xs sm:text-sm font-bold text-center leading-normal">
         🔥 เหลือเพียง{" "}
         <span
-          className="font-extrabold px-2 py-0.5 rounded mx-0.5 text-sm"
+          className="font-extrabold px-2 py-0.5 rounded mx-0.5 text-xs sm:text-sm"
           style={{ background: "#FFB300", color: "#1A2E1A" }}
         >
           {SEATS_LEFT} ที่นั่ง
         </span>{" "}
-        ในราคา ฿ 5,900 — ครบแล้วปรับเต็มราคา!
+        <span className="whitespace-nowrap">ในราคา ฿ 5,900</span>{" "}
+        — ครบแล้วปรับเต็มราคา!
       </span>
 
       {/* Row 2: Live viewers + CTA */}
