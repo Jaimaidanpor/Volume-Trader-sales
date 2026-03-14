@@ -239,10 +239,7 @@ export default function CoursesSection() {
                 href={LINE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={(e) => {
-                  e.preventDefault();
-                  window.open("https://lin.ee/1hpcpsl", "_blank", "noopener,noreferrer");
-                }}
+                onClick={(e) => openLine(e)}
                 className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
                 style={{
                   background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
