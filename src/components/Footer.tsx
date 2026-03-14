@@ -15,9 +15,9 @@ export default function Footer() {
               <Image
                 src="/logo.png"
                 alt="Volume Trader"
-                width={110}
-                height={36}
-                className="object-contain brightness-0 invert"
+                width={100}
+                height={33}
+                className="object-contain rounded-lg"
               />
               <div>
                 <div
