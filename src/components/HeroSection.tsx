@@ -194,7 +194,7 @@ export default function HeroSection() {
             className="mt-4 inline-block px-4 py-2 rounded-full text-xs font-semibold"
             style={{ background: "#FFF3CD", color: "#856404", border: "1px solid #FFECB5" }}
           >
-            🔥 เหลือเพียง <strong>8 ที่นั่งสุดท้าย</strong> ในราคา ฿ 5,900
+            🔥 เหลือเพียง <strong>3 ที่นั่งสุดท้าย</strong> ในราคา ฿ 5,900
           </motion.div>
         </div>
 
