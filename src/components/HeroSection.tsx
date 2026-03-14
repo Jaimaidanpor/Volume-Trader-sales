@@ -25,7 +25,8 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden pt-16"
+      className="relative min-h-screen flex items-center overflow-hidden"
+      style={{ paddingTop: "calc(var(--urgency-bar-height, 40px) + 64px)" }}
       style={{
         background: "linear-gradient(145deg, #F9FDF9 0%, #E8F5E9 50%, #F1F8E9 100%)",
       }}

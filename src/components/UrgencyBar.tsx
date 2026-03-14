@@ -26,8 +26,21 @@ export default function UrgencyBar() {
     if (el) el.scrollIntoView({ behavior: "smooth" });
   };
 
+  // Set CSS variable for navbar to read
+  useEffect(() => {
+    const el = document.getElementById("urgency-bar");
+    if (!el) return;
+    const update = () => {
+      document.documentElement.style.setProperty("--urgency-bar-height", `${el.offsetHeight}px`);
+    };
+    update();
+    window.addEventListener("resize", update);
+    return () => window.removeEventListener("resize", update);
+  }, []);
+
   return (
     <motion.div
+      id="urgency-bar"
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, delay: 0.3 }}
