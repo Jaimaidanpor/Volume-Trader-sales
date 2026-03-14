@@ -81,7 +81,7 @@ export default function HeroSection() {
                 backgroundClip: "text",
               }}
             >
-              ทั้งที่ดู Chart
+              ทั้งที่ดู กราฟ
             </span>
             <span className="block">ทุกวัน?</span>
           </motion.h1>
