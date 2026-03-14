@@ -1,7 +1,20 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion, useInView } from "framer-motion";
+
+function getTimeLeft() {
+  const now = new Date();
+  const target = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59);
+  const diff = target.getTime() - now.getTime();
+  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / (1000 * 60)) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
+}
 
 const valueStackBrief = [
   { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿ 14,900" },
@@ -19,6 +32,13 @@ const trustBadges = [
 export default function OfferSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const [time, setTime] = useState(getTimeLeft());
+  const pad = (n: number) => String(n).padStart(2, "0");
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(getTimeLeft()), 1000);
+    return () => clearInterval(timer);
+  }, []);
 
   const handleCTA = () => {
     const el = document.querySelector("#final-cta");
@@ -71,14 +91,39 @@ export default function OfferSection() {
             </span>
           </h2>
 
-          {/* Urgency message */}
+          {/* Countdown Timer */}
           <div
-            className="inline-block px-5 py-3 rounded-2xl mb-8"
-            style={{ background: "rgba(255,193,7,0.15)", border: "1px solid rgba(255,193,7,0.3)" }}
+            className="inline-block px-6 py-4 rounded-2xl mb-8"
+            style={{ background: "rgba(183,28,28,0.25)", border: "1px solid rgba(239,83,80,0.4)" }}
           >
-            <p className="text-yellow-300 text-sm font-semibold">
-              ⚠️ ราคาพิเศษนี้ไม่มีกำหนดสิ้นสุด อาจขึ้นราคาได้ตลอดเวลา
+            <p className="text-red-200 text-xs font-semibold mb-3 tracking-widest uppercase">
+              ⏰ ราคาพิเศษหมดเขตสิ้นเดือนนี้
             </p>
+            <div className="flex items-center justify-center gap-2">
+              {[
+                { val: time.days, label: "วัน" },
+                { val: time.hours, label: "ชั่วโมง" },
+                { val: time.minutes, label: "นาที" },
+                { val: time.seconds, label: "วินาที" },
+              ].map((item, i) => (
+                <div key={i} className="flex items-center gap-2">
+                  <div className="flex flex-col items-center">
+                    <div
+                      className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl flex items-center justify-center"
+                      style={{ background: "rgba(0,0,0,0.4)" }}
+                    >
+                      <span className="text-white font-bold text-xl sm:text-2xl tabular-nums">
+                        {pad(item.val)}
+                      </span>
+                    </div>
+                    <span className="text-red-200 text-[10px] mt-1">{item.label}</span>
+                  </div>
+                  {i < 3 && (
+                    <span className="text-white font-bold text-xl mb-4">:</span>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Value stack brief */}

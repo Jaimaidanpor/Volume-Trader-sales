@@ -1,3 +1,4 @@
+import UrgencyBar from "@/components/UrgencyBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import PainSection from "@/components/PainSection";
@@ -12,6 +13,7 @@ import Footer from "@/components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen font-poppins">
+      <UrgencyBar />
       <Navbar />
       <HeroSection />
       <PainSection />
