@@ -121,7 +121,9 @@ export default function FinalCTASection() {
 
             {/* LINE Button */}
             <motion.a
-              href="#"
+              href="https://lin.ee/1hpcpsl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center gap-2.5 px-7 py-3.5 rounded-full font-semibold text-base text-white shadow-lg transition-all duration-200"
               style={{ background: "#06C755" }}
               whileHover={{ scale: 1.04, y: -1 }}

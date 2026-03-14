@@ -45,7 +45,9 @@ export default function Footer() {
             </p>
             <div className="flex items-center justify-center md:justify-end gap-3 mb-3">
               <motion.a
-                href="#"
+                href="https://lin.ee/1hpcpsl"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-white transition-all duration-200"
                 style={{ background: "#06C755" }}
                 whileHover={{ scale: 1.05 }}
