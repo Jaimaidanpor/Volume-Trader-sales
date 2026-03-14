@@ -8,10 +8,6 @@ export default function FinalCTASection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const handleCTA = () => {
-    window.open("https://lin.ee/1hpcpsl", "_blank");
-  };
-
   return (
     <section
       id="final-cta"
@@ -99,8 +95,10 @@ export default function FinalCTASection() {
 
           {/* BIG CTA Button */}
           <div className="flex flex-col items-center gap-4">
-            <motion.button
-              onClick={handleCTA}
+            <motion.a
+              href="https://lin.ee/1hpcpsl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl transition-all duration-200"
               style={{
                 background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
@@ -110,7 +108,7 @@ export default function FinalCTASection() {
               whileTap={{ scale: 0.97 }}
             >
               เริ่มเรียน Volume Profile วันนี้เลย →
-            </motion.button>
+            </motion.a>
 
             {/* Price reminder */}
             <p className="text-sm text-gray-600">

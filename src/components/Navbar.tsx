@@ -15,10 +15,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleCTA = () => {
-    window.open("https://lin.ee/1hpcpsl", "_blank");
-  };
-
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
@@ -55,8 +51,10 @@ export default function Navbar() {
           </motion.a>
 
           {/* Single CTA Button */}
-          <motion.button
-            onClick={handleCTA}
+          <motion.a
+            href="https://lin.ee/1hpcpsl"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #FFB300, #FFA000)",
@@ -66,7 +64,7 @@ export default function Navbar() {
             whileTap={{ scale: 0.97 }}
           >
             สมัครเรียน ฿ 5,900 →
-          </motion.button>
+          </motion.a>
         </div>
       </div>
     </motion.nav>

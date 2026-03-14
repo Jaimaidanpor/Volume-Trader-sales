@@ -131,9 +131,6 @@ export default function FAQSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
-  const handleCTA = () => {
-    window.open("https://lin.ee/1hpcpsl", "_blank");
-  };
 
   return (
     <section id="faq" className="py-20 lg:py-28 bg-white relative overflow-hidden">
@@ -209,15 +206,17 @@ export default function FAQSection() {
             ทีมงานของเราพร้อมตอบทุกคำถาม ติดต่อผ่าน LINE ได้เลยค่ะ
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <motion.button
-              onClick={handleCTA}
+            <motion.a
+              href="https://lin.ee/1hpcpsl"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-6 py-3 rounded-full font-bold text-sm shadow-md transition-all duration-200"
               style={{ background: "linear-gradient(135deg, #FFB300, #FFA000)", color: "#1A2E1A" }}
               whileHover={{ scale: 1.04 }}
               whileTap={{ scale: 0.97 }}
             >
               สมัครเรียนเลย ฿ 5,900
-            </motion.button>
+            </motion.a>
             <button
               className="px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200 hover:bg-white/60"
               style={{ borderColor: "#1B5E20", color: "#1B5E20" }}

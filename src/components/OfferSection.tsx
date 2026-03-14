@@ -35,10 +35,6 @@ export default function OfferSection() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleCTA = () => {
-    window.open("https://lin.ee/1hpcpsl", "_blank");
-  };
-
   return (
     <section
       id="offer"
@@ -185,8 +181,10 @@ export default function OfferSection() {
           </div>
 
           {/* BIG CTA */}
-          <motion.button
-            onClick={handleCTA}
+          <motion.a
+            href="https://lin.ee/1hpcpsl"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl mb-4 transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
@@ -196,7 +194,7 @@ export default function OfferSection() {
             whileTap={{ scale: 0.97 }}
           >
             สมัครเรียนเลยตอนนี้ — ฿ 5,900 →
-          </motion.button>
+          </motion.a>
 
           {/* Payment info */}
           <p className="text-green-200 text-xs sm:text-sm mb-8">

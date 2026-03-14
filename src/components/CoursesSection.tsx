@@ -83,9 +83,6 @@ export default function CoursesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const handleCTA = () => {
-    window.open("https://lin.ee/1hpcpsl", "_blank");
-  };
 
   return (
     <section
@@ -236,8 +233,10 @@ export default function CoursesSection() {
                 ฿ 5,900
               </div>
 
-              <motion.button
-                onClick={handleCTA}
+              <motion.a
+                href="https://lin.ee/1hpcpsl"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
                 style={{
                   background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
@@ -247,7 +246,7 @@ export default function CoursesSection() {
                 whileTap={{ scale: 0.97 }}
               >
                 สมัครเรียนเลยตอนนี้ — ฿ 5,900 →
-              </motion.button>
+              </motion.a>
 
               <p className="text-green-300 text-xs mt-3">
                 ชำระครั้งเดียว • เรียนซ้ำได้ตลอดชีพ • เข้าถึงทันทีหลังชำระ

@@ -35,10 +35,6 @@ export default function UrgencyBar() {
     return () => clearInterval(timer);
   }, []);
 
-  const handleCTA = () => {
-    window.open("https://lin.ee/1hpcpsl", "_blank");
-  };
-
   return (
     <motion.div
       ref={barRef}
@@ -86,13 +82,15 @@ export default function UrgencyBar() {
           <span className="text-xs">คนกำลังดูอยู่ตอนนี้</span>
         </span>
 
-        <button
-          onClick={handleCTA}
+        <a
+          href="https://lin.ee/1hpcpsl"
+          target="_blank"
+          rel="noopener noreferrer"
           className="px-4 py-1 rounded-full text-xs font-bold whitespace-nowrap transition-all hover:scale-105"
           style={{ background: "#FFB300", color: "#1A2E1A" }}
         >
           สมัครเลย →
-        </button>
+        </a>
       </div>
     </motion.div>
   );

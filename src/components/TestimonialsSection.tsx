@@ -60,9 +60,6 @@ export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
-  const handleCTA = () => {
-    window.open("https://lin.ee/1hpcpsl", "_blank");
-  };
 
   return (
     <section
@@ -205,8 +202,10 @@ export default function TestimonialsSection() {
           transition={{ delay: 0.7, duration: 0.5 }}
           className="text-center"
         >
-          <motion.button
-            onClick={handleCTA}
+          <motion.a
+            href="https://lin.ee/1hpcpsl"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-white font-bold shadow-lg transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
@@ -215,7 +214,7 @@ export default function TestimonialsSection() {
             whileTap={{ scale: 0.97 }}
           >
             สมัครเรียน ฿ 5,900 →
-          </motion.button>
+          </motion.a>
           <p className="text-xs text-gray-500 mt-2">เข้าถึงได้ทันทีหลังชำระ</p>
         </motion.div>
       </div>
