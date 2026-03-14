@@ -6,29 +6,29 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "ต้องมีพื้นฐานการเทรดก่อนไหม?",
+    question: "คอร์สนี้เหมาะกับใคร?",
     answer:
-      "ไม่จำเป็นค่ะ คอร์ส Starter ออกแบบมาสำหรับมือใหม่โดยเฉพาะ เราเริ่มตั้งแต่พื้นฐานการอ่านกราฟ จนถึงการวิเคราะห์ Volume แบบ Step-by-step ทุกคนเริ่มได้เลยค่ะ",
+      "เหมาะทั้งมือใหม่และนักเทรดที่มีพื้นฐานแล้ว อยากยกระดับการวิเคราะห์ด้วย Volume Profile และ Order Flow ค่ะ",
   },
   {
-    question: "เรียนผ่านช่องทางไหน?",
+    question: "ใช้ Platform อะไรในการเรียน?",
     answer:
-      "เรียนออนไลน์ผ่านเว็บไซต์ของเรา ดูได้ทุกที่ทุกเวลา รองรับทั้งมือถือและคอมพิวเตอร์ วิดีโอ HD คุณภาพสูง ดูซ้ำได้ไม่จำกัด และดาวน์โหลดสื่อการเรียนได้ค่ะ",
+      "มีแนะนำทั้ง Sierra Chart และ TradingView พร้อมไฟล์ Indicator ให้ดาวน์โหลดฟรีค่ะ ใช้แค่อย่างใดอย่างหนึ่งก็ได้",
   },
   {
-    question: "มีการสอนสดไหม?",
+    question: "ราคา ฿5,900 ใช้ได้ถึงเมื่อไหร่?",
     answer:
-      "มีค่ะ! ทุกเดือนมี Live สอนสดและ Q&A session สำหรับสมาชิกทุกระดับ นอกจากนี้ยังมีการวิเคราะห์ตลาด Live ใน Community อีกด้วยค่ะ",
+      "เป็นราคาโปรโมชันพิเศษ อาจสิ้นสุดโดยไม่แจ้งล่วงหน้าค่ะ แนะนำสมัครก่อนราคาขึ้นนะคะ",
   },
   {
-    question: "ชำระเงินช่องทางไหนได้บ้าง?",
+    question: "ชำระเงินผ่านช่องทางไหน?",
     answer:
-      "ชำระได้หลายช่องทางค่ะ ได้แก่ QR Code PromptPay, บัตรเครดิต/เดบิต (Visa, Mastercard), โอนเงินธนาคารทุกธนาคาร และ TrueMoney Wallet ค่ะ",
+      "ชำระได้ผ่าน PromptPay QR Code, โอนเงินธนาคาร และบัตรเครดิต/เดบิตค่ะ หลังชำระจะได้รับ link เข้าเรียนทันที",
   },
   {
-    question: "ถ้าเรียนแล้วไม่เข้าใจทำอย่างไร?",
+    question: "มี Community หลังเรียนจบไหม?",
     answer:
-      "มีทีม support คอยตอบคำถามใน Community ทุกวัน สามารถรีวิวบทเรียนได้ไม่จำกัด และยังมี Q&A รายเดือน สามารถถามได้โดยตรงกับอาจารย์ค่ะ",
+      "มีกลุ่ม LINE Private สำหรับนักเรียนโดยเฉพาะค่ะ สามารถถามคำถามและแชร์การวิเคราะห์กันได้ตลอดค่ะ",
   },
 ];
 
@@ -160,7 +160,7 @@ export default function FAQSection() {
             คำถามที่พบบ่อย
           </h2>
           <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
-            มีข้อสงสัยเพิ่มเติม? สามารถติดต่อทีมงานได้ตลอด 24 ชั่วโมง
+            มีข้อสงสัยเพิ่มเติม? ติดต่อผ่าน LINE ได้เลยค่ะ
           </p>
         </motion.div>
 
@@ -196,7 +196,7 @@ export default function FAQSection() {
             ยังมีคำถามเพิ่มเติม?
           </p>
           <p className="text-gray-500 text-sm mb-5">
-            ทีมงานของเราพร้อมตอบทุกคำถาม ติดต่อเราได้เลยค่ะ
+            ทีมงานของเราพร้อมตอบทุกคำถาม ติดต่อเราผ่าน LINE ได้เลยค่ะ
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <button
@@ -207,13 +207,13 @@ export default function FAQSection() {
               className="px-6 py-3 rounded-full text-white font-semibold text-sm shadow-md hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
               style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
             >
-              สมัครเรียนเลย
+              สมัครเรียนเลย ฿5,900
             </button>
             <button
               className="px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200 hover:bg-white/60"
               style={{ borderColor: "#6B3FA0", color: "#6B3FA0" }}
             >
-              ติดต่อ Line @volumetraderpro
+              ติดต่อผ่าน LINE
             </button>
           </div>
         </motion.div>

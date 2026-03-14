@@ -6,34 +6,34 @@ import { Star, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "คุณ สมหญิง ว.",
-    role: "นักเทรดอิสระ",
+    name: "คุณ สุภาพร ว.",
+    role: "นักเทรด Forex",
     avatar: "👩",
     avatarBg: "linear-gradient(135deg, #F4D9E4, #EDE0F8)",
     quote:
-      "หลังเรียนคอร์สนี้ เข้าใจว่าทำไมราคาถึงขึ้นหรือลง อ่าน Volume แล้วมั่นใจขึ้นมากเลยค่ะ ตอนนี้เทรดได้กำไรสม่ำเสมอมากขึ้น ขอบคุณอาจารย์มากๆ ค่ะ",
+      "ก่อนหน้านี้เทรดแบบเดา พอเรียน Volume Profile แล้วเริ่มเข้าใจว่าทำไมราคาถึงเด้งจากจุดนั้น เปลี่ยนชีวิตการเทรดเลยค่ะ",
     stars: 5,
-    course: "Volume Advanced",
+    course: "Volume Profile & Order Flow Trading",
   },
   {
-    name: "คุณ พิมพ์ใจ ร.",
-    role: "พนักงานบริษัท",
+    name: "คุณ พิชญา ร.",
+    role: "เทรด Gold ออนไลน์",
     avatar: "👩‍💼",
     avatarBg: "linear-gradient(135deg, #EDE0F8, #C8B4E8)",
     quote:
-      "เรียนตอนเย็นหลังเลิกงาน ครูอธิบายเข้าใจง่ายมาก ตอนนี้ทำกำไรได้ทุกเดือนค่ะ แนะนำให้เพื่อนอีก 3 คนมาเรียนแล้ว ทุกคนประทับใจมากค่ะ",
+      "ชอบที่สอนทั้ง Sierra Chart และ TradingView มาก ไฟล์ Indicator ที่ให้มาก็ใช้ได้จริงเลยค่ะ ขอบคุณมากนะคะ",
     stars: 5,
-    course: "Volume Advanced",
+    course: "Volume Profile & Order Flow Trading",
   },
   {
-    name: "คุณ นภา ส.",
-    role: "แม่บ้านนักลงทุน",
+    name: "คุณ นันทนา ส.",
+    role: "พนักงานบริษัท เทรดพาร์ทไทม์",
     avatar: "👩‍🍳",
     avatarBg: "linear-gradient(135deg, #FFF8F0, #F4D9E4)",
     quote:
-      "ไม่เคยเทรดมาก่อนเลย แต่คอร์ส Starter ทำให้เข้าใจตลาดมากขึ้น แนะนำเลยค่ะ อาจารย์ใจดีมาก ตอบทุกคำถามใน community เสมอค่ะ",
+      "เรียนตอนเย็นหลังเลิกงาน 16 บทเรียนครบมาก ดูซ้ำได้เรื่อยๆ ตอนนี้อ่าน Footprint Chart เป็นแล้วค่ะ",
     stars: 5,
-    course: "Volume พื้นฐาน",
+    course: "Volume Profile & Order Flow Trading",
   },
 ];
 
@@ -113,7 +113,7 @@ export default function TestimonialsSection() {
             <span className="font-bold text-xl" style={{ color: "#2D2D2D" }}>
               4.9
             </span>
-            <span className="text-gray-400 text-sm">จากนักเรียน 2,400+ คน</span>
+            <span className="text-gray-400 text-sm">Rating จากนักเรียน</span>
           </div>
         </motion.div>
 
@@ -202,7 +202,7 @@ export default function TestimonialsSection() {
             className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
             style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
           >
-            เริ่มต้นเรียนวันนี้ →
+            สมัครเรียน ฿5,900 →
           </button>
         </motion.div>
       </div>

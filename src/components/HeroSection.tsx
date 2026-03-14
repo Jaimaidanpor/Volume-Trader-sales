@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, BookOpen, Star, Video } from "lucide-react";
+import { ArrowRight, Star, Video, DollarSign } from "lucide-react";
 
 const floatingVariants: Variants = {
   animate: {
@@ -40,9 +40,9 @@ const floatingVariants3: Variants = {
 
 const stats = [
   {
-    icon: <BookOpen className="w-5 h-5" />,
-    value: "2,400+",
-    label: "นักเรียน",
+    icon: <Video className="w-5 h-5" />,
+    value: "16",
+    label: "บทเรียน",
   },
   {
     icon: <Star className="w-5 h-5" />,
@@ -50,9 +50,9 @@ const stats = [
     label: "Rating",
   },
   {
-    icon: <Video className="w-5 h-5" />,
-    value: "40+",
-    label: "บทเรียน",
+    icon: <DollarSign className="w-5 h-5" />,
+    value: "฿5,900",
+    label: "ราคาพิเศษ",
   },
 ];
 
@@ -117,7 +117,7 @@ export default function HeroSection() {
             }}
           >
             <span className="w-2 h-2 rounded-full bg-[#6B3FA0] animate-pulse" />
-            คอร์สเทรดยอดนิยมในไทย
+            🔥 ลด 60% เหลือเพียง ฿5,900
           </motion.div>
 
           {/* Headline */}
@@ -128,7 +128,7 @@ export default function HeroSection() {
             className="font-playfair font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5"
             style={{ color: "#2D2D2D" }}
           >
-            เปิดเซียน
+            เรียนรู้อ่านตลาด
             <span
               className="block"
               style={{
@@ -138,14 +138,14 @@ export default function HeroSection() {
                 backgroundClip: "text",
               }}
             >
-              ด้าน Volume
+              Volume Profile
             </span>
-            <span className="block">อ่านตลาดแตก</span>
+            <span className="block">&amp; Order Flow</span>
             <span
               className="block text-3xl sm:text-4xl lg:text-5xl mt-1"
               style={{ color: "#C9A96E" }}
             >
-              ทำกำไรได้จริง
+              อย่างมืออาชีพ
             </span>
           </motion.h1>
 
@@ -157,15 +157,15 @@ export default function HeroSection() {
             className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
             style={{ color: "#555" }}
           >
-            เรียนรู้เทคนิคการวิเคราะห์ Volume ที่ใช้ได้จริงในตลาด{" "}
+            เข้าใจพฤติกรรมของ Smart Money อ่าน Footprint Chart, Delta และ Volume Profile
+            เพื่อหาจุดเข้าออกที่แม่นยำ ใช้ได้จริงในตลาด{" "}
             <strong className="font-semibold" style={{ color: "#6B3FA0" }}>
               Forex, Gold
             </strong>{" "}
             และ{" "}
             <strong className="font-semibold" style={{ color: "#6B3FA0" }}>
-              หุ้นไทย
-            </strong>{" "}
-            พร้อม Community นักเทรดที่แข็งแกร่ง
+              Futures
+            </strong>
           </motion.p>
 
           {/* CTA Buttons */}
@@ -182,7 +182,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.04, y: -2 }}
               whileTap={{ scale: 0.97 }}
             >
-              สมัครเรียนเลย
+              สมัครเรียน ฿5,900
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </motion.button>
 
@@ -193,7 +193,7 @@ export default function HeroSection() {
               whileHover={{ scale: 1.03, y: -1 }}
               whileTap={{ scale: 0.97 }}
             >
-              ดูรายละเอียดคอร์ส
+              ดูเนื้อหาคอร์ส
             </motion.button>
           </motion.div>
 
@@ -237,6 +237,13 @@ export default function HeroSection() {
                 backdropFilter: "blur(10px)",
               }}
             >
+              {/* Card title */}
+              <div className="mb-4">
+                <p className="font-playfair font-bold text-lg" style={{ color: "#2D2D2D" }}>
+                  Volume Profile &amp; Order Flow
+                </p>
+              </div>
+
               {/* Chart visualization */}
               <div className="mb-6">
                 <div className="flex items-end justify-between gap-1 h-32 mb-2">
@@ -307,7 +314,7 @@ export default function HeroSection() {
               className="absolute -top-4 -right-4 px-4 py-2 rounded-2xl shadow-lg text-white text-xs font-bold"
               style={{ background: "linear-gradient(135deg, #C9A96E, #E8C99A)" }}
             >
-              ยอดนิยม 🔥
+              ลด 60% 🔥
             </motion.div>
 
             {/* Bottom badge */}
@@ -317,7 +324,7 @@ export default function HeroSection() {
               className="absolute -bottom-4 -left-4 px-4 py-2.5 rounded-2xl shadow-lg bg-white border border-purple-100 text-xs font-semibold"
               style={{ color: "#6B3FA0" }}
             >
-              🎓 นักเรียน 2,400+ คน
+              🎓 16 บทเรียน • เรียนซ้ำได้ตลอดชีพ
             </motion.div>
           </div>
         </motion.div>

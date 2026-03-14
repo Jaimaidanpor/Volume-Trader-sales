@@ -6,9 +6,9 @@ import { Menu, X, TrendingUp } from "lucide-react";
 
 const navLinks = [
   { label: "หน้าหลัก", href: "#hero" },
-  { label: "คอร์ส", href: "#courses" },
-  { label: "เกี่ยวกับ", href: "#instructor" },
-  { label: "ติดต่อ", href: "#footer" },
+  { label: "เนื้อหาคอร์ส", href: "#courses" },
+  { label: "รีวิว", href: "#testimonials" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -63,7 +63,7 @@ export default function Navbar() {
                 className="font-playfair font-bold text-lg tracking-tight"
                 style={{ color: "#6B3FA0" }}
               >
-                VolumeTrader
+                Volume Trader
               </span>
               <span className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#C9A96E" }}>
                 Pro
@@ -102,7 +102,7 @@ export default function Navbar() {
               whileHover={{ scale: 1.04, y: -1 }}
               whileTap={{ scale: 0.97 }}
             >
-              สมัครเรียน
+              สมัครเรียน ฿5,900
             </motion.a>
           </div>
 
@@ -154,7 +154,7 @@ export default function Navbar() {
                   className="block text-center px-4 py-3 rounded-full text-sm font-semibold text-white"
                   style={{ background: "linear-gradient(135deg, #6B3FA0 0%, #8B5CC0 100%)" }}
                 >
-                  สมัครเรียน
+                  สมัครเรียน ฿5,900
                 </a>
               </div>
             </div>

@@ -1,19 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { TrendingUp, Heart, ExternalLink } from "lucide-react";
+import { TrendingUp, Heart, ExternalLink, MessageCircle, Facebook } from "lucide-react";
 
 const footerLinks = [
   { label: "เกี่ยวกับเรา", href: "#instructor" },
   { label: "นโยบายความเป็นส่วนตัว", href: "#" },
   { label: "ติดต่อเรา", href: "#" },
-];
-
-const socialLinks = [
-  { label: "LINE", icon: "💬", href: "#" },
-  { label: "Facebook", icon: "📘", href: "#" },
-  { label: "YouTube", icon: "📺", href: "#" },
-  { label: "Discord", icon: "🎮", href: "#" },
 ];
 
 export default function Footer() {
@@ -59,9 +52,9 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4 leading-tight"
           >
-            พร้อมเริ่มเทรดด้วย Volume
+            พร้อมเรียนรู้ Volume Profile
             <span className="block" style={{ color: "#C9A96E" }}>
-              แล้วหรือยัง?
+              &amp; Order Flow แล้วหรือยัง?
             </span>
           </motion.h2>
 
@@ -72,8 +65,8 @@ export default function Footer() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-purple-200 text-base sm:text-lg mb-8 max-w-xl mx-auto leading-relaxed"
           >
-            เข้าร่วมกับนักเรียนกว่า 2,400 คนที่เปลี่ยนวิธีเทรดด้วยพลังของ Volume Trading
-            เริ่มต้นได้วันนี้เลยค่ะ
+            เข้าใจพฤติกรรม Smart Money อ่าน Footprint Chart และ Volume Profile
+            เพื่อเทรด Forex, Gold และ Futures ได้อย่างมืออาชีพ
           </motion.p>
 
           <motion.div
@@ -93,7 +86,7 @@ export default function Footer() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.97 }}
             >
-              สมัครเรียนวันนี้
+              สมัครเรียน ฿5,900
               <ExternalLink className="w-4 h-4" />
             </motion.button>
             <button
@@ -104,7 +97,7 @@ export default function Footer() {
               className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base border-2 text-white transition-all duration-200 hover:bg-white/10"
               style={{ borderColor: "rgba(255,255,255,0.4)" }}
             >
-              ดูคอร์สทั้งหมด
+              ดูรายละเอียดคอร์ส
             </button>
           </motion.div>
         </div>
@@ -128,7 +121,7 @@ export default function Footer() {
                     className="font-playfair font-bold text-lg leading-none"
                     style={{ color: "#C9A96E" }}
                   >
-                    VolumeTrader
+                    Volume Trader
                   </div>
                   <div className="text-xs font-semibold tracking-widest uppercase" style={{ color: "#C8B4E8" }}>
                     Pro
@@ -136,25 +129,33 @@ export default function Footer() {
                 </div>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed mb-5">
-                แพลตฟอร์มการเรียนรู้ด้าน Volume Trading อันดับ 1 ของไทย
-                เรียนรู้จากผู้เชี่ยวชาญที่มีประสบการณ์จริงในตลาด
+                สอน Volume Profile &amp; Order Flow Trading สำหรับตลาด Forex, Gold และ Futures
               </p>
               {/* Social links */}
               <div className="flex gap-3">
-                {socialLinks.map((social) => (
-                  <a
-                    key={social.label}
-                    href={social.href}
-                    title={social.label}
-                    className="w-9 h-9 rounded-full flex items-center justify-center text-sm transition-all duration-200 hover:scale-110"
-                    style={{
-                      background: "rgba(255,255,255,0.08)",
-                      border: "1px solid rgba(255,255,255,0.1)",
-                    }}
-                  >
-                    {social.icon}
-                  </a>
-                ))}
+                <a
+                  href="#"
+                  title="สมัครผ่าน LINE"
+                  className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 hover:scale-105"
+                  style={{
+                    background: "#06C755",
+                    color: "white",
+                  }}
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  สมัครผ่าน LINE
+                </a>
+                <a
+                  href="#"
+                  title="Facebook"
+                  className="w-9 h-9 rounded-full flex items-center justify-center transition-all duration-200 hover:scale-110"
+                  style={{
+                    background: "#1877F2",
+                    color: "white",
+                  }}
+                >
+                  <Facebook className="w-4 h-4" />
+                </a>
               </div>
             </div>
 
@@ -198,12 +199,12 @@ export default function Footer() {
               </h4>
               <ul className="space-y-3 text-gray-400 text-sm">
                 <li className="flex items-start gap-2">
-                  <span>💬</span>
-                  <span>LINE: @volumetraderpro</span>
+                  <MessageCircle className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#06C755" }} />
+                  <span>LINE: สมัครผ่าน LINE</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span>📧</span>
-                  <span>support@volumetraderpro.com</span>
+                  <Facebook className="w-4 h-4 mt-0.5 flex-shrink-0" style={{ color: "#1877F2" }} />
+                  <span>Facebook: Volume Trader Pro</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span>⏰</span>
@@ -219,7 +220,7 @@ export default function Footer() {
                   border: "1px solid rgba(107,63,160,0.3)",
                 }}
               >
-                <p className="text-xs text-gray-400 mb-2">เริ่มต้นคอร์สแรกของคุณ</p>
+                <p className="text-xs text-gray-400 mb-2">ราคาพิเศษ ฿5,900 เท่านั้น</p>
                 <button
                   onClick={() => {
                     const el = document.querySelector("#courses");
@@ -228,7 +229,7 @@ export default function Footer() {
                   className="text-sm font-semibold hover:opacity-90 transition-opacity"
                   style={{ color: "#C9A96E" }}
                 >
-                  ดูราคาคอร์ส →
+                  สมัครเรียนเลย →
                 </button>
               </div>
             </div>
@@ -240,7 +241,7 @@ export default function Footer() {
           {/* Copyright */}
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-gray-500 text-xs text-center sm:text-left">
-              © 2025 VolumeTrader Pro. สงวนลิขสิทธิ์
+              © 2025 Volume Trader Pro. สงวนลิขสิทธิ์
             </p>
             <p className="text-gray-600 text-xs flex items-center gap-1">
               สร้างด้วย

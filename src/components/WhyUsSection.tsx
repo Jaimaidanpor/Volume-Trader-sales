@@ -6,36 +6,36 @@ import { motion, useInView, type Variants } from "framer-motion";
 const features = [
   {
     icon: "🎯",
-    title: "เทคนิคที่ใช้ได้จริง",
+    title: "เทคนิคจากตลาดจริง",
     description:
-      "ไม่ใช่ทฤษฎีล้วนๆ ทุกบทเรียนมีตัวอย่างจากตลาดจริง พร้อม case study ให้วิเคราะห์",
+      "ทุกบทเรียนใช้ตัวอย่างจากตลาด Gold, Forex และ Futures ที่เกิดขึ้นจริง ไม่ใช่แค่ทฤษฎี",
     color: "#6B3FA0",
     bgColor: "rgba(107,63,160,0.08)",
     borderColor: "rgba(107,63,160,0.15)",
   },
   {
     icon: "📊",
-    title: "วิเคราะห์ Volume เชิงลึก",
+    title: "Footprint & Volume Profile",
     description:
-      "เรียนรู้ Order Flow, Volume Profile, Delta และเครื่องมือเฉพาะทางที่นักเทรดมืออาชีพใช้",
+      "เรียนเครื่องมือที่นักเทรดสถาบันใช้ ทั้ง Footprint Chart, Delta, VWAP และ Volume Profile อย่างลึกซึ้ง",
     color: "#C9A96E",
     bgColor: "rgba(201,169,110,0.08)",
     borderColor: "rgba(201,169,110,0.2)",
   },
   {
-    icon: "🤝",
-    title: "Community นักเทรด",
+    icon: "🖥️",
+    title: "รองรับทุก Platform",
     description:
-      "กลุ่ม LINE และ Discord สำหรับแลกเปลี่ยนความรู้ วิเคราะห์ตลาดร่วมกัน และช่วยเหลือกัน",
+      "มีแนะนำการตั้งค่าทั้ง Sierra Chart และ TradingView พร้อมไฟล์ Indicator ให้ดาวน์โหลดฟรี",
     color: "#F4A7B9",
     bgColor: "rgba(244,167,185,0.1)",
     borderColor: "rgba(244,167,185,0.25)",
   },
   {
-    icon: "♾️",
-    title: "เรียนซ้ำได้ตลอดชีพ",
+    icon: "👥",
+    title: "Community Private",
     description:
-      "ซื้อครั้งเดียว เข้าถึงเนื้อหาได้ตลอด รวมถึงอัปเดตเนื้อหาใหม่ในอนาคตด้วย",
+      "เข้ากลุ่ม LINE นักเรียน Private สำหรับแลกเปลี่ยนการวิเคราะห์และถามตอบกับผู้สอน",
     color: "#C8B4E8",
     bgColor: "rgba(200,180,232,0.12)",
     borderColor: "rgba(200,180,232,0.3)",
@@ -172,7 +172,7 @@ export default function WhyUsSection() {
             className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-white font-semibold text-sm shadow-md hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
             style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
           >
-            ดูคอร์สทั้งหมด →
+            ดูรายละเอียดคอร์ส →
           </button>
         </motion.div>
       </div>
