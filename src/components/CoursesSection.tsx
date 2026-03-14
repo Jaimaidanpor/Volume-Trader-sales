@@ -264,7 +264,7 @@ export default function CoursesSection() {
           transition={{ delay: 0.8, duration: 0.5 }}
           className="text-center mt-6 text-sm text-gray-400"
         >
-          ราคาพิเศษนี้อาจสิ้นสุดโดยไม่แจ้งล่วงหน้า • ชำระผ่าน PromptPay / โอนเงิน / บัตรเครดิต
+          ราคาพิเศษนี้อาจสิ้นสุดโดยไม่แจ้งล่วงหน้า • ชำระผ่าน PromptPay / โอนเงิน
         </motion.p>
       </div>
     </section>

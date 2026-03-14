@@ -140,7 +140,7 @@ export default function OfferSection() {
 
           {/* Payment info */}
           <p className="text-green-200 text-xs sm:text-sm mb-8">
-            ✅ ชำระผ่าน PromptPay / โอนเงิน / บัตรเครดิต &nbsp;•&nbsp; ✅ เข้าถึงได้ทันทีหลังชำระ
+            ✅ ชำระผ่าน PromptPay / โอนเงิน &nbsp;•&nbsp; ✅ เข้าถึงได้ทันทีหลังชำระ
           </p>
 
           {/* Trust badges */}
