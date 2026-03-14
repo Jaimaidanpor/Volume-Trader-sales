@@ -44,7 +44,7 @@ const phases = [
     modules: [
       { num: 9, title: "Price Action + Volume — ผสมให้ลงตัว" },
       { num: 10, title: "การตั้งค่า Sierra Chart ทีละขั้นตอน" },
-      { num: 11, title: "การตั้งค่า TradingView ทีละขั้นตอน" },
+      { num: 11, title: "Workshop: กลยุทธ์ Common Gaps" },
       { num: 12, title: "Workshop: วิเคราะห์ Gold Live" },
       { num: 13, title: "Workshop: วิเคราะห์ Forex Live" },
     ],
