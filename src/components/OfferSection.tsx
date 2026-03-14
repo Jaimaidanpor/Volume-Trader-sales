@@ -114,24 +114,25 @@ export default function OfferSection() {
 
           {/* Price */}
           <div className="mb-6">
-            <p className="text-green-300 text-sm mb-1">วันนี้ราคาเพียง</p>
+            <p className="text-green-200 text-sm mb-1">วันนี้ราคาเพียง</p>
             <div
               className="font-playfair font-bold text-6xl sm:text-7xl mb-2"
-              style={{ color: "#A5D6A7" }}
+              style={{ color: "#FFB300" }}
             >
               ฿5,900
             </div>
-            <p className="text-green-300 text-sm">ชำระครั้งเดียว • เรียนตลอดชีพ</p>
+            <p className="text-green-200 text-sm">ชำระครั้งเดียว • เรียนตลอดชีพ</p>
           </div>
 
           {/* BIG CTA */}
           <motion.button
             onClick={handleCTA}
-            className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl text-white shadow-2xl mb-4 transition-all duration-200"
+            className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl mb-4 transition-all duration-200"
             style={{
-              background: "linear-gradient(135deg, #43A047 0%, #66BB6A 50%, #43A047 100%)",
+              background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
+              color: "#1A2E1A",
             }}
-            whileHover={{ scale: 1.04, y: -3, boxShadow: "0 25px 50px rgba(67,160,71,0.5)" }}
+            whileHover={{ scale: 1.04, y: -3, boxShadow: "0 25px 50px rgba(255,179,0,0.5)" }}
             whileTap={{ scale: 0.97 }}
           >
             สมัครเรียนเลยตอนนี้ — ฿5,900 →

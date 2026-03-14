@@ -48,8 +48,8 @@ export default function Navbar() {
             <Image
               src="/logo.png"
               alt="Volume Trader"
-              width={120}
-              height={40}
+              width={90}
+              height={30}
               className="object-contain"
             />
           </motion.a>
