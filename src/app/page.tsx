@@ -1,10 +1,12 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import WhyUsSection from "@/components/WhyUsSection";
+import PainSection from "@/components/PainSection";
+import SolutionSection from "@/components/SolutionSection";
 import CoursesSection from "@/components/CoursesSection";
-import InstructorSection from "@/components/InstructorSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
+import OfferSection from "@/components/OfferSection";
 import FAQSection from "@/components/FAQSection";
+import FinalCTASection from "@/components/FinalCTASection";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -12,11 +14,13 @@ export default function Home() {
     <main className="min-h-screen font-poppins">
       <Navbar />
       <HeroSection />
-      <WhyUsSection />
+      <PainSection />
+      <SolutionSection />
       <CoursesSection />
-      <InstructorSection />
       <TestimonialsSection />
+      <OfferSection />
       <FAQSection />
+      <FinalCTASection />
       <Footer />
     </main>
   );

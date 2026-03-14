@@ -1,60 +1,20 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
-import { ArrowRight, Star, Video, DollarSign } from "lucide-react";
 
 const floatingVariants: Variants = {
   animate: {
-    y: [0, -18, 0],
-    transition: {
-      duration: 4,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-    },
+    y: [0, -14, 0],
+    transition: { duration: 4, repeat: Infinity, ease: "easeInOut" },
   },
 };
 
 const floatingVariants2: Variants = {
   animate: {
-    y: [0, 14, 0],
-    x: [0, 8, 0],
-    transition: {
-      duration: 5,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-    },
+    y: [0, 10, 0],
+    transition: { duration: 5, repeat: Infinity, ease: "easeInOut" },
   },
 };
-
-const floatingVariants3: Variants = {
-  animate: {
-    y: [0, -10, 0],
-    x: [0, -6, 0],
-    transition: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut" as const,
-    },
-  },
-};
-
-const stats = [
-  {
-    icon: <Video className="w-5 h-5" />,
-    value: "16",
-    label: "บทเรียน",
-  },
-  {
-    icon: <Star className="w-5 h-5" />,
-    value: "4.9",
-    label: "Rating",
-  },
-  {
-    icon: <DollarSign className="w-5 h-5" />,
-    value: "฿5,900",
-    label: "ราคาพิเศษ",
-  },
-];
 
 export default function HeroSection() {
   const handleScroll = (href: string) => {
@@ -65,59 +25,41 @@ export default function HeroSection() {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center overflow-hidden gradient-hero pt-20"
+      className="relative min-h-screen flex items-center overflow-hidden pt-16"
+      style={{
+        background: "linear-gradient(145deg, #FFF8F0 0%, #EDE0F8 50%, #F4D9E4 100%)",
+      }}
     >
       {/* Decorative blobs */}
       <motion.div
         variants={floatingVariants}
         animate="animate"
-        className="absolute top-24 right-10 w-64 h-64 rounded-full opacity-30 blur-3xl pointer-events-none"
+        className="absolute top-20 right-8 w-72 h-72 rounded-full opacity-25 blur-3xl pointer-events-none"
         style={{ background: "radial-gradient(circle, #C8B4E8, #F4A7B9)" }}
       />
       <motion.div
         variants={floatingVariants2}
         animate="animate"
-        className="absolute bottom-24 left-8 w-48 h-48 rounded-full opacity-25 blur-2xl pointer-events-none"
+        className="absolute bottom-20 left-4 w-56 h-56 rounded-full opacity-20 blur-2xl pointer-events-none"
         style={{ background: "radial-gradient(circle, #C9A96E, #F4A7B9)" }}
       />
-      <motion.div
-        variants={floatingVariants3}
-        animate="animate"
-        className="absolute top-1/2 right-1/4 w-32 h-32 rounded-full opacity-20 blur-2xl pointer-events-none"
-        style={{ background: "radial-gradient(circle, #6B3FA0, #C8B4E8)" }}
-      />
 
-      {/* Decorative circles — smaller ornamental */}
-      <div
-        className="absolute top-32 left-1/4 w-12 h-12 rounded-full opacity-40 pointer-events-none"
-        style={{ background: "linear-gradient(135deg, #C9A96E, #E8C99A)" }}
-      />
-      <div
-        className="absolute bottom-40 right-16 w-8 h-8 rounded-full opacity-35 pointer-events-none"
-        style={{ background: "linear-gradient(135deg, #C8B4E8, #F4A7B9)" }}
-      />
-      <div
-        className="absolute top-1/3 left-10 w-5 h-5 rounded-full opacity-50 pointer-events-none"
-        style={{ backgroundColor: "#C9A96E" }}
-      />
-
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
-        {/* Text Content */}
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-20 grid lg:grid-cols-2 gap-10 items-center w-full">
+        {/* Left: Text Content */}
         <div className="text-center lg:text-left">
-          {/* Badge */}
+          {/* Top badge */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide mb-6"
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold mb-6"
             style={{
-              background: "linear-gradient(135deg, #F4D9E4, #EDE0F8)",
-              color: "#6B3FA0",
-              border: "1px solid #C8B4E8",
+              background: "linear-gradient(135deg, #FFF3E0, #FFE0B2)",
+              color: "#E65100",
+              border: "1px solid #FFCC80",
             }}
           >
-            <span className="w-2 h-2 rounded-full bg-[#6B3FA0] animate-pulse" />
-            🔥 ลด 60% เหลือเพียง ฿5,900
+            ⚠️ คนส่วนใหญ่เทรดแบบ &ldquo;เดา&rdquo; — คุณจะไม่เป็นแบบนั้นอีกต่อไป
           </motion.div>
 
           {/* Headline */}
@@ -125,12 +67,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1 }}
-            className="font-playfair font-bold text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5"
+            className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl xl:text-6xl leading-tight mb-5"
             style={{ color: "#2D2D2D" }}
           >
-            เรียนรู้อ่านตลาด
+            ทำไมคุณถึงยังขาดทุน
             <span
-              className="block"
+              className="block mt-1"
               style={{
                 background: "linear-gradient(135deg, #6B3FA0, #C9A96E)",
                 WebkitBackgroundClip: "text",
@@ -138,140 +80,183 @@ export default function HeroSection() {
                 backgroundClip: "text",
               }}
             >
-              Volume Profile
+              ทั้งที่ดู Chart
             </span>
-            <span className="block">&amp; Order Flow</span>
-            <span
-              className="block text-3xl sm:text-4xl lg:text-5xl mt-1"
-              style={{ color: "#C9A96E" }}
-            >
-              อย่างมืออาชีพ
-            </span>
+            <span className="block">ทุกวัน?</span>
           </motion.h1>
 
-          {/* Subheadline */}
+          {/* Sub-headline */}
           <motion.p
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-base sm:text-lg leading-relaxed mb-8 max-w-xl mx-auto lg:mx-0"
+            className="text-sm sm:text-base lg:text-lg leading-relaxed mb-7 max-w-xl mx-auto lg:mx-0"
             style={{ color: "#555" }}
           >
-            เข้าใจพฤติกรรมของ Smart Money อ่าน Footprint Chart, Delta และ Volume Profile
-            เพื่อหาจุดเข้าออกที่แม่นยำ ใช้ได้จริงในตลาด{" "}
-            <strong className="font-semibold" style={{ color: "#6B3FA0" }}>
-              Forex, Gold
-            </strong>{" "}
-            และ{" "}
-            <strong className="font-semibold" style={{ color: "#6B3FA0" }}>
-              Futures
-            </strong>
+            เพราะคุณกำลังดูแค่{" "}
+            <strong style={{ color: "#6B3FA0" }}>&ldquo;เส้น&rdquo;</strong> บนกราฟ — แต่ไม่เห็น{" "}
+            <strong style={{ color: "#C9A96E" }}>&ldquo;แรงซื้อแรงขาย&rdquo;</strong>{" "}
+            ที่แท้จริงที่อยู่เบื้องหลัง
           </motion.p>
 
-          {/* CTA Buttons */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-10"
-          >
-            <motion.button
-              onClick={() => handleScroll("#courses")}
-              className="group inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold text-base shadow-lg hover:shadow-purple-300/50 transition-all duration-200"
-              style={{ background: "linear-gradient(135deg, #6B3FA0 0%, #8B5CC0 100%)" }}
-              whileHover={{ scale: 1.04, y: -2 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              สมัครเรียน ฿5,900
-              <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-            </motion.button>
-
-            <motion.button
-              onClick={() => handleScroll("#courses")}
-              className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full font-semibold text-base border-2 transition-all duration-200 hover:bg-purple-50"
-              style={{ borderColor: "#6B3FA0", color: "#6B3FA0" }}
-              whileHover={{ scale: 1.03, y: -1 }}
-              whileTap={{ scale: 0.97 }}
-            >
-              ดูเนื้อหาคอร์ส
-            </motion.button>
-          </motion.div>
-
-          {/* Stats Row */}
+          {/* Pain bullets */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.45 }}
-            className="flex items-center justify-center lg:justify-start gap-6 sm:gap-8"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="space-y-3 mb-7 text-left max-w-xl mx-auto lg:mx-0"
           >
-            {stats.map((stat, i) => (
-              <div key={i} className="flex flex-col items-center lg:items-start">
-                <div className="flex items-center gap-1.5 mb-0.5">
-                  <span style={{ color: "#C9A96E" }}>{stat.icon}</span>
-                  <span
-                    className="text-xl font-bold font-playfair"
-                    style={{ color: "#2D2D2D" }}
-                  >
-                    {stat.value}
-                  </span>
-                </div>
-                <span className="text-xs text-gray-500 font-medium">{stat.label}</span>
+            {[
+              { emoji: "😤", text: "เข้าออกผิดจังหวะซ้ำๆ ทั้งที่ตั้ง SL ไว้แล้ว" },
+              { emoji: "😰", text: "ถูก Stop Hunt บ่อยจนไม่กล้าเทรด" },
+              { emoji: "😩", text: "เห็นราคาวิ่งตามที่วิเคราะห์ แต่ตัวเองไม่ได้กำไร" },
+            ].map((item, i) => (
+              <div
+                key={i}
+                className="flex items-start gap-3 px-4 py-3 rounded-2xl"
+                style={{
+                  background: "rgba(255,255,255,0.7)",
+                  border: "1px solid rgba(200,180,232,0.3)",
+                }}
+              >
+                <span className="text-xl flex-shrink-0">{item.emoji}</span>
+                <span className="text-sm sm:text-base text-gray-700">{item.text}</span>
               </div>
             ))}
           </motion.div>
+
+          {/* Transition line */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="text-sm sm:text-base font-semibold mb-7 max-w-xl mx-auto lg:mx-0"
+            style={{ color: "#6B3FA0" }}
+          >
+            ปัญหาเหล่านี้มีคำตอบเดียวค่ะ — คุณต้องเรียนรู้ที่จะอ่าน Volume
+          </motion.p>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.5 }}
+            className="flex flex-col items-center lg:items-start gap-2"
+          >
+            <motion.button
+              onClick={() => handleScroll("#offer")}
+              className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full text-gray-900 font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
+              style={{
+                background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
+              }}
+              whileHover={{ scale: 1.04, y: -2, boxShadow: "0 20px 40px rgba(201,169,110,0.4)" }}
+              whileTap={{ scale: 0.97 }}
+            >
+              ใช่! หนูอยากเรียนอ่าน Volume →
+            </motion.button>
+            <p className="text-xs sm:text-sm text-gray-500">
+              ราคาพิเศษ{" "}
+              <strong style={{ color: "#6B3FA0" }}>฿5,900</strong>{" "}
+              <span className="line-through text-gray-400">(ปกติ ฿14,900)</span>
+            </p>
+          </motion.div>
+
+          {/* Urgency strip */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-4 inline-block px-4 py-2 rounded-full text-xs font-semibold"
+            style={{ background: "#FFF3CD", color: "#856404", border: "1px solid #FFECB5" }}
+          >
+            🔥 ราคานี้จะสิ้นสุดเร็วๆ นี้ — ไม่มีกำหนดแน่นอน
+          </motion.div>
         </div>
 
-        {/* Hero Visual — decorative card */}
+        {/* Right: Visual Card */}
         <motion.div
           initial={{ opacity: 0, x: 40, scale: 0.95 }}
           animate={{ opacity: 1, x: 0, scale: 1 }}
-          transition={{ duration: 0.75, delay: 0.2, ease: "easeOut" }}
+          transition={{ duration: 0.75, delay: 0.25, ease: "easeOut" }}
           className="hidden lg:flex items-center justify-center"
         >
-          <div className="relative w-full max-w-md">
+          <div className="relative w-full max-w-sm">
             {/* Main card */}
             <div
-              className="rounded-3xl p-8 shadow-2xl shadow-purple-200/60 border border-white/60"
+              className="rounded-3xl p-6 shadow-2xl shadow-purple-200/60"
               style={{
-                background: "linear-gradient(145deg, rgba(255,255,255,0.9), rgba(237,224,248,0.7))",
+                background: "linear-gradient(145deg, rgba(255,255,255,0.95), rgba(237,224,248,0.8))",
+                border: "1px solid rgba(200,180,232,0.4)",
                 backdropFilter: "blur(10px)",
               }}
             >
-              {/* Card title */}
-              <div className="mb-4">
-                <p className="font-playfair font-bold text-lg" style={{ color: "#2D2D2D" }}>
-                  Volume Profile &amp; Order Flow
-                </p>
-              </div>
+              <p
+                className="font-playfair font-bold text-base mb-4 text-center"
+                style={{ color: "#2D2D2D" }}
+              >
+                Volume Profile & Order Flow
+              </p>
 
-              {/* Chart visualization */}
-              <div className="mb-6">
-                <div className="flex items-end justify-between gap-1 h-32 mb-2">
-                  {[40, 55, 35, 70, 50, 85, 65, 90, 75, 95, 80, 100].map(
-                    (h, i) => (
-                      <motion.div
-                        key={i}
-                        initial={{ height: 0 }}
-                        animate={{ height: `${h}%` }}
-                        transition={{ delay: 0.5 + i * 0.05, duration: 0.5 }}
-                        className="flex-1 rounded-sm"
-                        style={{
-                          background:
-                            h > 75
-                              ? "linear-gradient(to top, #6B3FA0, #C8B4E8)"
-                              : h > 55
-                              ? "linear-gradient(to top, #C9A96E, #E8C99A)"
-                              : "linear-gradient(to top, #F4A7B9, #FDD5DF)",
-                        }}
-                      />
-                    )
-                  )}
+              {/* Before / After */}
+              <div className="space-y-3 mb-5">
+                {/* Before */}
+                <div
+                  className="rounded-2xl p-4"
+                  style={{ background: "linear-gradient(135deg, #FFF0F0, #FFE4E4)", border: "1px solid #FFCDD2" }}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg">😞</span>
+                    <span className="text-xs font-bold text-red-500 uppercase tracking-wide">BEFORE</span>
+                  </div>
+                  <p className="text-sm text-red-700 font-medium">เทรดแบบเดา ❌</p>
+                  <p className="text-xs text-red-400 mt-1">ดูแค่เส้นกราฟ — ไม่รู้ว่าใครซื้อ ใครขาย</p>
                 </div>
-                <div className="text-xs text-gray-400 text-center">Volume Profile Chart</div>
+
+                {/* Arrow */}
+                <div className="text-center text-xl">↓</div>
+
+                {/* After */}
+                <div
+                  className="rounded-2xl p-4"
+                  style={{ background: "linear-gradient(135deg, #F0FFF4, #DCFCE7)", border: "1px solid #BBF7D0" }}
+                >
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className="text-lg">🚀</span>
+                    <span className="text-xs font-bold text-green-600 uppercase tracking-wide">AFTER</span>
+                  </div>
+                  <p className="text-sm text-green-700 font-medium">
+                    ✅ อ่าน Volume เป็น
+                  </p>
+                  <p className="text-xs text-green-600 mt-1">รู้ว่า Smart Money อยู่ที่ไหน</p>
+                </div>
               </div>
 
-              {/* Metrics */}
-              <div className="grid grid-cols-2 gap-3 mb-5">
+              {/* Mini volume chart visualization */}
+              <div className="mb-4">
+                <div className="flex items-end justify-between gap-0.5 h-16 mb-1">
+                  {[35, 50, 30, 65, 45, 80, 60, 90, 70, 95, 75, 100].map((h, i) => (
+                    <motion.div
+                      key={i}
+                      initial={{ height: 0 }}
+                      animate={{ height: `${h}%` }}
+                      transition={{ delay: 0.6 + i * 0.04, duration: 0.4 }}
+                      className="flex-1 rounded-sm"
+                      style={{
+                        background:
+                          h > 75
+                            ? "linear-gradient(to top, #6B3FA0, #C8B4E8)"
+                            : h > 50
+                            ? "linear-gradient(to top, #C9A96E, #E8C99A)"
+                            : "linear-gradient(to top, #F4A7B9, #FDD5DF)",
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="text-[10px] text-gray-400 text-center">Volume Profile Chart</div>
+              </div>
+
+              {/* Metrics row */}
+              <div className="grid grid-cols-2 gap-2">
                 {[
                   { label: "Buy Volume", value: "+68.4%", color: "#6B3FA0" },
                   { label: "Sell Volume", value: "31.6%", color: "#F4A7B9" },
@@ -280,51 +265,36 @@ export default function HeroSection() {
                 ].map((m, i) => (
                   <div
                     key={i}
-                    className="rounded-xl p-3"
-                    style={{ background: "rgba(255,255,255,0.7)" }}
+                    className="rounded-xl p-2.5"
+                    style={{ background: "rgba(255,255,255,0.8)" }}
                   >
-                    <div className="text-xs text-gray-400 mb-0.5">{m.label}</div>
-                    <div className="font-bold text-sm" style={{ color: m.color }}>
+                    <div className="text-[10px] text-gray-400">{m.label}</div>
+                    <div className="font-bold text-xs mt-0.5" style={{ color: m.color }}>
                       {m.value}
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* CTA inside card */}
-              <div
-                className="rounded-2xl p-4 text-center"
-                style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
-              >
-                <p className="text-white text-sm font-medium mb-2">
-                  อ่าน Volume เป็น = เห็นแรงซื้อแรงขาย
-                </p>
-                <div className="flex justify-center gap-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3.5 h-3.5 fill-[#C9A96E] text-[#C9A96E]" />
-                  ))}
-                </div>
-              </div>
             </div>
 
-            {/* Floating badge */}
+            {/* Floating badge top */}
             <motion.div
               variants={floatingVariants}
               animate="animate"
-              className="absolute -top-4 -right-4 px-4 py-2 rounded-2xl shadow-lg text-white text-xs font-bold"
-              style={{ background: "linear-gradient(135deg, #C9A96E, #E8C99A)" }}
+              className="absolute -top-4 -right-4 px-3 py-1.5 rounded-2xl shadow-lg text-white text-xs font-bold"
+              style={{ background: "linear-gradient(135deg, #C9A96E, #E8C99A)", color: "#2D2D2D" }}
             >
               ลด 60% 🔥
             </motion.div>
 
-            {/* Bottom badge */}
+            {/* Floating badge bottom */}
             <motion.div
               variants={floatingVariants2}
               animate="animate"
-              className="absolute -bottom-4 -left-4 px-4 py-2.5 rounded-2xl shadow-lg bg-white border border-purple-100 text-xs font-semibold"
+              className="absolute -bottom-4 -left-4 px-3 py-2 rounded-2xl shadow-lg bg-white border border-purple-100 text-xs font-semibold"
               style={{ color: "#6B3FA0" }}
             >
-              🎓 16 บทเรียน • เรียนซ้ำได้ตลอดชีพ
+              🎓 16 บทเรียน • เรียนตลอดชีพ
             </motion.div>
           </div>
         </motion.div>
@@ -333,14 +303,14 @@ export default function HeroSection() {
       {/* Bottom wave */}
       <div className="absolute bottom-0 left-0 right-0">
         <svg
-          viewBox="0 0 1440 60"
+          viewBox="0 0 1440 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
           className="w-full"
           preserveAspectRatio="none"
         >
           <path
-            d="M0 60L1440 60L1440 20C1080 60 720 0 360 30C180 45 0 20 0 20L0 60Z"
+            d="M0 50L1440 50L1440 15C1080 50 720 0 360 25C180 37 0 15 0 15L0 50Z"
             fill="white"
           />
         </svg>

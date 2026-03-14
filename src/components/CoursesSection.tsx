@@ -1,39 +1,92 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
-import { CheckCircle, BookOpen } from "lucide-react";
+import { motion, useInView, type Variants } from "framer-motion";
 
-const modules = [
-  "แนะนำ Order Flow & Footprint Chart",
-  "Volume Profile พื้นฐาน",
-  "POC, VAH, VAL คืออะไร",
-  "Tick Chart & การตั้งค่า",
-  "VWAP และการใช้งาน",
-  "Delta Analysis เชิงลึก",
-  "Footprint Chart ขั้นสูง",
-  "หา Demand & Supply Zone",
-  "Price Action + Volume",
-  "การตั้งค่า Sierra Chart",
-  "การตั้งค่า TradingView",
-  "Workshop: วิเคราะห์ Gold",
-  "Workshop: วิเคราะห์ Forex",
-  "Workshop: วิเคราะห์ Futures",
-  "Risk Management ด้วย Volume",
-  "สร้าง Trading Plan ส่วนตัว",
+const phases = [
+  {
+    phase: "Phase 1",
+    title: "รากฐาน",
+    emoji: "🏗️",
+    lessons: "บทที่ 1–4",
+    color: "#6B3FA0",
+    bg: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
+    modules: [
+      { num: 1, title: "แนะนำ Order Flow & ทำไม Volume ถึงสำคัญ" },
+      { num: 2, title: "Volume Profile พื้นฐาน — POC, VAH, VAL" },
+      { num: 3, title: "Tick Chart คืออะไรและการตั้งค่า" },
+      { num: 4, title: "VWAP — เครื่องมือที่ Institutional ใช้ทุกวัน" },
+    ],
+  },
+  {
+    phase: "Phase 2",
+    title: "เครื่องมือขั้นสูง",
+    emoji: "⚡",
+    lessons: "บทที่ 5–8",
+    color: "#C9A96E",
+    bg: "linear-gradient(135deg, #FFF8F0, #FFF0DC)",
+    modules: [
+      { num: 5, title: "Delta Analysis — อ่านแรงซื้อแรงขายแบบ Real-time" },
+      { num: 6, title: "Footprint Chart เบื้องต้น" },
+      { num: 7, title: "Footprint Chart ขั้นสูง — อ่าน Absorption & Exhaustion" },
+      { num: 8, title: "หา Demand & Supply Zone ด้วย Volume" },
+    ],
+  },
+  {
+    phase: "Phase 3",
+    title: "Workshop จริง",
+    emoji: "🎯",
+    lessons: "บทที่ 9–13",
+    color: "#F4A7B9",
+    bg: "linear-gradient(135deg, #FFF0F5, #FFEAF2)",
+    modules: [
+      { num: 9, title: "Price Action + Volume — ผสมให้ลงตัว" },
+      { num: 10, title: "การตั้งค่า Sierra Chart ทีละขั้นตอน" },
+      { num: 11, title: "การตั้งค่า TradingView ทีละขั้นตอน" },
+      { num: 12, title: "Workshop: วิเคราะห์ Gold Live" },
+      { num: 13, title: "Workshop: วิเคราะห์ Forex Live" },
+    ],
+  },
+  {
+    phase: "Phase 4",
+    title: "ระบบการเทรด",
+    emoji: "🏆",
+    lessons: "บทที่ 14–16",
+    color: "#2E7D32",
+    bg: "linear-gradient(135deg, #F0FFF4, #DCFCE7)",
+    modules: [
+      { num: 14, title: "Workshop: วิเคราะห์ Futures Live" },
+      { num: 15, title: "Risk Management ด้วย Volume" },
+      { num: 16, title: "สร้าง Trading Plan ส่วนตัวของคุณ" },
+    ],
+  },
 ];
 
-const included = [
-  "วิดีโอ 16 บทเรียน เข้าถึงตลอดชีพ",
-  "ไฟล์ Indicator พร้อมใช้งาน",
-  "กลุ่ม Community นักเรียน Private",
-  "อัปเดตเนื้อหาในอนาคต",
-  "รองรับทั้ง Sierra Chart & TradingView",
+const valueStack = [
+  { emoji: "🎬", label: "วิดีโอ 16 บทเรียน", value: "฿14,900" },
+  { emoji: "📁", label: "ไฟล์ Indicator พร้อมใช้", value: "฿2,000" },
+  { emoji: "👥", label: "กลุ่ม LINE Community Private", value: "฿3,000" },
+  { emoji: "🔄", label: "เข้าถึงตลอดชีพ + อัปเดตฟรี", value: "฿5,000" },
 ];
+
+const containerVariants: Variants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.12 } },
+};
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] } },
+};
 
 export default function CoursesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  const handleCTA = () => {
+    const el = document.querySelector("#offer");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
@@ -46,11 +99,11 @@ export default function CoursesSection() {
         className="absolute inset-0 opacity-30 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse at 20% 80%, rgba(200,180,232,0.3) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.15) 0%, transparent 50%)",
+            "radial-gradient(ellipse at 20% 80%, rgba(200,180,232,0.25) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(201,169,110,0.12) 0%, transparent 50%)",
         }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           ref={ref}
@@ -66,151 +119,152 @@ export default function CoursesSection() {
               color: "#6B3FA0",
             }}
           >
-            หลักสูตรของเรา
+            เนื้อหาหลักสูตร
           </span>
           <h2
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4"
             style={{ color: "#2D2D2D" }}
           >
-            คอร์สเรียนของเรา
+            สิ่งที่คุณจะได้เรียน
           </h2>
-          <p className="text-gray-500 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
-            หลักสูตรครบวงจร Volume Profile &amp; Order Flow Trading
-            เรียนซ้ำได้ตลอดชีพ พร้อม Community นักเรียน Private
+          <p className="text-gray-500 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
+            ครบ <strong style={{ color: "#6B3FA0" }}>16 บทเรียน</strong> แบ่งเป็น 4 Phase — จากพื้นฐานถึงระดับมืออาชีพ
           </p>
         </motion.div>
 
-        {/* Single Premium Course Card */}
+        {/* 4 Phase grid */}
         <motion.div
-          initial={{ opacity: 0, y: 50, scale: 0.97 }}
-          animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
-          transition={{ duration: 0.55, ease: [0.25, 0.46, 0.45, 0.94] }}
-          className="max-w-4xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          animate={isInView ? "visible" : "hidden"}
+          className="grid sm:grid-cols-2 gap-5 mb-14"
         >
-          <div
-            className="relative rounded-3xl overflow-hidden shadow-2xl shadow-purple-300/30"
-            style={{
-              background: "linear-gradient(145deg, #6B3FA0 0%, #8B5CC0 100%)",
-              border: "2px solid #6B3FA0",
-            }}
-          >
-            {/* Top Badge */}
-            <div
-              className="absolute top-5 right-5 px-4 py-1.5 rounded-full text-xs font-bold shadow-md z-10"
-              style={{ background: "linear-gradient(135deg, #C9A96E, #FFD700)", color: "#2D2D2D" }}
+          {phases.map((phase, i) => (
+            <motion.div
+              key={i}
+              variants={cardVariants}
+              className="rounded-3xl overflow-hidden shadow-md"
+              style={{ border: "1px solid rgba(200,180,232,0.25)" }}
             >
-              ประหยัด ฿9,000 (60%) 🔥
-            </div>
-
-            {/* Card Header */}
-            <div className="p-8 pb-6">
-              <div className="flex items-center gap-3 mb-2">
-                <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center shadow-sm"
-                  style={{ background: "rgba(255,255,255,0.15)" }}
-                >
-                  <BookOpen className="w-6 h-6 text-white" />
-                </div>
+              {/* Phase header */}
+              <div
+                className="px-6 py-4 flex items-center gap-3"
+                style={{ background: phase.bg, borderBottom: "1px solid rgba(0,0,0,0.06)" }}
+              >
+                <span className="text-2xl">{phase.emoji}</span>
                 <div>
-                  <div className="text-xs font-bold tracking-widest uppercase text-purple-200 opacity-80">
-                    หลักสูตรเต็ม
-                  </div>
-                  <div className="font-playfair font-bold text-2xl text-white leading-tight">
-                    Volume Profile &amp; Order Flow Trading
-                  </div>
-                </div>
-              </div>
-
-              <p className="text-purple-200 text-sm leading-relaxed mt-3 mb-6 opacity-90">
-                หลักสูตรครบวงจร • 16 บทเรียน • เรียนซ้ำได้ตลอดชีพ
-              </p>
-
-              {/* Price block */}
-              <div className="mb-6 flex flex-wrap items-end gap-4">
-                <div>
-                  <div className="text-purple-300 text-sm line-through mb-0.5">฿14,900</div>
                   <div
-                    className="font-playfair font-bold text-5xl text-white"
+                    className="text-xs font-bold tracking-widest uppercase"
+                    style={{ color: phase.color }}
                   >
-                    ฿5,900
+                    {phase.phase} — {phase.lessons}
                   </div>
-                  <div className="text-purple-200 text-xs mt-1 opacity-70">
-                    ชำระครั้งเดียว • เรียนตลอดชีพ
+                  <div
+                    className="font-playfair font-bold text-lg"
+                    style={{ color: "#2D2D2D" }}
+                  >
+                    {phase.title}
                   </div>
                 </div>
               </div>
+
+              {/* Module list */}
+              <div className="bg-white px-6 py-4">
+                <ul className="space-y-2.5">
+                  {phase.modules.map((mod) => (
+                    <li key={mod.num} className="flex items-start gap-3">
+                      <span
+                        className="flex-shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
+                        style={{ background: `${phase.color}20`, color: phase.color }}
+                      >
+                        {mod.num}
+                      </span>
+                      <span className="text-sm text-gray-700 leading-snug">{mod.title}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </motion.div>
+
+        {/* Value Stack */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
+          className="rounded-3xl overflow-hidden shadow-2xl shadow-purple-200/30"
+          style={{
+            background: "linear-gradient(145deg, #6B3FA0 0%, #8B5CC0 100%)",
+          }}
+        >
+          <div className="px-6 sm:px-10 py-8">
+            <h3 className="text-white font-playfair font-bold text-2xl sm:text-3xl text-center mb-2">
+              คุณจะได้รับทั้งหมดนี้ค่ะ:
+            </h3>
+            <p className="text-purple-200 text-sm text-center mb-8">รวมมูลค่าทั้งหมดที่คุณจะได้รับ</p>
+
+            <div className="space-y-3 mb-8 max-w-xl mx-auto">
+              {valueStack.map((item, i) => (
+                <div
+                  key={i}
+                  className="flex items-center justify-between px-5 py-3 rounded-2xl"
+                  style={{ background: "rgba(255,255,255,0.12)" }}
+                >
+                  <div className="flex items-center gap-3">
+                    <span className="text-xl">{item.emoji}</span>
+                    <span className="text-white text-sm sm:text-base">{item.label}</span>
+                  </div>
+                  <span className="text-purple-200 text-sm font-semibold whitespace-nowrap">
+                    มูลค่า {item.value}
+                  </span>
+                </div>
+              ))}
             </div>
 
-            {/* Divider */}
-            <div className="mx-8 h-px" style={{ background: "rgba(255,255,255,0.15)" }} />
-
-            {/* Body: modules + included */}
-            <div className="p-8 pt-6 grid md:grid-cols-2 gap-8">
-              {/* Module list */}
-              <div>
-                <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wide">
-                  เนื้อหา 16 บทเรียน
-                </h3>
-                <ul className="space-y-2">
-                  {modules.map((mod, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <span
-                        className="flex-shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold mt-0.5"
-                        style={{ background: "rgba(201,169,110,0.25)", color: "#C9A96E" }}
-                      >
-                        {i + 1}
-                      </span>
-                      <span className="text-purple-100 text-sm leading-snug">{mod}</span>
-                    </li>
-                  ))}
-                </ul>
+            {/* Price reveal */}
+            <div className="text-center">
+              <div className="mb-2">
+                <span className="text-purple-300 text-base line-through mr-2">รวมมูลค่า ฿24,900</span>
+              </div>
+              <div className="mb-1">
+                <span className="text-white text-sm">วันนี้ราคาเพียง</span>
+              </div>
+              <div
+                className="font-playfair font-bold text-5xl sm:text-6xl mb-4"
+                style={{ color: "#C9A96E" }}
+              >
+                ฿5,900
               </div>
 
-              {/* What's included */}
-              <div>
-                <h3 className="text-white font-semibold text-sm mb-4 uppercase tracking-wide">
-                  สิ่งที่ได้รับ
-                </h3>
-                <ul className="space-y-3 mb-8">
-                  {included.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2.5">
-                      <CheckCircle
-                        className="w-4 h-4 mt-0.5 flex-shrink-0"
-                        style={{ color: "#C9A96E" }}
-                      />
-                      <span className="text-purple-100 text-sm">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+              <motion.button
+                onClick={handleCTA}
+                className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-4 rounded-full font-bold text-base sm:text-lg text-gray-900 shadow-xl transition-all duration-200"
+                style={{
+                  background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
+                }}
+                whileHover={{ scale: 1.04, y: -2 }}
+                whileTap={{ scale: 0.97 }}
+              >
+                สมัครเรียนเลยตอนนี้ — ฿5,900 →
+              </motion.button>
 
-                {/* CTA Button */}
-                <motion.a
-                  href="#"
-                  onClick={(e) => e.preventDefault()}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
-                  className="w-full block text-center py-4 rounded-2xl font-bold text-base transition-all duration-200 shadow-xl"
-                  style={{
-                    background: "linear-gradient(135deg, #C9A96E, #E8C99A)",
-                    color: "#2D2D2D",
-                  }}
-                >
-                  สมัครเรียนเลย — ฿5,900
-                </motion.a>
-              </div>
+              <p className="text-purple-300 text-xs mt-3">
+                ชำระครั้งเดียว • เรียนซ้ำได้ตลอดชีพ • เข้าถึงทันทีหลังชำระ
+              </p>
             </div>
           </div>
         </motion.div>
 
         {/* Bottom note */}
-        <motion.div
+        <motion.p
           initial={{ opacity: 0 }}
           animate={isInView ? { opacity: 1 } : {}}
           transition={{ delay: 0.8, duration: 0.5 }}
-          className="text-center mt-8 text-sm text-gray-400"
+          className="text-center mt-6 text-sm text-gray-400"
         >
           ราคาพิเศษนี้อาจสิ้นสุดโดยไม่แจ้งล่วงหน้า • ชำระผ่าน PromptPay / โอนเงิน / บัตรเครดิต
-        </motion.div>
+        </motion.p>
       </div>
     </section>
   );

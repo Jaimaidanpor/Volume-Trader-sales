@@ -6,29 +6,39 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "คอร์สนี้เหมาะกับใคร?",
+    question: "ฉันไม่มีพื้นฐานเลย เรียนได้ไหม?",
     answer:
-      "เหมาะทั้งมือใหม่และนักเทรดที่มีพื้นฐานแล้ว อยากยกระดับการวิเคราะห์ด้วย Volume Profile และ Order Flow ค่ะ",
+      "ได้เลยค่ะ! Phase 1 ออกแบบมาสำหรับคนที่เริ่มต้นจากศูนย์ เริ่มจากพื้นฐานที่สุดก่อนค่ะ ไม่ต้องกังวลเลยนะคะ",
   },
   {
-    question: "ใช้ Platform อะไรในการเรียน?",
+    question: "ต้องใช้ Sierra Chart ซึ่งแพงมาก จำเป็นไหม?",
     answer:
-      "มีแนะนำทั้ง Sierra Chart และ TradingView พร้อมไฟล์ Indicator ให้ดาวน์โหลดฟรีค่ะ ใช้แค่อย่างใดอย่างหนึ่งก็ได้",
+      "ไม่จำเป็นค่ะ ใช้ TradingView (มีแผน free) ก็เรียนได้ครบ มี Workshop สอนทั้ง 2 platform ค่ะ เลือกใช้แค่อย่างใดอย่างหนึ่งก็ได้เลย",
   },
   {
-    question: "ราคา ฿5,900 ใช้ได้ถึงเมื่อไหร่?",
+    question: "ฉันทำงานประจำ จะมีเวลาเรียนไหม?",
     answer:
-      "เป็นราคาโปรโมชันพิเศษ อาจสิ้นสุดโดยไม่แจ้งล่วงหน้าค่ะ แนะนำสมัครก่อนราคาขึ้นนะคะ",
+      "วิดีโอดูได้ตอนไหนก็ได้ ไม่มีหมดเวลา เรียนช้าเร็วได้ตามสะดวกเลยค่ะ เรียนตอนเย็น วันหยุด หรือตอนดึกก็ได้ค่ะ",
   },
   {
-    question: "ชำระเงินผ่านช่องทางไหน?",
+    question: "ราคา ฿5,900 แพงเกินไปสำหรับฉัน",
     answer:
-      "ชำระได้ผ่าน PromptPay QR Code, โอนเงินธนาคาร และบัตรเครดิต/เดบิตค่ะ หลังชำระจะได้รับ link เข้าเรียนทันที",
+      "ลองคิดดูนะคะ ถ้าการเรียนรู้ครั้งนี้ช่วยให้หยุดขาดทุนได้แค่เดือนเดียว คุ้มกว่ามากค่ะ และเทียบกับ indicator ราคาแพงหรือ signal ที่ไม่ work ที่เคยซื้อไปแล้ว ฿5,900 นี้ถือว่าคุ้มมากๆ ค่ะ",
   },
   {
-    question: "มี Community หลังเรียนจบไหม?",
+    question: "มั่นใจได้แค่ไหนว่าจะใช้ได้จริง?",
     answer:
-      "มีกลุ่ม LINE Private สำหรับนักเรียนโดยเฉพาะค่ะ สามารถถามคำถามและแชร์การวิเคราะห์กันได้ตลอดค่ะ",
+      "เนื้อหาทุกบทมาจากการเทรดในตลาดจริง ไม่ใช่ทฤษฎีในห้องแล็บ และมี Workshop live จากตลาดจริงด้วยค่ะ ทั้ง Gold, Forex และ Futures",
+  },
+  {
+    question: "ถ้าเรียนแล้วไม่เข้าใจทำอย่างไร?",
+    answer:
+      "ถามได้ในกลุ่ม LINE Community ที่มีทั้งผู้สอนและเพื่อนนักเรียนคอยช่วยตอบค่ะ และดูวิดีโอซ้ำได้ไม่จำกัดค่ะ ไม่มีหมดอายุ",
+  },
+  {
+    question: "ชำระเงินแล้วได้รับเนื้อหาเมื่อไหร่?",
+    answer:
+      "ได้รับ link เข้าเรียนทันทีหลังยืนยันการชำระค่ะ ไม่ต้องรอค่ะ เข้าเรียนได้เลยภายในไม่กี่นาที",
   },
 ];
 
@@ -45,17 +55,17 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ delay: index * 0.08, duration: 0.5 }}
+      transition={{ delay: index * 0.07, duration: 0.45 }}
       className="rounded-2xl overflow-hidden"
       style={{
         border: isOpen
-          ? "1.5px solid rgba(107,63,160,0.35)"
+          ? "1.5px solid rgba(107,63,160,0.4)"
           : "1.5px solid rgba(200,180,232,0.25)",
         background: isOpen
-          ? "linear-gradient(135deg, rgba(237,224,248,0.4), rgba(255,248,240,0.6))"
-          : "rgba(255,255,255,0.75)",
+          ? "linear-gradient(135deg, rgba(237,224,248,0.45), rgba(255,248,240,0.65))"
+          : "rgba(255,255,255,0.8)",
         boxShadow: isOpen
-          ? "0 4px 24px rgba(107,63,160,0.08)"
+          ? "0 4px 24px rgba(107,63,160,0.1)"
           : "0 2px 8px rgba(0,0,0,0.04)",
       }}
     >
@@ -65,7 +75,6 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
         aria-expanded={isOpen}
       >
         <div className="flex items-center gap-4">
-          {/* Number badge */}
           <span
             className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm font-bold transition-all duration-300"
             style={{
@@ -78,7 +87,7 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
             {index + 1}
           </span>
           <span
-            className="font-semibold text-sm sm:text-base transition-colors duration-200"
+            className="font-semibold text-sm sm:text-base transition-colors duration-200 text-left"
             style={{ color: isOpen ? "#6B3FA0" : "#2D2D2D" }}
           >
             {question}
@@ -87,7 +96,7 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
         <motion.div
           animate={{ rotate: isOpen ? 180 : 0 }}
           transition={{ duration: 0.25 }}
-          className="flex-shrink-0 ml-4"
+          className="flex-shrink-0 ml-3"
           style={{ color: isOpen ? "#6B3FA0" : "#999" }}
         >
           <ChevronDown className="w-5 h-5" />
@@ -103,10 +112,8 @@ function FAQItem({ question, answer, index, isOpen, onToggle }: FAQItemProps) {
             transition={{ duration: 0.3, ease: "easeInOut" }}
             className="overflow-hidden"
           >
-            <div className="px-5 sm:px-6 pb-5 sm:pb-6 pl-16 sm:pl-[4.5rem]">
-              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
-                {answer}
-              </p>
+            <div className="px-5 sm:px-6 pb-5 pl-16 sm:pl-[4.5rem]">
+              <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{answer}</p>
             </div>
           </motion.div>
         )}
@@ -124,11 +131,15 @@ export default function FAQSection() {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const handleCTA = () => {
+    const el = document.querySelector("#offer");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
     <section id="faq" className="py-20 lg:py-28 bg-white relative overflow-hidden">
-      {/* Background decoration */}
       <div
-        className="absolute inset-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 opacity-25 pointer-events-none"
         style={{
           background:
             "radial-gradient(ellipse at 10% 50%, rgba(200,180,232,0.2) 0%, transparent 50%)",
@@ -136,13 +147,13 @@ export default function FAQSection() {
       />
 
       <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-12"
         >
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
@@ -157,15 +168,15 @@ export default function FAQSection() {
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4"
             style={{ color: "#2D2D2D" }}
           >
-            คำถามที่พบบ่อย
+            ข้อสงสัยที่พบบ่อย
           </h2>
           <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
-            มีข้อสงสัยเพิ่มเติม? ติดต่อผ่าน LINE ได้เลยค่ะ
+            ก่อนตัดสินใจสมัคร — ตอบทุกข้อสงสัยเลยค่ะ
           </p>
         </motion.div>
 
         {/* FAQ Items */}
-        <div className="space-y-3">
+        <div className="space-y-3 mb-10">
           {faqs.map((faq, i) => (
             <FAQItem
               key={i}
@@ -183,7 +194,7 @@ export default function FAQSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.6, duration: 0.5 }}
-          className="mt-12 text-center rounded-3xl p-8"
+          className="text-center rounded-3xl p-8"
           style={{
             background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
             border: "1px solid rgba(200,180,232,0.4)",
@@ -196,19 +207,18 @@ export default function FAQSection() {
             ยังมีคำถามเพิ่มเติม?
           </p>
           <p className="text-gray-500 text-sm mb-5">
-            ทีมงานของเราพร้อมตอบทุกคำถาม ติดต่อเราผ่าน LINE ได้เลยค่ะ
+            ทีมงานของเราพร้อมตอบทุกคำถาม ติดต่อผ่าน LINE ได้เลยค่ะ
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <button
-              onClick={() => {
-                const el = document.querySelector("#courses");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
-              className="px-6 py-3 rounded-full text-white font-semibold text-sm shadow-md hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
-              style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
+            <motion.button
+              onClick={handleCTA}
+              className="px-6 py-3 rounded-full text-gray-900 font-bold text-sm shadow-md transition-all duration-200"
+              style={{ background: "linear-gradient(135deg, #C9A96E, #FFD97D)" }}
+              whileHover={{ scale: 1.04 }}
+              whileTap={{ scale: 0.97 }}
             >
               สมัครเรียนเลย ฿5,900
-            </button>
+            </motion.button>
             <button
               className="px-6 py-3 rounded-full font-semibold text-sm border-2 transition-all duration-200 hover:bg-white/60"
               style={{ borderColor: "#6B3FA0", color: "#6B3FA0" }}

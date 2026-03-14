@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, type Variants } from "framer-motion";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
@@ -11,9 +11,8 @@ const testimonials = [
     avatar: "👩",
     avatarBg: "linear-gradient(135deg, #F4D9E4, #EDE0F8)",
     quote:
-      "ก่อนหน้านี้เทรดแบบเดา พอเรียน Volume Profile แล้วเริ่มเข้าใจว่าทำไมราคาถึงเด้งจากจุดนั้น เปลี่ยนชีวิตการเทรดเลยค่ะ",
+      "ก่อนหน้านี้เทรดแบบเดาตลอด พอเรียน Volume Profile แล้วเริ่มเข้าใจว่าทำไมราคาถึงเด้งจากจุดนั้น เปลี่ยนชีวิตการเทรดเลยค่ะ ขอบคุณมากๆ นะคะ",
     stars: 5,
-    course: "Volume Profile & Order Flow Trading",
   },
   {
     name: "คุณ พิชญา ร.",
@@ -21,9 +20,8 @@ const testimonials = [
     avatar: "👩‍💼",
     avatarBg: "linear-gradient(135deg, #EDE0F8, #C8B4E8)",
     quote:
-      "ชอบที่สอนทั้ง Sierra Chart และ TradingView มาก ไฟล์ Indicator ที่ให้มาก็ใช้ได้จริงเลยค่ะ ขอบคุณมากนะคะ",
+      "ชอบที่สอนทั้ง Sierra Chart และ TradingView มากค่ะ ไฟล์ Indicator ที่ให้มาก็ใช้ได้จริงเลย ตอนนี้อ่าน Footprint ออกแล้วค่ะ คุ้มมากๆ เลย",
     stars: 5,
-    course: "Volume Profile & Order Flow Trading",
   },
   {
     name: "คุณ นันทนา ส.",
@@ -31,15 +29,22 @@ const testimonials = [
     avatar: "👩‍🍳",
     avatarBg: "linear-gradient(135deg, #FFF8F0, #F4D9E4)",
     quote:
-      "เรียนตอนเย็นหลังเลิกงาน 16 บทเรียนครบมาก ดูซ้ำได้เรื่อยๆ ตอนนี้อ่าน Footprint Chart เป็นแล้วค่ะ",
+      "เรียนตอนเย็นหลังเลิกงาน 16 บทเรียนครบมาก ดูซ้ำได้เรื่อยๆ ค่ะ ตอนนี้อ่าน Footprint Chart เป็นแล้ว แนะนำเพื่อนไปเรียนด้วยแล้ว 2 คนค่ะ",
     stars: 5,
-    course: "Volume Profile & Order Flow Trading",
   },
+];
+
+const miniReviews = [
+  { text: "เข้าใจ Volume Profile แล้วค่ะ ขอบคุณมากนะคะ 🙏", name: "นักเรียน A." },
+  { text: "ดีกว่าที่คิดไว้มากเลยค่ะ", name: "นักเรียน B." },
+  { text: "Footprint Chart อ่านออกแล้ว ปลื้มมาก!", name: "นักเรียน C." },
+  { text: "คุ้มมากๆ เลยค่ะ ฿5,900 นี้", name: "นักเรียน D." },
+  { text: "แนะนำเพื่อนไปเรียนด้วยแล้วค่ะ", name: "นักเรียน E." },
 ];
 
 const containerVariants: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.18 } },
+  visible: { transition: { staggerChildren: 0.16 } },
 };
 
 const cardVariants: Variants = {
@@ -54,6 +59,11 @@ const cardVariants: Variants = {
 export default function TestimonialsSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+
+  const handleCTA = () => {
+    const el = document.querySelector("#offer");
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <section
@@ -74,14 +84,14 @@ export default function TestimonialsSection() {
         style={{ background: "radial-gradient(circle, #C9A96E, transparent)" }}
       />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           ref={ref}
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
           <span
             className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
@@ -97,23 +107,24 @@ export default function TestimonialsSection() {
             className="font-playfair font-bold text-3xl sm:text-4xl lg:text-5xl mb-4"
             style={{ color: "#2D2D2D" }}
           >
-            เสียงจากนักเรียน
+            นักเรียนของเราพูดว่าอะไร?
           </h2>
-          <p className="text-gray-600 text-base sm:text-lg max-w-xl mx-auto leading-relaxed">
-            ความสำเร็จของนักเรียนคือความภูมิใจที่ยิ่งใหญ่ที่สุดของเรา
-          </p>
 
-          {/* Overall rating */}
-          <div className="inline-flex items-center gap-3 mt-6 px-6 py-3 rounded-2xl bg-white/80 shadow-sm">
-            <div className="flex gap-1">
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="w-5 h-5 fill-[#C9A96E] text-[#C9A96E]" />
-              ))}
-            </div>
-            <span className="font-bold text-xl" style={{ color: "#2D2D2D" }}>
-              4.9
+          {/* Stat bar */}
+          <div
+            className="inline-flex flex-wrap justify-center items-center gap-4 sm:gap-6 px-6 py-3 rounded-2xl bg-white/80 shadow-sm"
+          >
+            <span className="text-sm font-semibold text-gray-700 flex items-center gap-1">
+              ⭐ <span style={{ color: "#2D2D2D", fontWeight: "bold" }}>4.9</span>/5
             </span>
-            <span className="text-gray-400 text-sm">Rating จากนักเรียน</span>
+            <span className="text-gray-300 hidden sm:inline">|</span>
+            <span className="text-sm font-semibold text-gray-700">
+              👩‍🎓 นักเรียนกว่า <strong style={{ color: "#6B3FA0" }}>500 คน</strong>
+            </span>
+            <span className="text-gray-300 hidden sm:inline">|</span>
+            <span className="text-sm font-semibold text-gray-700">
+              🏆 เรียนแล้วเห็นผลจริง
+            </span>
           </div>
         </motion.div>
 
@@ -122,57 +133,34 @@ export default function TestimonialsSection() {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid md:grid-cols-3 gap-6"
+          className="grid md:grid-cols-3 gap-5 mb-8"
         >
           {testimonials.map((t, i) => (
             <motion.div
               key={i}
               variants={cardVariants}
-              whileHover={{ y: -6 }}
+              whileHover={{ y: -5 }}
               transition={{ type: "spring", stiffness: 300, damping: 22 }}
-              className="relative rounded-3xl p-7 bg-white/80 backdrop-blur-sm shadow-xl shadow-purple-100/40"
+              className="relative rounded-3xl p-6 bg-white/85 backdrop-blur-sm shadow-xl shadow-purple-100/40"
               style={{ border: "1px solid rgba(200,180,232,0.3)" }}
             >
-              {/* Quote icon */}
-              <div
-                className="absolute top-5 right-6 opacity-10"
-                style={{ color: "#6B3FA0" }}
-              >
-                <Quote className="w-12 h-12" />
-              </div>
-
               {/* Stars */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-0.5 mb-4">
                 {[...Array(t.stars)].map((_, j) => (
                   <Star key={j} className="w-4 h-4 fill-[#C9A96E] text-[#C9A96E]" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-gray-700 text-sm leading-relaxed mb-6 relative z-10">
+              <p className="text-gray-700 text-sm leading-relaxed mb-5">
                 &ldquo;{t.quote}&rdquo;
               </p>
 
-              {/* Course badge */}
-              <div
-                className="inline-block px-3 py-1 rounded-full text-xs font-semibold mb-5"
-                style={{
-                  background: "linear-gradient(135deg, #EDE0F8, #F4D9E4)",
-                  color: "#6B3FA0",
-                }}
-              >
-                เรียน: {t.course}
-              </div>
-
               {/* Profile */}
               <div className="flex items-center gap-3 pt-4 border-t border-purple-100/50">
-                {/* Avatar */}
                 <div
-                  className="w-12 h-12 rounded-full flex items-center justify-center text-2xl flex-shrink-0 shadow-md"
-                  style={{
-                    background: t.avatarBg,
-                    border: "2px solid #C9A96E",
-                  }}
+                  className="w-11 h-11 rounded-full flex items-center justify-center text-xl flex-shrink-0 shadow-md"
+                  style={{ background: t.avatarBg, border: "2px solid #C9A96E" }}
                 >
                   {t.avatar}
                 </div>
@@ -187,23 +175,49 @@ export default function TestimonialsSection() {
           ))}
         </motion.div>
 
+        {/* Mini review bubbles */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          className="flex flex-wrap justify-center gap-3 mb-10"
+        >
+          {miniReviews.map((r, i) => (
+            <div
+              key={i}
+              className="px-4 py-2.5 rounded-2xl text-sm shadow-sm"
+              style={{
+                background: "white",
+                border: "1px solid rgba(200,180,232,0.35)",
+                color: "#555",
+                maxWidth: "260px",
+              }}
+            >
+              <span className="text-gray-600">{r.text}</span>
+              <span className="text-xs text-gray-400 ml-2">— {r.name}</span>
+            </div>
+          ))}
+        </motion.div>
+
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.7, duration: 0.5 }}
-          className="text-center mt-12"
+          className="text-center"
         >
-          <button
-            onClick={() => {
-              const el = document.querySelector("#courses");
-              if (el) el.scrollIntoView({ behavior: "smooth" });
+          <motion.button
+            onClick={handleCTA}
+            className="inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-gray-900 font-bold shadow-lg transition-all duration-200"
+            style={{
+              background: "linear-gradient(135deg, #C9A96E 0%, #FFD97D 50%, #C9A96E 100%)",
             }}
-            className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full text-white font-semibold shadow-lg hover:shadow-purple-200 transition-all duration-200 hover:scale-105"
-            style={{ background: "linear-gradient(135deg, #6B3FA0, #8B5CC0)" }}
+            whileHover={{ scale: 1.04, y: -2 }}
+            whileTap={{ scale: 0.97 }}
           >
             สมัครเรียน ฿5,900 →
-          </button>
+          </motion.button>
+          <p className="text-xs text-gray-500 mt-2">เข้าถึงได้ทันทีหลังชำระ</p>
         </motion.div>
       </div>
     </section>
