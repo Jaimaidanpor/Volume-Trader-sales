@@ -5,7 +5,7 @@ import { openLine, LINE_URL } from "@/lib/openLine";
 import { useRef, useState, useEffect } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
-const SEATS_LEFT = 8;
+const SEATS_LEFT = 3;
 const TOTAL_SEATS = 50;
 const BATCH = "รุ่นที่ 3";
 

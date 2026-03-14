@@ -5,7 +5,7 @@ import { openLine, LINE_URL } from "@/lib/openLine";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-const SEATS_LEFT = 8;
+const SEATS_LEFT = 3;
 
 export default function UrgencyBar() {
   const [viewers, setViewers] = useState(12);
