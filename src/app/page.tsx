@@ -1,5 +1,4 @@
 import UrgencyBar from "@/components/UrgencyBar";
-import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import PainSection from "@/components/PainSection";
 import SolutionSection from "@/components/SolutionSection";
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <main className="min-h-screen font-poppins">
       <UrgencyBar />
-      <Navbar />
       <HeroSection />
       <PainSection />
       <SolutionSection />
