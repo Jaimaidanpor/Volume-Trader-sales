@@ -1,6 +1,7 @@
 "use client";
 
 import { openLine, LINE_URL } from "@/lib/openLine";
+import { fbq } from "@/components/FacebookPixel";
 
 import { useRef } from "react";
 import { useViewers } from "@/context/ViewerContext";
@@ -178,7 +179,7 @@ export default function OfferSection() {
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={(e) => openLine(e)}
+            onClick={(e) => { fbq("track", "InitiateCheckout", { currency: "THB", value: 5900 }); openLine(e); }}
             className="w-full sm:w-auto inline-flex items-center justify-center px-10 py-5 rounded-full font-bold text-lg sm:text-xl shadow-2xl mb-4 transition-all duration-200"
             style={{
               background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",

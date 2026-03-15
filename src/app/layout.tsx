@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ViewerProvider } from "@/context/ViewerContext";
+import FacebookPixel from "@/components/FacebookPixel";
 import { Playfair_Display, Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${poppins.variable} font-poppins antialiased`}
       >
+        <FacebookPixel />
         <ViewerProvider>{children}</ViewerProvider>
       </body>
     </html>

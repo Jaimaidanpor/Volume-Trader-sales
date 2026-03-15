@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { fbq } from "@/components/FacebookPixel";
 
 const floatingVariants: Variants = {
   animate: {
@@ -168,7 +169,7 @@ export default function HeroSection() {
             className="flex flex-col items-center lg:items-start gap-2"
           >
             <motion.button
-              onClick={() => handleScroll("#offer")}
+              onClick={() => { handleScroll("#offer"); fbq("trackCustom", "HeroCTAClick"); }}
               className="w-full sm:w-auto inline-flex items-center justify-center px-8 py-4 rounded-full font-bold text-base sm:text-lg shadow-xl transition-all duration-200"
               style={{
                 background: "linear-gradient(135deg, #FFB300 0%, #FFA000 50%, #FFB300 100%)",
