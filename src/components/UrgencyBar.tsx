@@ -2,13 +2,14 @@
 
 import { openLine, LINE_URL } from "@/lib/openLine";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
+import { useViewers } from "@/context/ViewerContext";
 import { motion, AnimatePresence } from "framer-motion";
 
 const SEATS_LEFT = 3;
 
 export default function UrgencyBar() {
-  const [viewers, setViewers] = useState(12);
+  const viewers = useViewers();
   const barRef = useRef<HTMLDivElement>(null);
 
   // Dynamically update CSS var based on actual rendered height
@@ -25,16 +26,6 @@ export default function UrgencyBar() {
     const ro = new ResizeObserver(update);
     ro.observe(el);
     return () => ro.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setViewers((prev) => {
-        const change = Math.random() < 0.5 ? 1 : -1;
-        return Math.min(Math.max(prev + change, 8), 18);
-      });
-    }, 4000);
-    return () => clearInterval(timer);
   }, []);
 
   return (

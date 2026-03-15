@@ -2,7 +2,8 @@
 
 import { openLine, LINE_URL } from "@/lib/openLine";
 
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
+import { useViewers } from "@/context/ViewerContext";
 import { motion, useInView, AnimatePresence } from "framer-motion";
 
 const SEATS_LEFT = 3;
@@ -25,17 +26,7 @@ const trustBadges = [
 export default function OfferSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
-  const [viewers, setViewers] = useState(12);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setViewers((prev) => {
-        const change = Math.random() < 0.5 ? 1 : -1;
-        return Math.min(Math.max(prev + change, 8), 18);
-      });
-    }, 4500);
-    return () => clearInterval(timer);
-  }, []);
+  const viewers = useViewers();
 
   return (
     <section
