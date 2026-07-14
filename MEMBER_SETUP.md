@@ -8,11 +8,11 @@
 ## ขั้นที่ 1 — สร้าง Google Sheet
 
 1. เปิด https://sheets.google.com สร้าง Sheet ใหม่ ตั้งชื่อว่า **"สมาชิก Volume Trader"**
-2. แถวแรก (หัวตาราง) พิมพ์หัวข้อไว้ 6 ช่อง:
+2. แถวแรก (หัวตาราง) พิมพ์หัวข้อไว้ 5 ช่อง:
 
-| A | B | C | D | E | F |
-|---|---|---|---|---|---|
-| เวลา | ชื่อจริง | นามสกุล | เบอร์โทร | Gmail | Discord |
+| A | B | C | D | E |
+|---|---|---|---|---|
+| เวลา | ชื่อ Facebook | เบอร์โทร | Gmail | Discord |
 
 > ไม่ต้องพิมพ์ก็ได้ สคริปต์จะสร้างหัวตารางให้อัตโนมัติถ้ายังว่าง
 
@@ -31,13 +31,12 @@ function doPost(e) {
 
     // สร้างหัวตารางอัตโนมัติถ้ายังว่าง
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["เวลา", "ชื่อจริง", "นามสกุล", "เบอร์โทร", "Gmail", "Discord"]);
+      sheet.appendRow(["เวลา", "ชื่อ Facebook", "เบอร์โทร", "Gmail", "Discord"]);
     }
 
     sheet.appendRow([
       new Date(),
-      data.firstName || "",
-      data.lastName || "",
+      data.facebookName || "",
       data.phone || "",
       data.gmail || "",
       data.discord || ""

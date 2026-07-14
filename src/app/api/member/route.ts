@@ -5,8 +5,7 @@ import { NextResponse } from "next/server";
 // (ดูวิธีทำใน MEMBER_SETUP.md)
 
 type MemberPayload = {
-  firstName?: string;
-  lastName?: string;
+  facebookName?: string;
   phone?: string;
   gmail?: string;
   discord?: string;
@@ -20,14 +19,13 @@ export async function POST(request: Request) {
     return NextResponse.json({ error: "invalid json" }, { status: 400 });
   }
 
-  const firstName = (data.firstName ?? "").trim();
-  const lastName = (data.lastName ?? "").trim();
+  const facebookName = (data.facebookName ?? "").trim();
   const phone = (data.phone ?? "").trim();
   const gmail = (data.gmail ?? "").trim();
   const discord = (data.discord ?? "").trim();
 
   // Validate ฝั่ง server กันข้อมูลว่าง/ปลอม
-  if (!firstName || !lastName || !phone || !gmail || !discord) {
+  if (!facebookName || !phone || !gmail || !discord) {
     return NextResponse.json({ error: "missing fields" }, { status: 400 });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gmail)) {
@@ -48,8 +46,7 @@ export async function POST(request: Request) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        firstName,
-        lastName,
+        facebookName,
         phone,
         gmail,
         discord,

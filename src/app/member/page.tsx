@@ -7,16 +7,14 @@ import Link from "next/link";
 import { LINE_URL } from "@/lib/openLine";
 
 type FormState = {
-  firstName: string;
-  lastName: string;
+  facebookName: string;
   phone: string;
   gmail: string;
   discord: string;
 };
 
 const EMPTY: FormState = {
-  firstName: "",
-  lastName: "",
+  facebookName: "",
   phone: "",
   gmail: "",
   discord: "",
@@ -30,8 +28,13 @@ const fields: {
   hint?: string;
   emoji: string;
 }[] = [
-  { name: "firstName", label: "ชื่อจริง", placeholder: "เช่น สมชาย", emoji: "👤" },
-  { name: "lastName", label: "นามสกุล", placeholder: "เช่น ใจดี", emoji: "👤" },
+  {
+    name: "facebookName",
+    label: "ชื่อ Facebook ที่ทักหาเรา",
+    placeholder: "เช่น Somchai Jaidee",
+    emoji: "📘",
+    hint: "ใส่ชื่อ Facebook เดียวกับที่ใช้ทักแชทมาสมัคร เพื่อให้เราจับคู่ข้อมูลได้ถูกคน",
+  },
   {
     name: "phone",
     label: "เบอร์โทรศัพท์",
@@ -64,8 +67,7 @@ export default function MemberPage() {
 
   function validate(): boolean {
     const next: Partial<Record<keyof FormState, string>> = {};
-    if (!form.firstName.trim()) next.firstName = "กรุณากรอกชื่อจริง";
-    if (!form.lastName.trim()) next.lastName = "กรุณากรอกนามสกุล";
+    if (!form.facebookName.trim()) next.facebookName = "กรุณากรอกชื่อ Facebook";
 
     const phoneDigits = form.phone.replace(/\D/g, "");
     if (!form.phone.trim()) next.phone = "กรุณากรอกเบอร์โทรศัพท์";
@@ -92,8 +94,7 @@ export default function MemberPage() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           ...form,
-          firstName: form.firstName.trim(),
-          lastName: form.lastName.trim(),
+          facebookName: form.facebookName.trim(),
           phone: form.phone.trim(),
           gmail: form.gmail.trim(),
           discord: form.discord.trim(),
@@ -209,21 +210,7 @@ export default function MemberPage() {
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4" noValidate>
-                {/* Name row */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {fields.slice(0, 2).map((f) => (
-                    <FieldInput
-                      key={f.name}
-                      field={f}
-                      value={form[f.name]}
-                      error={errors[f.name]}
-                      onChange={(v) => update(f.name, v)}
-                    />
-                  ))}
-                </div>
-
-                {/* Remaining full-width fields */}
-                {fields.slice(2).map((f) => (
+                {fields.map((f) => (
                   <FieldInput
                     key={f.name}
                     field={f}
