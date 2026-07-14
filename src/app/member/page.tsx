@@ -63,12 +63,20 @@ const fields: {
 const MAX_UPLOAD_MB = 10; // จำกัดขนาดไฟล์ก่อนย่อ
 const MAX_DIMENSION = 1400; // ย่อด้านยาวสุดไม่เกิน 1400px
 
-// ข้อมูลบัญชีรับโอน
+// ข้อมูลบัญชีรับโอน + ยอดโอน
 const BANK = {
   name: "ธนาคารกสิกรไทย",
   accountNo: "028-1-78003-4",
   accountName: "ชัชชัย ศรีคำลือ",
 };
+
+const PRICE = {
+  full: 14900, // ราคาเต็ม
+  pay: 5900, // ยอดที่ต้องโอน (หลังส่วนลด)
+};
+const PRICE_SAVE = PRICE.full - PRICE.pay; // ส่วนที่ประหยัด
+const PRICE_OFF = Math.round((PRICE_SAVE / PRICE.full) * 100); // % ส่วนลด
+const baht = (n: number) => n.toLocaleString("th-TH");
 
 // ย่อรูปในเครื่องก่อนอัปโหลด → คืนค่าเป็น data URL (JPEG)
 // ช่วยกันไฟล์ใหญ่เกิน limit ของ Vercel/Apps Script และอัปโหลดเร็วขึ้น
@@ -400,10 +408,45 @@ function BankInfo() {
       className="rounded-2xl p-4 sm:p-5"
       style={{ background: "#E8F5E9", border: "1px solid #A5D6A7" }}
     >
-      <p className="text-xs font-bold tracking-wide text-brand-primary mb-3">
-        💳 ยังไม่ได้โอน? โอนมาที่บัญชีนี้ก่อนนะคะ
-      </p>
+      {/* Discount badge */}
+      <div className="flex items-center justify-center mb-3">
+        <span
+          className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full"
+          style={{ background: "#1B5E20", color: "#FFD54F" }}
+        >
+          🎉 คุณได้รับส่วนลดพิเศษ -{PRICE_OFF}%
+        </span>
+      </div>
 
+      {/* Amount block */}
+      <div className="bg-white rounded-2xl px-4 py-4 text-center shadow-sm mb-4">
+        <div className="flex items-center justify-center gap-2 mb-1">
+          <span className="text-sm text-gray-400 line-through">
+            ฿ {baht(PRICE.full)}
+          </span>
+          <span
+            className="text-xs font-bold px-2 py-0.5 rounded-full"
+            style={{ background: "#FFF3E0", color: "#E65100" }}
+          >
+            ประหยัด ฿ {baht(PRICE_SAVE)}
+          </span>
+        </div>
+        <p className="text-xs text-gray-500">ยอดที่ต้องโอนวันนี้</p>
+        <p
+          className="font-playfair font-bold text-4xl sm:text-5xl leading-tight"
+          style={{ color: "#F57F17" }}
+        >
+          ฿ {baht(PRICE.pay)}
+        </p>
+        <p className="text-xs text-brand-medium font-medium mt-0.5">
+          ชำระครั้งเดียว • เรียนได้ตลอดชีพ
+        </p>
+      </div>
+
+      {/* Bank details */}
+      <p className="text-xs font-bold tracking-wide text-brand-primary mb-2">
+        💳 โอนมาที่บัญชีนี้ได้เลยค่ะ
+      </p>
       <div className="flex items-center justify-between gap-3">
         <div className="min-w-0">
           <p className="text-sm text-gray-500">{BANK.name}</p>
