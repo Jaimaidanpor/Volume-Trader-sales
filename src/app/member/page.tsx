@@ -139,7 +139,8 @@ export default function MemberPage() {
     setSlipError("");
   }
 
-  function validate(): boolean {
+  // ตรวจข้อมูล + คืนค่า id ของช่องที่ผิด "ช่องแรก" (ไล่จากบนลงล่าง) ถ้าไม่มีผิดคืน null
+  function validate(): string | null {
     const next: Partial<Record<keyof FormState, string>> = {};
     if (!form.facebookName.trim()) next.facebookName = "กรุณากรอกชื่อ Facebook";
 
@@ -154,18 +155,32 @@ export default function MemberPage() {
 
     setErrors(next);
 
-    let slipOk = true;
-    if (!slip) {
-      setSlipError("กรุณาแนบรูปสลิปการโอนเงิน");
-      slipOk = false;
-    }
+    const slipMissing = !slip;
+    setSlipError(slipMissing ? "กรุณาแนบรูปสลิปการโอนเงิน" : "");
 
-    return Object.keys(next).length === 0 && slipOk;
+    // ลำดับช่องบนหน้าจอ — ต้องเลื่อนไปหาช่องผิด "บนสุด" ก่อน
+    const order: (keyof FormState)[] = ["facebookName", "phone", "gmail"];
+    for (const key of order) {
+      if (next[key]) return `field-${key}`;
+    }
+    if (slipMissing) return "field-slip";
+    return null;
+  }
+
+  function focusFirstError(id: string) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (el instanceof HTMLInputElement) el.focus({ preventScroll: true });
   }
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
-    if (!validate()) return;
+    const firstErrorId = validate();
+    if (firstErrorId) {
+      focusFirstError(firstErrorId);
+      return;
+    }
     setStatus("loading");
     try {
       const res = await fetch("/api/member", {
@@ -356,6 +371,7 @@ function FieldInput({
         {field.label}
       </label>
       <input
+        id={`field-${field.name}`}
         type={field.type ?? "text"}
         value={value}
         onChange={(e) => onChange(e.target.value)}
@@ -474,7 +490,7 @@ function SlipUpload({
   onRemove: () => void;
 }) {
   return (
-    <div>
+    <div id="field-slip" style={{ scrollMarginTop: "1.5rem" }}>
       <label className="block text-sm font-semibold text-gray-700 mb-1.5">
         <span className="mr-1">🧾</span>
         แนบสลิปการโอนเงิน
