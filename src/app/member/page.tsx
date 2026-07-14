@@ -290,13 +290,14 @@ export default function MemberPage() {
                   className="inline-block text-xs font-bold tracking-widest uppercase px-4 py-1.5 rounded-full mb-4"
                   style={{ background: "#E8F5E9", color: "#1B5E20" }}
                 >
-                  สำหรับผู้ที่ชำระเงินแล้ว
+                  โอนเงิน &amp; ลงทะเบียนเข้าเรียน
                 </span>
                 <h1 className="font-playfair font-bold text-2xl sm:text-3xl text-brand-primary mb-2 leading-tight">
                   ลงทะเบียนเข้าเรียน
                 </h1>
                 <p className="text-gray-500 text-sm leading-relaxed">
-                  กรอกข้อมูลด้านล่างเพื่อรับสิทธิ์เข้าเรียน วิดีโอบทเรียน
+                  ยังไม่ได้โอน? โอนตามยอดด้านล่างได้เลยค่ะ — โอนแล้วแนบสลิป
+                  และกรอกข้อมูลเพื่อรับสิทธิ์เข้าเรียน วิดีโอบทเรียน
                   และเข้ากลุ่ม Discord (ห้องเรียน + ห้องวางแผน)
                 </p>
               </div>
