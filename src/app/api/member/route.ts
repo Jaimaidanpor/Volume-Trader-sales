@@ -9,7 +9,13 @@ type MemberPayload = {
   phone?: string;
   gmail?: string;
   discord?: string;
+  slip?: string; // data URL (image/jpeg) ของสลิป
+  slipName?: string;
 };
+
+// เผื่อสลิป base64 มีขนาดใหญ่ ต้องยอมรับ body ก้อนโต
+export const runtime = "nodejs";
+export const maxDuration = 30;
 
 export async function POST(request: Request) {
   let data: MemberPayload;
@@ -23,6 +29,8 @@ export async function POST(request: Request) {
   const phone = (data.phone ?? "").trim();
   const gmail = (data.gmail ?? "").trim();
   const discord = (data.discord ?? "").trim();
+  const slip = (data.slip ?? "").trim();
+  const slipName = (data.slipName ?? "").trim();
 
   // Validate ฝั่ง server กันข้อมูลว่าง/ปลอม
   if (!facebookName || !phone || !gmail || !discord) {
@@ -30,6 +38,10 @@ export async function POST(request: Request) {
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gmail)) {
     return NextResponse.json({ error: "invalid email" }, { status: 400 });
+  }
+  // ต้องแนบสลิป และต้องเป็น data URL ของรูปภาพเท่านั้น
+  if (!slip || !slip.startsWith("data:image/")) {
+    return NextResponse.json({ error: "missing slip" }, { status: 400 });
   }
 
   const scriptUrl = process.env.GOOGLE_SCRIPT_URL;
@@ -50,6 +62,8 @@ export async function POST(request: Request) {
         phone,
         gmail,
         discord,
+        slip, // data URL — Apps Script จะบันทึกลง Google Drive
+        slipName,
         // เวลาที่ส่ง (บันทึกฝั่ง Apps Script ด้วย new Date() ก็ได้)
         submittedAt: new Date().toISOString(),
       }),

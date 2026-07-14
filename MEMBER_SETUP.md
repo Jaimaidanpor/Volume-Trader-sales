@@ -8,13 +8,14 @@
 ## ขั้นที่ 1 — สร้าง Google Sheet
 
 1. เปิด https://sheets.google.com สร้าง Sheet ใหม่ ตั้งชื่อว่า **"สมาชิก Volume Trader"**
-2. แถวแรก (หัวตาราง) พิมพ์หัวข้อไว้ 5 ช่อง:
+2. แถวแรก (หัวตาราง) พิมพ์หัวข้อไว้ 6 ช่อง:
 
-| A | B | C | D | E |
-|---|---|---|---|---|
-| เวลา | ชื่อ Facebook | เบอร์โทร | Gmail | Discord |
+| A | B | C | D | E | F |
+|---|---|---|---|---|---|
+| เวลา | ชื่อ Facebook | เบอร์โทร | Gmail | Discord | สลิป |
 
 > ไม่ต้องพิมพ์ก็ได้ สคริปต์จะสร้างหัวตารางให้อัตโนมัติถ้ายังว่าง
+> ช่อง "สลิป" จะเป็น **ลิงก์** ไปยังรูปที่เก็บใน Google Drive คลิกดูได้เลย
 
 ---
 
@@ -24,6 +25,9 @@
 2. ลบโค้ดเดิมทั้งหมด แล้ววางโค้ดนี้แทน:
 
 ```javascript
+// ชื่อโฟลเดอร์ใน Google Drive ที่จะเก็บรูปสลิป (สคริปต์จะสร้างให้อัตโนมัติ)
+var SLIP_FOLDER = "Volume Trader - สลิปสมาชิก";
+
 function doPost(e) {
   try {
     var data = JSON.parse(e.postData.contents);
@@ -31,7 +35,13 @@ function doPost(e) {
 
     // สร้างหัวตารางอัตโนมัติถ้ายังว่าง
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["เวลา", "ชื่อ Facebook", "เบอร์โทร", "Gmail", "Discord"]);
+      sheet.appendRow(["เวลา", "ชื่อ Facebook", "เบอร์โทร", "Gmail", "Discord", "สลิป"]);
+    }
+
+    // บันทึกรูปสลิปลง Google Drive แล้วเก็บลิงก์
+    var slipUrl = "";
+    if (data.slip && data.slip.indexOf("data:image/") === 0) {
+      slipUrl = saveSlip_(data.slip, data.facebookName || "member");
     }
 
     sheet.appendRow([
@@ -39,7 +49,8 @@ function doPost(e) {
       data.facebookName || "",
       data.phone || "",
       data.gmail || "",
-      data.discord || ""
+      data.discord || "",
+      slipUrl
     ]);
 
     return ContentService
@@ -50,6 +61,26 @@ function doPost(e) {
       .createTextOutput(JSON.stringify({ ok: false, error: String(err) }))
       .setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+// แปลง data URL เป็นไฟล์รูป แล้วเซฟลงโฟลเดอร์ Drive คืนค่าเป็นลิงก์
+function saveSlip_(dataUrl, name) {
+  var parts = dataUrl.split(",");
+  var meta = parts[0]; // เช่น data:image/jpeg;base64
+  var base64 = parts[1];
+  var contentType = meta.substring(meta.indexOf(":") + 1, meta.indexOf(";"));
+  var ext = contentType.split("/")[1] || "jpg";
+
+  var bytes = Utilities.base64Decode(base64);
+  var stamp = Utilities.formatDate(new Date(), "GMT+7", "yyyyMMdd-HHmmss");
+  var safeName = String(name).replace(/[^\w฀-๿]+/g, "_").substring(0, 40);
+  var blob = Utilities.newBlob(bytes, contentType, "slip-" + safeName + "-" + stamp + "." + ext);
+
+  var folders = DriveApp.getFoldersByName(SLIP_FOLDER);
+  var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(SLIP_FOLDER);
+  var file = folder.createFile(blob);
+
+  return file.getUrl();
 }
 ```
 
