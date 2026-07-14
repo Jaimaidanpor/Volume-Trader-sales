@@ -25,8 +25,10 @@
 2. ลบโค้ดเดิมทั้งหมด แล้ววางโค้ดนี้แทน:
 
 ```javascript
-// ชื่อโฟลเดอร์ใน Google Drive ที่จะเก็บรูปสลิป (สคริปต์จะสร้างให้อัตโนมัติ)
-var SLIP_FOLDER = "Volume Trader - สลิปสมาชิก";
+// วางไอดีโฟลเดอร์ Drive ที่คุณสร้างเองไว้ตรงนี้ (ดูวิธีหาไอดีในคู่มือ)
+// ถ้าเว้นว่าง "" สคริปต์จะสร้างโฟลเดอร์ชื่อ SLIP_FOLDER ให้อัตโนมัติ
+var FOLDER_ID = "วางไอดีโฟลเดอร์ตรงนี้";
+var SLIP_FOLDER = "Volume Trader - สลิปสมาชิก"; // ใช้เมื่อ FOLDER_ID ว่าง
 
 function doPost(e) {
   try {
@@ -75,8 +77,15 @@ function saveSlip_(dataUrl, name) {
   var safeName = String(name).replace(/[^\w฀-๿]+/g, "_").substring(0, 40);
   var blob = Utilities.newBlob(bytes, contentType, "slip-" + safeName + "-" + stamp + "." + ext);
 
-  var folders = DriveApp.getFoldersByName(SLIP_FOLDER);
-  var folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(SLIP_FOLDER);
+  var folder;
+  if (FOLDER_ID && FOLDER_ID.indexOf("วาง") !== 0) {
+    // ใช้โฟลเดอร์ที่ระบุไอดีไว้
+    folder = DriveApp.getFolderById(FOLDER_ID);
+  } else {
+    // ไม่ได้ระบุไอดี → หา/สร้างโฟลเดอร์ตามชื่อ
+    var folders = DriveApp.getFoldersByName(SLIP_FOLDER);
+    folder = folders.hasNext() ? folders.next() : DriveApp.createFolder(SLIP_FOLDER);
+  }
   var file = folder.createFile(blob);
 
   return file.getUrl();
