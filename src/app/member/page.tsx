@@ -63,6 +63,13 @@ const fields: {
 const MAX_UPLOAD_MB = 10; // จำกัดขนาดไฟล์ก่อนย่อ
 const MAX_DIMENSION = 1400; // ย่อด้านยาวสุดไม่เกิน 1400px
 
+// ข้อมูลบัญชีรับโอน
+const BANK = {
+  name: "ธนาคารกสิกรไทย",
+  accountNo: "028-1-78003-4",
+  accountName: "ชัชชัย ศรีคำลือ",
+};
+
 // ย่อรูปในเครื่องก่อนอัปโหลด → คืนค่าเป็น data URL (JPEG)
 // ช่วยกันไฟล์ใหญ่เกิน limit ของ Vercel/Apps Script และอัปโหลดเร็วขึ้น
 function compressImage(file: File): Promise<string> {
@@ -297,6 +304,8 @@ export default function MemberPage() {
                   />
                 ))}
 
+                <BankInfo />
+
                 <SlipUpload
                   slip={slip}
                   slipName={slipName}
@@ -368,6 +377,55 @@ function FieldInput({
         <p className="text-xs text-gray-400 mt-1">{field.hint}</p>
       )}
       {error && <p className="text-xs text-red-500 mt-1">{error}</p>}
+    </div>
+  );
+}
+
+function BankInfo() {
+  const [copied, setCopied] = useState(false);
+
+  async function copyAccount() {
+    const digits = BANK.accountNo.replace(/\D/g, "");
+    try {
+      await navigator.clipboard.writeText(digits);
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 1800);
+    } catch {
+      // เบราว์เซอร์บล็อกคลิปบอร์ด — ผู้ใช้ก็อปเองได้จากตัวเลขที่แสดง
+    }
+  }
+
+  return (
+    <div
+      className="rounded-2xl p-4 sm:p-5"
+      style={{ background: "#E8F5E9", border: "1px solid #A5D6A7" }}
+    >
+      <p className="text-xs font-bold tracking-wide text-brand-primary mb-3">
+        💳 ยังไม่ได้โอน? โอนมาที่บัญชีนี้ก่อนนะคะ
+      </p>
+
+      <div className="flex items-center justify-between gap-3">
+        <div className="min-w-0">
+          <p className="text-sm text-gray-500">{BANK.name}</p>
+          <p className="font-bold text-lg text-brand-primary tabular-nums tracking-wide">
+            {BANK.accountNo}
+          </p>
+          <p className="text-sm text-gray-600">ชื่อบัญชี: {BANK.accountName}</p>
+        </div>
+
+        <button
+          type="button"
+          onClick={copyAccount}
+          className="shrink-0 px-3.5 py-2 rounded-full text-xs font-bold shadow-sm transition-transform active:scale-95"
+          style={{ background: "#1B5E20", color: "#fff" }}
+        >
+          {copied ? "✓ คัดลอกแล้ว" : "คัดลอกเลขบัญชี"}
+        </button>
+      </div>
+
+      <p className="text-xs text-gray-500 mt-3 leading-relaxed">
+        โอนแล้วแคปหน้าจอสลิป แล้วแนบด้านล่าง พร้อมกรอกข้อมูลเพื่อรับสิทธิ์เข้าเรียนค่ะ
+      </p>
     </div>
   );
 }
