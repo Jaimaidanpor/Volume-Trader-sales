@@ -281,14 +281,9 @@ export default function MemberPage() {
                 >
                   โอนเงิน &amp; ลงทะเบียนเข้าเรียน
                 </span>
-                <h1 className="font-playfair font-bold text-2xl sm:text-3xl text-brand-primary mb-2 leading-tight">
+                <h1 className="font-playfair font-bold text-2xl sm:text-3xl text-brand-primary leading-tight">
                   ลงทะเบียนเข้าเรียน
                 </h1>
-                <p className="text-gray-500 text-sm leading-relaxed">
-                  ยังไม่ได้โอน? โอนตามยอดด้านล่างได้เลยค่ะ — โอนแล้วแนบสลิป
-                  และกรอกข้อมูลเพื่อรับสิทธิ์เข้าเรียน วิดีโอบทเรียน
-                  และเข้ากลุ่ม Discord (ห้องเรียน + ห้องวางแผน)
-                </p>
               </div>
 
               <form onSubmit={handleSubmit} className="space-y-4" noValidate>
