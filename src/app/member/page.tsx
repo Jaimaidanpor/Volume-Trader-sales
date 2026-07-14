@@ -10,14 +10,12 @@ type FormState = {
   facebookName: string;
   phone: string;
   gmail: string;
-  discord: string;
 };
 
 const EMPTY: FormState = {
   facebookName: "",
   phone: "",
   gmail: "",
-  discord: "",
 };
 
 const fields: {
@@ -49,14 +47,7 @@ const fields: {
     placeholder: "yourname@gmail.com",
     type: "email",
     emoji: "📧",
-    hint: "ต้องเป็น Gmail เพราะใช้ให้สิทธิ์เข้าดูวิดีโอบทเรียน",
-  },
-  {
-    name: "discord",
-    label: "ชื่อ Discord (เข้าเรียน + ห้องวางแผน)",
-    placeholder: "เช่น somchai_trade",
-    emoji: "💬",
-    hint: "ชื่อผู้ใช้ Discord ของคุณ เพื่อเชิญเข้ากลุ่มเรียนและห้องวางแผนเทรด",
+    hint: "ต้องเป็น Gmail เพราะใช้ให้สิทธิ์เข้าดูวิดีโอบทเรียน และส่งลิงก์เชิญเข้ากลุ่ม Discord",
   },
 ];
 
@@ -161,8 +152,6 @@ export default function MemberPage() {
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.gmail.trim()))
       next.gmail = "รูปแบบอีเมลไม่ถูกต้อง";
 
-    if (!form.discord.trim()) next.discord = "กรุณากรอกชื่อ Discord";
-
     setErrors(next);
 
     let slipOk = true;
@@ -187,7 +176,6 @@ export default function MemberPage() {
           facebookName: form.facebookName.trim(),
           phone: form.phone.trim(),
           gmail: form.gmail.trim(),
-          discord: form.discord.trim(),
           slip, // data URL (image/jpeg) หลังย่อรูป
           slipName,
         }),
@@ -257,8 +245,9 @@ export default function MemberPage() {
                 ขอบคุณค่ะ เราได้รับข้อมูลของคุณเรียบร้อยแล้ว 🎉
               </p>
               <p className="text-gray-600 mb-8 leading-relaxed text-sm">
-                ทีมงานจะตรวจสอบและส่งสิทธิ์เข้าเรียนไปที่ <b>Gmail</b> ของคุณ
-                พร้อมเชิญเข้ากลุ่ม <b>Discord</b> (ห้องเรียน + ห้องวางแผน) ภายใน 24 ชั่วโมง
+                ทีมงานจะตรวจสอบและส่งสิทธิ์เข้าเรียน พร้อม <b>ลิงก์เชิญเข้ากลุ่ม
+                Discord</b> (ห้องเรียน + ห้องวางแผน) ไปที่ <b>Gmail</b> ของคุณ
+                ภายใน 24 ชั่วโมง
               </p>
               <a
                 href={LINE_URL}

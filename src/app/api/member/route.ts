@@ -8,7 +8,6 @@ type MemberPayload = {
   facebookName?: string;
   phone?: string;
   gmail?: string;
-  discord?: string;
   slip?: string; // data URL (image/jpeg) ของสลิป
   slipName?: string;
 };
@@ -28,12 +27,11 @@ export async function POST(request: Request) {
   const facebookName = (data.facebookName ?? "").trim();
   const phone = (data.phone ?? "").trim();
   const gmail = (data.gmail ?? "").trim();
-  const discord = (data.discord ?? "").trim();
   const slip = (data.slip ?? "").trim();
   const slipName = (data.slipName ?? "").trim();
 
   // Validate ฝั่ง server กันข้อมูลว่าง/ปลอม
-  if (!facebookName || !phone || !gmail || !discord) {
+  if (!facebookName || !phone || !gmail) {
     return NextResponse.json({ error: "missing fields" }, { status: 400 });
   }
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(gmail)) {
@@ -61,7 +59,6 @@ export async function POST(request: Request) {
         facebookName,
         phone,
         gmail,
-        discord,
         slip, // data URL — Apps Script จะบันทึกลง Google Drive
         slipName,
         // เวลาที่ส่ง (บันทึกฝั่ง Apps Script ด้วย new Date() ก็ได้)

@@ -8,11 +8,11 @@
 ## ขั้นที่ 1 — สร้าง Google Sheet
 
 1. เปิด https://sheets.google.com สร้าง Sheet ใหม่ ตั้งชื่อว่า **"สมาชิก Volume Trader"**
-2. แถวแรก (หัวตาราง) พิมพ์หัวข้อไว้ 6 ช่อง:
+2. แถวแรก (หัวตาราง) พิมพ์หัวข้อไว้ 5 ช่อง:
 
-| A | B | C | D | E | F |
-|---|---|---|---|---|---|
-| เวลา | ชื่อ Facebook | เบอร์โทร | Gmail | Discord | สลิป |
+| A | B | C | D | E |
+|---|---|---|---|---|
+| เวลา | ชื่อ Facebook | เบอร์โทร | Gmail | สลิป |
 
 > ไม่ต้องพิมพ์ก็ได้ สคริปต์จะสร้างหัวตารางให้อัตโนมัติถ้ายังว่าง
 > ช่อง "สลิป" จะเป็น **ลิงก์** ไปยังรูปที่เก็บใน Google Drive คลิกดูได้เลย
@@ -35,7 +35,7 @@ function doPost(e) {
 
     // สร้างหัวตารางอัตโนมัติถ้ายังว่าง
     if (sheet.getLastRow() === 0) {
-      sheet.appendRow(["เวลา", "ชื่อ Facebook", "เบอร์โทร", "Gmail", "Discord", "สลิป"]);
+      sheet.appendRow(["เวลา", "ชื่อ Facebook", "เบอร์โทร", "Gmail", "สลิป"]);
     }
 
     // บันทึกรูปสลิปลง Google Drive แล้วเก็บลิงก์
@@ -49,7 +49,6 @@ function doPost(e) {
       data.facebookName || "",
       data.phone || "",
       data.gmail || "",
-      data.discord || "",
       slipUrl
     ]);
 
